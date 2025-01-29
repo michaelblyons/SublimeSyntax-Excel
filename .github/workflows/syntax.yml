@@ -44,3 +44,4 @@ jobs:
           build: ${{ matrix.build }}
           package_name: 'Excel formula'
           # dummy_syntaxes: source.regexp.basic
+
