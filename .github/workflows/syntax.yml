@@ -15,11 +15,13 @@ on:
         - debug
   push:
     paths:
+      - '.github/workflows/*'
       - '**.sublime-syntax'
       - '**/syntax_test*'
       - '**.tmPreferences'
   pull_request:
     paths:
+      - '.github/workflows/*'
       - '**.sublime-syntax'
       - '**/syntax_test*'
       - '**.tmPreferences'
@@ -32,11 +34,13 @@ jobs:
     strategy:
       matrix:
         include:
-          - build: 'latest'
-          # - build: 3211  # libgl1-mesa-glx is not available on ubuntu-latest SublimeText/syntax-action#17
+          # - build: 3154  # First test binary I can find after 3092, but there are GDK errors
+          - build: 3211  # At least this one has tests
+          - build: 4073  # Last test binary before `extends`
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: SublimeText/syntax-test-action@v2
         with:
           build: ${{ matrix.build }}
           package_name: 'Excel formula'
+          # dummy_syntaxes: source.regexp.basic
