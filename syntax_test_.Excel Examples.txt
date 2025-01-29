@@ -25,18 +25,6 @@ TEXTJOIN(";",FALSE,valmax)
 )
 )
 
-=LET(にほんご,1,にほんご)
-' <- keyword.operator.assignment.excel
-'^^^^^^^^^^^^^^^^ meta.function-call
-'^^^ support.function.excel
-'   ^^^^^^^^^^^^^ meta.function-call.arguments.excel
-'   ^ punctuation.section.arguments.begin.excel
-'               ^ punctuation.section.arguments.end.excel
-'    ^^^^ variable.other.readwrite.excel
-'           ^^^^ variable.other.readwrite.excel
-'        ^ punctuation.separator.sequence.excel
-'          ^ punctuation.separator.sequence.excel
-'         ^ meta.number.integer.decimal.excel constant.numeric.value.excel
 =LET(hel4lo,4,hel4lo)
 '<- keyword.operator.assignment.excel
 '^^^^^^^^^^^^^^^^^^^^ meta.function-call
