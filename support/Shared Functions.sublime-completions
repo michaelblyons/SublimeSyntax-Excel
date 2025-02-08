@@ -4,7 +4,7 @@
 //
 // 460 funcs shared by Excel, Google, and Libre (1/18/25)
 {
-    // Disable these for Excel in favor of v2.
+    // Disabled for Excel in favor of full function snippets.
     "scope": "source.sheet - string - comment - source.sheet.excel",
     "completions": [
         { "trigger": "ABS", "contents": "ABS($1)", "kind": "function" },

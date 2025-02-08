@@ -1,9 +1,5 @@
-// Excel functions with descriptions and details. Missing functions + desc/cat found in Excel labs.
-// TODO: These added functions still need proofreading.
-// 
-// WIP v3. See v2 for notes.
 {
-    "scope": "source.sheet.excel - string - comment",
+    "scope": "source - source",
     "completions": [
         { "trigger": "ABS", "contents": "ABS($1)", "annotation": "Math and trigonometry", "details": "Returns the absolute value of a number.", "kind": "function" },
         { "trigger": "ACCRINT", "contents": "ACCRINT($1)", "annotation": "Financial", "details": "Returns the accrued interest for a security that pays periodic interest.", "kind": "function" },
