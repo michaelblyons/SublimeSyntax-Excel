@@ -90,7 +90,7 @@ for func_str in func_list:
     t.sleep(slp)
 
     # Capture screen and process text.
-    # Set this to match position of the tooltip on primary monitor in an Excel spreadsheet on cell A1. Set right horizontal bound to go to edge of spreadsheet.
+    # Set this to match position of the tooltip on primary monitor in a spreadsheet on cell A1. Set right horizontal bound to go to edge of spreadsheet.
     # UI scale correlates with OCR reliability.
     snapshot = ImageGrab.grab(bbox=(110, 650, 2500, 685))
     out = pytesseract.image_to_string(snapshot).strip()
