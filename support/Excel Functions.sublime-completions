@@ -2,7 +2,7 @@
 // TODO: Maybe shorten up some of the longer descriptions. It's a long shot, but maybe word wrap is possible?
 //       (just having a single extra line would make a world of a difference IMO)
 //       
-//       It may be better to just put a `(XL2007)` parenthetical at the end or start of each 07 compatibility 
+// TODO: It may be better to just put a `(XL2007)` parenthetical at the end or start of each 07 compatibility 
 //       func rather than ending with ' In Excel 2007, this is a Statistical function.'
 //
 //       
