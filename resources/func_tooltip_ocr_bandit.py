@@ -40,7 +40,7 @@ func_file = "excel_funcs.txt"
 # Name of the application to be interacted with.
 app_name = "ExcelTooltipper.xlsx - Excel"
 
-# Read Excel function names from file
+# Read function names from file
 with open(func_file, "r") as file:
     func_list = [line.strip() for line in file]
 
