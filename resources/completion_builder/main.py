@@ -17,7 +17,7 @@
 #       mg.py ("merge")
 # 
 # 5. Build out completion strings for nullary functions
-#       main.py
+#       mg.py
 # 
 # Last. Build out entire .sublime-completions file.
 #       main.py
