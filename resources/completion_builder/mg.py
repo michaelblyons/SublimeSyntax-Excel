@@ -1,3 +1,5 @@
+# See main.py for overview.
+
 import json
 
 func_file = open('excel_funcs_comp.json', 'r')
