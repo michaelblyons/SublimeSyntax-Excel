@@ -1,50 +1,42 @@
 #! /usr/bin/env python3
 
-import subprocess
 import json
+from argparse import ArgumentParser
 
-# Switch subscript versions as needed.
-# These functions pass information through input/output files and sys.argv based on the value of `app`,
-# so they can be used in any combination if that is maintained.
-subscripts = ['js.py', 'cb.py', 'ld.py', 'mg.py']
+from SpreadsheetFunction import APP_SUFFIXES, SpreadsheetFunction
+from js import parse_function_list
+from ld import dump_function_args
+from mg import merge_function_args_with_desc
 
-# Takes values of 'excel', 'google', 'libre'
-app = 'excel'
+def main(sheet_app: str, write_intermediate_json: bool):
 
-# Boolean-toggled rerun of subscripts
-toggle_rerun = True
+    # TODO: pass the data seamlessly without dumping files
+    parse_function_list(sheet_app, write_intermediate_json)
+    dump_function_args(sheet_app, write_intermediate_json)
+    functions = merge_function_args_with_desc(sheet_app, write_intermediate_json)
 
-if toggle_rerun:
-    print(f'App Config: {app}')
-    for subscript in subscripts:
-        print(f'Running {subscript}...')
-        result = subprocess.run(['python3', subscript, app], check = True)
-        if result.returncode != 0:
-            print(f'Error occured while running {subscript}')
-            break
-        print(f'{subscript} completed successfully')
+    completions = {
+        "scope": f'source.sheet.{sheet_app} - string - comment',
+        "completions": [f.to_sublime_snippet_completion() for f in functions],
+    }
 
-master_file = open(f'{app}_funcs_master.json', 'r')
+    with open('.sublime-completions', 'w') as o:
+        json.dump(completions, o, indent=4)
 
-master_list = json.load(master_file)
 
-master_file.close()
+if __name__ == '__main__':
+    parser = ArgumentParser(
+        description='Construct spreadsheet app function completions')
+    parser.add_argument(
+        '-s', '--spreadsheet-app',
+        choices=APP_SUFFIXES,
+        default='excel',
+        help='spreadsheet application')
+    parser.add_argument(
+        '-j', '--dump-json',
+        type=bool,
+        default=True,
+        help='dump JSON output to a file')
+    args = parser.parse_args()
 
-completions = []
-
-for func in master_list:
-    trigger = func.get('func_name')
-    contents = func.get('comp_str')
-    annotation = func.get('func_cat')
-    details = func.get('func_desc')
-    kind = 'function'
-    completions.append(dict(trigger = trigger, contents = contents, annotation = annotation, details = details, kind = kind))
-
-dict_list = dict(scope = f'source.sheet.{app} - string - comment', completions = completions)
-
-json_out = json.dumps(dict_list, indent = 4)
-
-o = open('.sublime-completions', 'w')
-
-o.write(json_out)
-o.close()
+    main(args.spreadsheet_app, args.dump_json)
