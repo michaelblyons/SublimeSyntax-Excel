@@ -18,11 +18,11 @@
 # 
 # 5. Build out completion strings for nullary functions
 #       (Nullary functions are not included during the OCR which creates the *_data_list_raw.txt file.
-#        Nullary functions are however included in the *_func_ref.xlsx file, so this is where they
+#        Nullary functions are however included in the *_funcs_ref.xlsx file, so this is where they
 #        are managed.)
 #    ⮡ mg.py
 #    
-# 6. Remove TRUE() and FALSE() from consideration if present in *_func_ref.xlsx
+# 6. Remove TRUE() and FALSE() from consideration if present in *_funcs_ref.xlsx
 #    ⮡ mg.py
 # 
 # 7. Run all subscripts (if toggle_rerun is enabled) and build out entire .sublime-completions file.
@@ -31,7 +31,7 @@
 # NOTE: Not all `ellipsis == True` functions follow the same format, e.g.:
 #       1. COUNTA~value1,[value2],...
 #       2. COUNTIFS~criteria_range1,criteria1,...
-#       Before running this script, clean formulas that look like 2. to look like 1. using your best judgement. Find them using:
+#       Before running this script, clean formulas in *_funcs_data_list.txt that look like 2. to look like 1. using your best judgement. Find them using:
 #           [^\]],\.{3}
 
 # TODO: Allow this entire directory to switch between application specific information like the `scope` found in this file and
@@ -40,7 +40,10 @@
 import subprocess
 import json
 
-scripts = ['js.py', 'cb.py', 'ld.py', 'mg.py']
+# Switch subscript versions as needed.
+# These functions pass information through input/output files and sys.argv based on the value of `app`,
+# so they can be used in any combination if that is maintained.
+subscripts = ['js.py', 'cb.py', 'ld.py', 'mg.py']
 
 # Takes values of 'excel', 'google', 'libre'
 app = 'excel'
@@ -50,15 +53,15 @@ toggle_rerun = True
 
 if toggle_rerun:
     print(f'App Config: {app}')
-    for script in scripts:
-        print(f'Running {script}...')
-        result = subprocess.run(['python3', script, app], check = True)
+    for subscript in subscripts:
+        print(f'Running {subscript}...')
+        result = subprocess.run(['python3', subscript, app], check = True)
         if result.returncode != 0:
-            print(f'Error occured while running {script}')
+            print(f'Error occured while running {subscript}')
             break
-        print(f'{script} completed successfully')
+        print(f'{subscript} completed successfully')
 
-master_file = open(f'{app}_func_master.json', 'r')
+master_file = open(f'{app}_funcs_master.json', 'r')
 
 master_list = json.load(master_file)
 

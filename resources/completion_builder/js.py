@@ -6,9 +6,7 @@ import sys
 
 app = sys.argv[1]
 
-print(f'{app}_func_data_list.txt')
-
-func_file = f'{app}_func_data_list.txt'
+func_file = f'{app}_funcs_data_list.txt'
 
 with open(func_file, 'r') as file:
     func_list = [line.strip() for line in file]

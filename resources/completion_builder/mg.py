@@ -41,13 +41,13 @@ for ref in js_ref:
             ref['comp_str'] = lookup[0]
             ref['ellipsis'] = lookup[1]
         except:
-            print("\nError when when matching comp_str for non nullary function:")
+            print("\nError when when matching comp_str for nonnullary function:")
             print(f'ref func_name: {func_name}')
             print(f'lookup: {lookup}')
 
-print('\nLength of Master List: ' + str(len(js_ref)))
+print('Length of Master List: ' + str(len(js_ref)))
 
-o = open(f'{app}_func_master.json', 'w')
+o = open(f'{app}_funcs_master.json', 'w')
 
 json_out = json.dumps(js_ref, indent = 4)
 

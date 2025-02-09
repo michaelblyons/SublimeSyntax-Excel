@@ -1,7 +1,7 @@
 # See main.py for overview.
 
-# This builds the functional-and-compact-but-not-pretty versions of `comp_str`.
-# `cb_2.py` should be used development for the WIP pretty-but-currently-not-functional versions of `comp_str`.
+# This builds the WIP pretty-but-currently-not-functional versions of `comp_str`.
+# `cb.py` should be used development for the functional-and-compact-but-not-pretty versions of `comp_str`.
 # 
 # The version of this script in use can be configured in `main.py`
 
@@ -9,12 +9,12 @@ import json
 import sys
 
 # Expected:
-#   "FORECAST.ETS(${1:target_date},${2: values},${3: timeline}${4:,${5: [seasonality]},${6: [data_completion]},${7: [aggregation]}})"
-#   "CHOOSECOLS(${1:array},${2: col_num1}${3:,${4: [col_num2], ...}})"
+#   "FORECAST.ETS(${1:target_date}, ${2:values}, ${3:timeline}${4:${5/.+/, /}${5:[seasonality]}${6/.+/, /}${6:[data_completion]}${7/.+/, /}${7:[aggregation]}})"
+#   "CHOOSECOLS(${1:array}, ${2:col_num1}${3:${4/.+/, /}${4:[col_num2], ...}})"
 
 # Actual:
-#   "FORECAST.ETS(${1:target_date},${2: values},${3: timeline}${4:,${5: [seasonality]},${6: [data_completion]},${7: [aggregation]}})",
-#   "CHOOSECOLS(${1:array},${2: col_num1}${3:,${4: [col_num2], ...}})",
+#   "FORECAST.ETS(${1:target_date}, ${2:values}, ${3:timeline}${4:${5/.+/, /}${5:[seasonality]}${6/.+/, /}${6:[data_completion]}${7/.+/, /}${7:[aggregation]}})"
+#   "CHOOSECOLS(${1:array}, ${2:col_num1}${3:${4/.+/, /}${4:[col_num2], ...}})"
 
 app = sys.argv[1]
 
@@ -38,17 +38,10 @@ for func in js:
     for req in req_param:
         param_id += 1
 
-        # if param_id > 1:
-        #     comp_str += ', '
-
-        # comp_str += f'${{{param_id}:{req}}}'
-
         if param_id > 1:
-            comp_str += ','
-            comp_str += f'${{{param_id}: {req}}}'
-        else:
-            comp_str += f'${{{param_id}:{req}}}'
+            comp_str += ', '
 
+        comp_str += f'${{{param_id}:{req}}}'
 
     opt_param = func.get('opt_param')
 
@@ -61,23 +54,18 @@ for func in js:
 
         param_id += 1
 
-        # comp_str += f'${{{param_id}:'
         comp_str += f'${{{param_id}:'
 
         for opt in opt_param:
             param_id += 1
 
-            # comp_str += f'${{{param_id}/.+/, /}}'
+            comp_str += f'${{{param_id}/.+/, /}}'
 
             if param_id == num_param + 1 and ellipsis == True:
-                # comp_str += f'${{{param_id}:[{opt}], ...}}'
-                comp_str += ','
-                comp_str += f'${{{param_id}: [{opt}], ...}}'
+                comp_str += f'${{{param_id}:[{opt}], ...}}'
 
             else:
-                # comp_str += f'${{{param_id}:[{opt}]}}'
-                comp_str += ','
-                comp_str += f'${{{param_id}: [{opt}]}}'
+                comp_str += f'${{{param_id}:[{opt}]}}'
 
         comp_str += '}'
 
