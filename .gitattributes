@@ -7,3 +7,4 @@
 /tests/ export-ignore
 /resources/ export-ignore
 /README.md export-ignore
+"/support/Test Functions.sublime-completions" export-ignore

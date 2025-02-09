@@ -1,0 +1,28 @@
+' Starting function:
+
+=FORECAST.ETS(target_date, values, timeline, [seasonality], [data_completion], [aggregation])
+
+' Desired behavior, when pressing `,` or `DEL` with `[seasonality]` selected:
+
+=FORECAST.ETS(target_date, values, timeline,, [data_completion], [aggregation])
+
+' Actual behavior:
+
+'    `,`:
+=FORECAST.ETS(target_date, values, timeline, ,, [data_completion], [aggregation])
+
+'  `DEL`:
+=FORECAST.ETS(target_date, values, timeline, [data_completion], [aggregation])
+
+=TEST.FUNC(req_param1, ,, [opt_param2], [opt_param3])
+
+
+'A - ${3/.+/, /}
+'B - ${3:[opt_param1]}
+
+'A takes the value of 3 ('[opt_param1]'), but the regex forces is to become ', ' since .+ matches the entirity of '[opt_param1]'
+'The idea is for this to then be removed if 3: is reduced to a blank string.
+
+'However, deleted parameters need to become ',' when deleted.
+
+=TEST.FUNC(req_param1,, [opt_param2], [opt_param3])
