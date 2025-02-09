@@ -1,4 +1,6 @@
-// Function(s) for testing completions. This should be or commented out after testing is complete.
+// Function(s) for testing completions.
+// This probably doesn't need to be commented out for relase since
+// it's accounted for in .gitattributes
 
 {
     "scope": "source.sheet.excel - string - comment",
@@ -12,7 +14,7 @@
             // Test new cb.py script output (w/ ellipsis)
             // "contents": "TEST.FUNC(${1:average_range},${2: criteria_range1},${3: criteria1}${4:,${5: [criteria_range2]},${6: [criteria2], ...}})",
             "annotation": "TEST",
-            "details": "Function for testing completions. This should be or commented out after testing is complete.",
+            "details": "Function for testing completions. This probably doesn't need to be commented out for relase since it's accounted for in .gitattributes",
             "kind": "function"
         }
     ]
