@@ -1,41 +1,4 @@
-# General operations performed by the scripts found in this directory:
-# 
-# 1. Covert the function data found in func_data_list.txt to JSON, where each has:
-#       "func_name" (String)
-#       "req_param" (Array)
-#       "opt_param" (Array)
-#       "ellipsis" (Boolean)
-#    ⮡ js.py ("json")
-#
-# 2. Build out completion strings for param-having functions
-#    ⮡ cb.py ("completion builder")
-# 
-# 3. Covert the function metadata found in func_ref.xlsx to JSON
-#    ⮡ ld.py ("load")
-#       
-# 4. Match completion strings to descriptions, categories, and function names
-#    ⮡ mg.py ("merge")
-# 
-# 5. Build out completion strings for nullary functions
-#       (Nullary functions are not included during the OCR which creates the *_data_list_raw.txt file.
-#        Nullary functions are however included in the *_funcs_ref.xlsx file, so this is where they
-#        are managed.)
-#    ⮡ mg.py
-#    
-# 6. Remove TRUE() and FALSE() from consideration if present in *_funcs_ref.xlsx
-#    ⮡ mg.py
-# 
-# 7. Run all subscripts (if toggle_rerun is enabled) and build out entire .sublime-completions file.
-#    ⮡ main.py
-# 
-# NOTE: Not all `ellipsis == True` functions follow the same format, e.g.:
-#       1. COUNTA~value1,[value2],...
-#       2. COUNTIFS~criteria_range1,criteria1,...
-#       Before running this script, clean formulas in *_funcs_data_list.txt that look like 2. to look like 1. using your best judgement. Find them using:
-#           [^\]],\.{3}
-
-# TODO: Allow this entire directory to switch between application specific information like the `scope` found in this file and
-#       the file names used by all scripts instead of having to refactor a bunch of stuff every time.
+#! /usr/bin/env python3
 
 import subprocess
 import json
