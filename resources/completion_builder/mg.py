@@ -14,7 +14,7 @@ SKIPPED_FUNCTIONS = [
 
 def merge_function_args_with_desc(sheet_app: str, write_json_file: bool = True):
     # completion-arg functions file
-    func_file = open(f'{sheet_app}_funcs_comp.json', 'r')
+    func_file = open(f'{sheet_app}_funcs.json', 'r')
     js_func = json.load(func_file)
     func_file.close()
 
