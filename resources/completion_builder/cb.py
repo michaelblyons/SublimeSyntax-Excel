@@ -51,9 +51,8 @@ for func in js:
 
             comp_str += f'${{{param_id}/.+/, /}}'
 
-            if param_id == num_param + 1:
-                if ellipsis == True:
-                    comp_str += f'${{{param_id}:[{opt}], ...}}'
+            if param_id == num_param + 1 and ellipsis == True:
+                comp_str += f'${{{param_id}:[{opt}], ...}}'
 
             else:
                 comp_str += f'${{{param_id}:[{opt}]}}'

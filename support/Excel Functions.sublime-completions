@@ -23,14 +23,14 @@
         },
         {
             "trigger": "ACCRINT",
-            "contents": "ACCRINT(${1:issue}, ${2:first_interest}, ${3:settlement}, ${4:rate}, ${5:par}, ${6:frequency}${7:${8/.+/, /}${8:[basis]}${9/.+/, /}})",
+            "contents": "ACCRINT(${1:issue}, ${2:first_interest}, ${3:settlement}, ${4:rate}, ${5:par}, ${6:frequency}${7:${8/.+/, /}${8:[basis]}${9/.+/, /}${9:[calc_method]}})",
             "annotation": "Financial",
             "details": "Returns the accrued interest for a security that pays periodic interest.",
             "kind": "function"
         },
         {
             "trigger": "ACCRINTM",
-            "contents": "ACCRINTM(${1:issue}, ${2:settlement}, ${3:rate}, ${4:par}${5:${6/.+/, /}})",
+            "contents": "ACCRINTM(${1:issue}, ${2:settlement}, ${3:rate}, ${4:par}${5:${6/.+/, /}${6:[basis]}})",
             "annotation": "Financial",
             "details": "Returns the accrued interest for a security that pays interest at maturity.",
             "kind": "function"
@@ -65,28 +65,28 @@
         },
         {
             "trigger": "ADDRESS",
-            "contents": "ADDRESS(${1:row_num}, ${2:column_num}${3:${4/.+/, /}${4:[abs_num]}${5/.+/, /}${5:[a1]}${6/.+/, /}})",
+            "contents": "ADDRESS(${1:row_num}, ${2:column_num}${3:${4/.+/, /}${4:[abs_num]}${5/.+/, /}${5:[a1]}${6/.+/, /}${6:[sheet_text]}})",
             "annotation": "Lookup and reference",
             "details": "Returns a reference as text to a single cell in a worksheet.",
             "kind": "function"
         },
         {
             "trigger": "AGGREGATE",
-            "contents": "AGGREGATE(${1:function_num}, ${2:options}, ${3:array}${4:${5/.+/, /}})",
+            "contents": "AGGREGATE(${1:function_num}, ${2:options}, ${3:array}${4:${5/.+/, /}${5:[k]}})",
             "annotation": "Math and trigonometry",
             "details": "Returns an aggregate in a list or database.",
             "kind": "function"
         },
         {
             "trigger": "AMORDEGRC",
-            "contents": "AMORDEGRC(${1:cost}, ${2:date_purchased}, ${3:first_period}, ${4:salvage}, ${5:period}, ${6:rate}${7:${8/.+/, /}})",
+            "contents": "AMORDEGRC(${1:cost}, ${2:date_purchased}, ${3:first_period}, ${4:salvage}, ${5:period}, ${6:rate}${7:${8/.+/, /}${8:[basis]}})",
             "annotation": "Financial",
             "details": "Returns the depreciation for each accounting period by using a depreciation coefficient.",
             "kind": "function"
         },
         {
             "trigger": "AMORLINC",
-            "contents": "AMORLINC(${1:cost}, ${2:date_purchased}, ${3:first_period}, ${4:salvage}, ${5:period}, ${6:rate}${7:${8/.+/, /}})",
+            "contents": "AMORLINC(${1:cost}, ${2:date_purchased}, ${3:first_period}, ${4:salvage}, ${5:period}, ${6:rate}${7:${8/.+/, /}${8:[basis]}})",
             "annotation": "Financial",
             "details": "Returns the depreciation for each accounting period.",
             "kind": "function"
@@ -114,7 +114,7 @@
         },
         {
             "trigger": "ARRAYTOTEXT",
-            "contents": "ARRAYTOTEXT(${1:array}${2:${3/.+/, /}})",
+            "contents": "ARRAYTOTEXT(${1:array}${2:${3/.+/, /}${3:[format]}})",
             "annotation": "Text",
             "details": "Returns an array of text values from any specified range.",
             "kind": "function"
@@ -184,7 +184,7 @@
         },
         {
             "trigger": "AVERAGEIF",
-            "contents": "AVERAGEIF(${1:range}, ${2:criteria}${3:${4/.+/, /}})",
+            "contents": "AVERAGEIF(${1:range}, ${2:criteria}${3:${4/.+/, /}${4:[average_range]}})",
             "annotation": "Statistical",
             "details": "Returns the average (arithmetic mean) of all the cells in a range that meet a given criteria.",
             "kind": "function"
@@ -205,7 +205,7 @@
         },
         {
             "trigger": "BASE",
-            "contents": "BASE(${1:number}, ${2:radix}${3:${4/.+/, /}})",
+            "contents": "BASE(${1:number}, ${2:radix}${3:${4/.+/, /}${4:[min_length]}})",
             "annotation": "Math and trigonometry",
             "details": "Converts a number into a text representation with the given radix (base).",
             "kind": "function"
@@ -240,28 +240,28 @@
         },
         {
             "trigger": "BETA.DIST",
-            "contents": "BETA.DIST(${1:x}, ${2:alpha}, ${3:beta}, ${4:cumulative}${5:${6/.+/, /}${6:[A]}${7/.+/, /}})",
+            "contents": "BETA.DIST(${1:x}, ${2:alpha}, ${3:beta}, ${4:cumulative}${5:${6/.+/, /}${6:[A]}${7/.+/, /}${7:[B]}})",
             "annotation": "Statistical",
             "details": "Returns the beta cumulative distribution function.",
             "kind": "function"
         },
         {
             "trigger": "BETA.INV",
-            "contents": "BETA.INV(${1:probability}, ${2:alpha}, ${3:beta}${4:${5/.+/, /}${5:[A]}${6/.+/, /}})",
+            "contents": "BETA.INV(${1:probability}, ${2:alpha}, ${3:beta}${4:${5/.+/, /}${5:[A]}${6/.+/, /}${6:[B]}})",
             "annotation": "Statistical",
             "details": "Returns the inverse of the cumulative distribution function for a specified beta distribution.",
             "kind": "function"
         },
         {
             "trigger": "BETADIST",
-            "contents": "BETADIST(${1:x}, ${2:alpha}, ${3:beta}${4:${5/.+/, /}${5:[A]}${6/.+/, /}})",
+            "contents": "BETADIST(${1:x}, ${2:alpha}, ${3:beta}${4:${5/.+/, /}${5:[A]}${6/.+/, /}${6:[B]}})",
             "annotation": "Compatibility",
             "details": "Returns the beta cumulative distribution function. In Excel 2007, this is a Statistical function.",
             "kind": "function"
         },
         {
             "trigger": "BETAINV",
-            "contents": "BETAINV(${1:probability}, ${2:alpha}, ${3:beta}${4:${5/.+/, /}${5:[A]}${6/.+/, /}})",
+            "contents": "BETAINV(${1:probability}, ${2:alpha}, ${3:beta}${4:${5/.+/, /}${5:[A]}${6/.+/, /}${6:[B]}})",
             "annotation": "Compatibility",
             "details": "Returns the inverse of the cumulative distribution function for a specified beta. In Excel 2007, this is a Statistical function.",
             "kind": "function"
@@ -275,14 +275,14 @@
         },
         {
             "trigger": "BIN2HEX",
-            "contents": "BIN2HEX(${1:number}${2:${3/.+/, /}})",
+            "contents": "BIN2HEX(${1:number}${2:${3/.+/, /}${3:[places]}})",
             "annotation": "Engineering",
             "details": "Converts a binary number to hexadecimal.",
             "kind": "function"
         },
         {
             "trigger": "BIN2OCT",
-            "contents": "BIN2OCT(${1:number}${2:${3/.+/, /}})",
+            "contents": "BIN2OCT(${1:number}${2:${3/.+/, /}${3:[places]}})",
             "annotation": "Engineering",
             "details": "Converts a binary number to octal.",
             "kind": "function"
@@ -296,7 +296,7 @@
         },
         {
             "trigger": "BINOM.DIST.RANGE",
-            "contents": "BINOM.DIST.RANGE(${1:trials}, ${2:probability_s}, ${3:number_s}${4:${5/.+/, /}})",
+            "contents": "BINOM.DIST.RANGE(${1:trials}, ${2:probability_s}, ${3:number_s}${4:${5/.+/, /}${5:[number_s2]}})",
             "annotation": "Statistical",
             "details": "Returns the probability of a trial result using a binomial distribution.",
             "kind": "function"
@@ -352,14 +352,14 @@
         },
         {
             "trigger": "BYCOL",
-            "contents": "BYCOL(${1:array}${2:${3/.+/, /}})",
+            "contents": "BYCOL(${1:array}${2:${3/.+/, /}${3:[function]}})",
             "annotation": "Array",
             "details": "Applies a LAMBDA to each column and returns an array of the results.",
             "kind": "function"
         },
         {
             "trigger": "BYROW",
-            "contents": "BYROW(${1:array}${2:${3/.+/, /}})",
+            "contents": "BYROW(${1:array}${2:${3/.+/, /}${3:[function]}})",
             "annotation": "Array",
             "details": "Applies a LAMBDA to each row and returns an array of the results.",
             "kind": "function"
@@ -380,21 +380,21 @@
         },
         {
             "trigger": "CEILING.MATH",
-            "contents": "CEILING.MATH(${1:number}${2:${3/.+/, /}${3:[significance]}${4/.+/, /}})",
+            "contents": "CEILING.MATH(${1:number}${2:${3/.+/, /}${3:[significance]}${4/.+/, /}${4:[mode]}})",
             "annotation": "Math and trigonometry",
             "details": "Rounds a number up, to the nearest integer or to the nearest multiple of significance.",
             "kind": "function"
         },
         {
             "trigger": "CEILING.PRECISE",
-            "contents": "CEILING.PRECISE(${1:number}${2:${3/.+/, /}})",
+            "contents": "CEILING.PRECISE(${1:number}${2:${3/.+/, /}${3:[significance]}})",
             "annotation": "Math and trigonometry",
             "details": "Rounds a number the nearest integer or to the nearest multiple of significance. Regardless of the sign of the number, the number is rounded up.",
             "kind": "function"
         },
         {
             "trigger": "CELL",
-            "contents": "CELL(${1:info_type}${2:${3/.+/, /}})",
+            "contents": "CELL(${1:info_type}${2:${3/.+/, /}${3:[reference]}})",
             "annotation": "Information",
             "details": "Returns information about the formatting, location, or contents of a cell. This function is not available in Excel Online.",
             "kind": "function"
@@ -499,7 +499,7 @@
         },
         {
             "trigger": "COLUMN",
-            "contents": "COLUMN(${1:${2/.+/, /}})",
+            "contents": "COLUMN(${1:${2/.+/, /}${2:[reference]}})",
             "annotation": "Lookup and reference",
             "details": "Returns the column number of a reference.",
             "kind": "function"
@@ -527,7 +527,7 @@
         },
         {
             "trigger": "COMPLEX",
-            "contents": "COMPLEX(${1:real_num}, ${2:i_num}${3:${4/.+/, /}})",
+            "contents": "COMPLEX(${1:real_num}, ${2:i_num}${3:${4/.+/, /}${4:[suffix]}})",
             "annotation": "Engineering",
             "details": "Converts real and imaginary coefficients into a complex number.",
             "kind": "function"
@@ -646,42 +646,42 @@
         },
         {
             "trigger": "COUPDAYBS",
-            "contents": "COUPDAYBS(${1:settlement}, ${2:maturity}, ${3:frequency}${4:${5/.+/, /}})",
+            "contents": "COUPDAYBS(${1:settlement}, ${2:maturity}, ${3:frequency}${4:${5/.+/, /}${5:[basis]}})",
             "annotation": "Financial",
             "details": "Returns the number of days from the beginning of the coupon period to the settlement date.",
             "kind": "function"
         },
         {
             "trigger": "COUPDAYS",
-            "contents": "COUPDAYS(${1:settlement}, ${2:maturity}, ${3:frequency}${4:${5/.+/, /}})",
+            "contents": "COUPDAYS(${1:settlement}, ${2:maturity}, ${3:frequency}${4:${5/.+/, /}${5:[basis]}})",
             "annotation": "Financial",
             "details": "Returns the number of days in the coupon period that contains the settlement date.",
             "kind": "function"
         },
         {
             "trigger": "COUPDAYSNC",
-            "contents": "COUPDAYSNC(${1:settlement}, ${2:maturity}, ${3:frequency}${4:${5/.+/, /}})",
+            "contents": "COUPDAYSNC(${1:settlement}, ${2:maturity}, ${3:frequency}${4:${5/.+/, /}${5:[basis]}})",
             "annotation": "Financial",
             "details": "Returns the number of days from the settlement date to the next coupon date.",
             "kind": "function"
         },
         {
             "trigger": "COUPNCD",
-            "contents": "COUPNCD(${1:settlement}, ${2:maturity}, ${3:frequency}${4:${5/.+/, /}})",
+            "contents": "COUPNCD(${1:settlement}, ${2:maturity}, ${3:frequency}${4:${5/.+/, /}${5:[basis]}})",
             "annotation": "Financial",
             "details": "Returns the next coupon date after the settlement date.",
             "kind": "function"
         },
         {
             "trigger": "COUPNUM",
-            "contents": "COUPNUM(${1:settlement}, ${2:maturity}, ${3:frequency}${4:${5/.+/, /}})",
+            "contents": "COUPNUM(${1:settlement}, ${2:maturity}, ${3:frequency}${4:${5/.+/, /}${5:[basis]}})",
             "annotation": "Financial",
             "details": "Returns the number of coupons payable between the settlement date and maturity date.",
             "kind": "function"
         },
         {
             "trigger": "COUPPCD",
-            "contents": "COUPPCD(${1:settlement}, ${2:maturity}, ${3:frequency}${4:${5/.+/, /}})",
+            "contents": "COUPPCD(${1:settlement}, ${2:maturity}, ${3:frequency}${4:${5/.+/, /}${5:[basis]}})",
             "annotation": "Financial",
             "details": "Returns the previous coupon date before the settlement date.",
             "kind": "function"
@@ -730,14 +730,14 @@
         },
         {
             "trigger": "CUBEKPIMEMBER",
-            "contents": "CUBEKPIMEMBER(${1:connection}, ${2:kpi_name}, ${3:kpi_property}${4:${5/.+/, /}})",
+            "contents": "CUBEKPIMEMBER(${1:connection}, ${2:kpi_name}, ${3:kpi_property}${4:${5/.+/, /}${5:[caption]}})",
             "annotation": "Cube",
             "details": "Returns a key performance  (KPI) name, property, and measure, and displays the name and property in the cell. A KPI is a quantifiable measurement, such as monthly gross profit or quarterly employee turnover, used to monitor an organization's performance.",
             "kind": "function"
         },
         {
             "trigger": "CUBEMEMBER",
-            "contents": "CUBEMEMBER(${1:connection}, ${2:member_expression}${3:${4/.+/, /}})",
+            "contents": "CUBEMEMBER(${1:connection}, ${2:member_expression}${3:${4/.+/, /}${4:[caption]}})",
             "annotation": "Cube",
             "details": "Returns a member or tuple in a cube hierarchy. Use to validate that the member or tuple exists in the cube.",
             "kind": "function"
@@ -751,14 +751,14 @@
         },
         {
             "trigger": "CUBERANKEDMEMBER",
-            "contents": "CUBERANKEDMEMBER(${1:connection}, ${2:set_expression}, ${3:rank}${4:${5/.+/, /}})",
+            "contents": "CUBERANKEDMEMBER(${1:connection}, ${2:set_expression}, ${3:rank}${4:${5/.+/, /}${5:[caption]}})",
             "annotation": "Cube",
             "details": "Returns the nth, or ranked, member in a set. Use to return one or more elements in a set, such as the top sales performer or top 10 students.",
             "kind": "function"
         },
         {
             "trigger": "CUBESET",
-            "contents": "CUBESET(${1:connection}, ${2:set_expression}${3:${4/.+/, /}${4:[caption]}${5/.+/, /}${5:[sort_order]}${6/.+/, /}})",
+            "contents": "CUBESET(${1:connection}, ${2:set_expression}${3:${4/.+/, /}${4:[caption]}${5/.+/, /}${5:[sort_order]}${6/.+/, /}${6:[sort_by]}})",
             "annotation": "Cube",
             "details": "Defines a calculated set of members or tuples by sending a set expression to the cube on the server, which creates the set, and then returns that set to Microsoft Office Excel.",
             "kind": "function"
@@ -835,14 +835,14 @@
         },
         {
             "trigger": "DAYS360",
-            "contents": "DAYS360(${1:start_date}, ${2:end_date}${3:${4/.+/, /}})",
+            "contents": "DAYS360(${1:start_date}, ${2:end_date}${3:${4/.+/, /}${4:[method]}})",
             "annotation": "Date and time",
             "details": "Calculates the number of days between two dates based on a 360-day year.",
             "kind": "function"
         },
         {
             "trigger": "DB",
-            "contents": "DB(${1:cost}, ${2:salvage}, ${3:life}, ${4:period}${5:${6/.+/, /}})",
+            "contents": "DB(${1:cost}, ${2:salvage}, ${3:life}, ${4:period}${5:${6/.+/, /}${6:[month]}})",
             "annotation": "Financial",
             "details": "Returns the depreciation of an asset for a specified period by using the fixed-declining balance method.",
             "kind": "function"
@@ -870,28 +870,28 @@
         },
         {
             "trigger": "DDB",
-            "contents": "DDB(${1:cost}, ${2:salvage}, ${3:life}, ${4:period}${5:${6/.+/, /}})",
+            "contents": "DDB(${1:cost}, ${2:salvage}, ${3:life}, ${4:period}${5:${6/.+/, /}${6:[factor]}})",
             "annotation": "Financial",
             "details": "Returns the depreciation of an asset for a specified period by using the double-declining balance method or some other method that you specify.",
             "kind": "function"
         },
         {
             "trigger": "DEC2BIN",
-            "contents": "DEC2BIN(${1:number}${2:${3/.+/, /}})",
+            "contents": "DEC2BIN(${1:number}${2:${3/.+/, /}${3:[places]}})",
             "annotation": "Engineering",
             "details": "Converts a decimal number to binary.",
             "kind": "function"
         },
         {
             "trigger": "DEC2HEX",
-            "contents": "DEC2HEX(${1:number}${2:${3/.+/, /}})",
+            "contents": "DEC2HEX(${1:number}${2:${3/.+/, /}${3:[places]}})",
             "annotation": "Engineering",
             "details": "Converts a decimal number to hexadecimal.",
             "kind": "function"
         },
         {
             "trigger": "DEC2OCT",
-            "contents": "DEC2OCT(${1:number}${2:${3/.+/, /}})",
+            "contents": "DEC2OCT(${1:number}${2:${3/.+/, /}${3:[places]}})",
             "annotation": "Engineering",
             "details": "Converts a decimal number to octal.",
             "kind": "function"
@@ -912,7 +912,7 @@
         },
         {
             "trigger": "DELTA",
-            "contents": "DELTA(${1:number1}${2:${3/.+/, /}})",
+            "contents": "DELTA(${1:number1}${2:${3/.+/, /}${3:[number2]}})",
             "annotation": "Engineering",
             "details": "Tests whether two values are equal.",
             "kind": "function"
@@ -933,7 +933,7 @@
         },
         {
             "trigger": "DISC",
-            "contents": "DISC(${1:settlement}, ${2:maturity}, ${3:pr}, ${4:redemption}${5:${6/.+/, /}})",
+            "contents": "DISC(${1:settlement}, ${2:maturity}, ${3:pr}, ${4:redemption}${5:${6/.+/, /}${6:[basis]}})",
             "annotation": "Financial",
             "details": "Returns the discount rate for a security.",
             "kind": "function"
@@ -954,7 +954,7 @@
         },
         {
             "trigger": "DOLLAR",
-            "contents": "DOLLAR(${1:number}${2:${3/.+/, /}})",
+            "contents": "DOLLAR(${1:number}${2:${3/.+/, /}${3:[decimals]}})",
             "annotation": "Text",
             "details": "Converts a number to text, using the $ (dollar) currency format.",
             "kind": "function"
@@ -982,7 +982,7 @@
         },
         {
             "trigger": "DROP",
-            "contents": "DROP(${1:array}, ${2:rows}${3:${4/.+/, /}})",
+            "contents": "DROP(${1:array}, ${2:rows}${3:${4/.+/, /}${4:[columns]}})",
             "annotation": "Array",
             "details": "Removes rows or columns from the start or end of an array.",
             "kind": "function"
@@ -1010,7 +1010,7 @@
         },
         {
             "trigger": "DURATION",
-            "contents": "DURATION(${1:settlement}, ${2:maturity}, ${3:coupon}, ${4:yld}, ${5:frequency}${6:${7/.+/, /}})",
+            "contents": "DURATION(${1:settlement}, ${2:maturity}, ${3:coupon}, ${4:yld}, ${5:frequency}${6:${7/.+/, /}${7:[basis]}})",
             "annotation": "Financial",
             "details": "Returns the annual duration of a security with periodic interest payments.",
             "kind": "function"
@@ -1059,7 +1059,7 @@
         },
         {
             "trigger": "ERF",
-            "contents": "ERF(${1:lower_limit}${2:${3/.+/, /}})",
+            "contents": "ERF(${1:lower_limit}${2:${3/.+/, /}${3:[upper_limit]}})",
             "annotation": "Engineering",
             "details": "Returns the error function integrated between lower_limit and upper_limit.",
             "kind": "function"
@@ -1122,7 +1122,7 @@
         },
         {
             "trigger": "EXPAND",
-            "contents": "EXPAND(${1:array}, ${2:rows}${3:${4/.+/, /}${4:[columns]}${5/.+/, /}})",
+            "contents": "EXPAND(${1:array}, ${2:rows}${3:${4/.+/, /}${4:[columns]}${5/.+/, /}${5:[pad_with]}})",
             "annotation": "Array",
             "details": "Expands an array to the specified dimensions. ",
             "kind": "function"
@@ -1199,7 +1199,7 @@
         },
         {
             "trigger": "FILTER",
-            "contents": "FILTER(${1:array}, ${2:include}${3:${4/.+/, /}})",
+            "contents": "FILTER(${1:array}, ${2:include}${3:${4/.+/, /}${4:[if_empty]}})",
             "annotation": "Lookup and reference",
             "details": "Filters a range of data based on criteria you define.",
             "kind": "function"
@@ -1213,14 +1213,14 @@
         },
         {
             "trigger": "FIND",
-            "contents": "FIND(${1:find_text}, ${2:within_text}${3:${4/.+/, /}})",
+            "contents": "FIND(${1:find_text}, ${2:within_text}${3:${4/.+/, /}${4:[start_num]}})",
             "annotation": "Text",
             "details": "Returns the position of a substring within a text string, case-sensitive.",
             "kind": "function"
         },
         {
             "trigger": "FINDB",
-            "contents": "FINDB(${1:find_text}, ${2:within_text}${3:${4/.+/, /}})",
+            "contents": "FINDB(${1:find_text}, ${2:within_text}${3:${4/.+/, /}${4:[start_num]}})",
             "annotation": "Text",
             "details": "Returns the position of the last occurrence of a specified substring within a text string, counting by bytes.",
             "kind": "function"
@@ -1248,7 +1248,7 @@
         },
         {
             "trigger": "FIXED",
-            "contents": "FIXED(${1:number}${2:${3/.+/, /}${3:[decimals]}${4/.+/, /}})",
+            "contents": "FIXED(${1:number}${2:${3/.+/, /}${3:[decimals]}${4/.+/, /}${4:[no_commas]}})",
             "annotation": "Text",
             "details": "Formats a number as text with a fixed number of decimals.",
             "kind": "function"
@@ -1262,14 +1262,14 @@
         },
         {
             "trigger": "FLOOR.MATH",
-            "contents": "FLOOR.MATH(${1:number}${2:${3/.+/, /}${3:[significance]}${4/.+/, /}})",
+            "contents": "FLOOR.MATH(${1:number}${2:${3/.+/, /}${3:[significance]}${4/.+/, /}${4:[mode]}})",
             "annotation": "Math and trigonometry",
             "details": "Rounds a number down, to the nearest integer or to the nearest multiple of significance.",
             "kind": "function"
         },
         {
             "trigger": "FLOOR.PRECISE",
-            "contents": "FLOOR.PRECISE(${1:number}${2:${3/.+/, /}})",
+            "contents": "FLOOR.PRECISE(${1:number}${2:${3/.+/, /}${3:[significance]}})",
             "annotation": "Math and trigonometry",
             "details": "Rounds a number the nearest integer or to the nearest multiple of significance. Regardless of the sign of the number, the number is rounded up.",
             "kind": "function"
@@ -1283,28 +1283,28 @@
         },
         {
             "trigger": "FORECAST.ETS",
-            "contents": "FORECAST.ETS(${1:target_date}, ${2:values}, ${3:timeline}${4:${5/.+/, /}${5:[seasonality]}${6/.+/, /}${6:[data_completion]}${7/.+/, /}})",
+            "contents": "FORECAST.ETS(${1:target_date}, ${2:values}, ${3:timeline}${4:${5/.+/, /}${5:[seasonality]}${6/.+/, /}${6:[data_completion]}${7/.+/, /}${7:[aggregation]}})",
             "annotation": "Statistical",
             "details": "Returns a future value based on existing (historical) values by using the AAA version of the Exponential Smoothing (ETS) algorithm. This function isn't available in Excel 2016 for Mac.",
             "kind": "function"
         },
         {
             "trigger": "FORECAST.ETS.CONFINT",
-            "contents": "FORECAST.ETS.CONFINT(${1:target_date}, ${2:values}, ${3:timeline}${4:${5/.+/, /}${5:[confidence_level]}${6/.+/, /}${6:[seasonality]}${7/.+/, /}${7:[data_completion]}${8/.+/, /}})",
+            "contents": "FORECAST.ETS.CONFINT(${1:target_date}, ${2:values}, ${3:timeline}${4:${5/.+/, /}${5:[confidence_level]}${6/.+/, /}${6:[seasonality]}${7/.+/, /}${7:[data_completion]}${8/.+/, /}${8:[aggregation]}})",
             "annotation": "Statistical",
             "details": "Returns a confidence interval for the forecast value at the specified target date. This function isn't available in Excel 2016 for Mac.",
             "kind": "function"
         },
         {
             "trigger": "FORECAST.ETS.SEASONALITY",
-            "contents": "FORECAST.ETS.SEASONALITY(${1:values}, ${2:timeline}${3:${4/.+/, /}${4:[data_completion]}${5/.+/, /}})",
+            "contents": "FORECAST.ETS.SEASONALITY(${1:values}, ${2:timeline}${3:${4/.+/, /}${4:[data_completion]}${5/.+/, /}${5:[aggregation]}})",
             "annotation": "Statistical",
             "details": "Returns the length of the repetitive pattern Excel detects for the specified time series. This function isn't available in Excel 2016 for Mac.",
             "kind": "function"
         },
         {
             "trigger": "FORECAST.ETS.STAT",
-            "contents": "FORECAST.ETS.STAT(${1:values}, ${2:timeline}, ${3:statistic_type}${4:${5/.+/, /}${5:[seasonality]}${6/.+/, /}${6:[data_completion]}${7/.+/, /}})",
+            "contents": "FORECAST.ETS.STAT(${1:values}, ${2:timeline}, ${3:statistic_type}${4:${5/.+/, /}${5:[seasonality]}${6/.+/, /}${6:[data_completion]}${7/.+/, /}${7:[aggregation]}})",
             "annotation": "Statistical",
             "details": "Returns a statistical value as a result of time series forecasting. This function isn't available in Excel 2016 for Mac.",
             "kind": "function"
@@ -1339,7 +1339,7 @@
         },
         {
             "trigger": "FV",
-            "contents": "FV(${1:rate}, ${2:nper}, ${3:pmt}${4:${5/.+/, /}${5:[pv]}${6/.+/, /}})",
+            "contents": "FV(${1:rate}, ${2:nper}, ${3:pmt}${4:${5/.+/, /}${5:[pv]}${6/.+/, /}${6:[type]}})",
             "annotation": "Financial",
             "details": "Returns the future value of an investment.",
             "kind": "function"
@@ -1423,7 +1423,7 @@
         },
         {
             "trigger": "GESTEP",
-            "contents": "GESTEP(${1:number}${2:${3/.+/, /}})",
+            "contents": "GESTEP(${1:number}${2:${3/.+/, /}${3:[step]}})",
             "annotation": "Engineering",
             "details": "Tests whether a number is greater than a threshold value.",
             "kind": "function"
@@ -1437,7 +1437,7 @@
         },
         {
             "trigger": "GROWTH",
-            "contents": "GROWTH(${1:known_ys}${2:${3/.+/, /}${3:[known_xs]}${4/.+/, /}${4:[new_xs]}${5/.+/, /}})",
+            "contents": "GROWTH(${1:known_ys}${2:${3/.+/, /}${3:[known_xs]}${4/.+/, /}${4:[new_xs]}${5/.+/, /}${5:[const]}})",
             "annotation": "Statistical",
             "details": "Returns values along an exponential trend.",
             "kind": "function"
@@ -1451,7 +1451,7 @@
         },
         {
             "trigger": "HEX2BIN",
-            "contents": "HEX2BIN(${1:number}${2:${3/.+/, /}})",
+            "contents": "HEX2BIN(${1:number}${2:${3/.+/, /}${3:[places]}})",
             "annotation": "Engineering",
             "details": "Converts a hexadecimal number to binary.",
             "kind": "function"
@@ -1465,14 +1465,14 @@
         },
         {
             "trigger": "HEX2OCT",
-            "contents": "HEX2OCT(${1:number}${2:${3/.+/, /}})",
+            "contents": "HEX2OCT(${1:number}${2:${3/.+/, /}${3:[places]}})",
             "annotation": "Engineering",
             "details": "Converts a hexadecimal number to octal.",
             "kind": "function"
         },
         {
             "trigger": "HLOOKUP",
-            "contents": "HLOOKUP(${1:lookup_value}, ${2:table_array}, ${3:row_index_num}${4:${5/.+/, /}})",
+            "contents": "HLOOKUP(${1:lookup_value}, ${2:table_array}, ${3:row_index_num}${4:${5/.+/, /}${5:[range_lookup]}})",
             "annotation": "Lookup and reference",
             "details": "Looks in the top row of an array and returns the value of the indicated cell.",
             "kind": "function"
@@ -1493,7 +1493,7 @@
         },
         {
             "trigger": "HYPERLINK",
-            "contents": "HYPERLINK(${1:link_location}${2:${3/.+/, /}})",
+            "contents": "HYPERLINK(${1:link_location}${2:${3/.+/, /}${3:[friendly_name]}})",
             "annotation": "Lookup and reference",
             "details": "Creates a shortcut or jump that opens a document stored on a network server, an intranet, or the Internet.",
             "kind": "function"
@@ -1514,7 +1514,7 @@
         },
         {
             "trigger": "IF",
-            "contents": "IF(${1:logical_test}${2:${3/.+/, /}${3:[value_if_true]}${4/.+/, /}})",
+            "contents": "IF(${1:logical_test}${2:${3/.+/, /}${3:[value_if_true]}${4/.+/, /}${4:[value_if_false]}})",
             "annotation": "Logical",
             "details": "Specifies a logical test to perform.",
             "kind": "function"
@@ -1549,7 +1549,7 @@
         },
         {
             "trigger": "IMAGE",
-            "contents": "IMAGE(${1:source}${2:${3/.+/, /}${3:[alt_text]}${4/.+/, /}${4:[sizing]}${5/.+/, /}${5:[height]}${6/.+/, /}})",
+            "contents": "IMAGE(${1:source}${2:${3/.+/, /}${3:[alt_text]}${4/.+/, /}${4:[sizing]}${5/.+/, /}${5:[height]}${6/.+/, /}${6:[width]}})",
             "annotation": "Lookup and reference",
             "details": "Returns an image from a given source.",
             "kind": "function"
@@ -1724,14 +1724,14 @@
         },
         {
             "trigger": "INDEX",
-            "contents": "INDEX(${1:array}, ${2:row_num}${3:${4/.+/, /}})",
+            "contents": "INDEX(${1:array}, ${2:row_num}${3:${4/.+/, /}${4:[column_num]}})",
             "annotation": "Lookup and reference",
             "details": "Uses an index to choose a value from a reference or array.",
             "kind": "function"
         },
         {
             "trigger": "INDIRECT",
-            "contents": "INDIRECT(${1:ref_text}${2:${3/.+/, /}})",
+            "contents": "INDIRECT(${1:ref_text}${2:${3/.+/, /}${3:[a1]}})",
             "annotation": "Lookup and reference",
             "details": "Returns a reference indicated by a text value.",
             "kind": "function"
@@ -1759,21 +1759,21 @@
         },
         {
             "trigger": "INTRATE",
-            "contents": "INTRATE(${1:settlement}, ${2:maturity}, ${3:investment}, ${4:redemption}${5:${6/.+/, /}})",
+            "contents": "INTRATE(${1:settlement}, ${2:maturity}, ${3:investment}, ${4:redemption}${5:${6/.+/, /}${6:[basis]}})",
             "annotation": "Financial",
             "details": "Returns the interest rate for a fully invested security.",
             "kind": "function"
         },
         {
             "trigger": "IPMT",
-            "contents": "IPMT(${1:rate}, ${2:per}, ${3:nper}, ${4:pv}${5:${6/.+/, /}${6:[fv]}${7/.+/, /}})",
+            "contents": "IPMT(${1:rate}, ${2:per}, ${3:nper}, ${4:pv}${5:${6/.+/, /}${6:[fv]}${7/.+/, /}${7:[type]}})",
             "annotation": "Financial",
             "details": "Returns the interest payment for an investment for a given period.",
             "kind": "function"
         },
         {
             "trigger": "IRR",
-            "contents": "IRR(${1:values}${2:${3/.+/, /}})",
+            "contents": "IRR(${1:values}${2:${3/.+/, /}${3:[guess]}})",
             "annotation": "Financial",
             "details": "Returns the internal rate of return for a series of cash flows.",
             "kind": "function"
@@ -1843,7 +1843,7 @@
         },
         {
             "trigger": "ISO.CEILING",
-            "contents": "ISO.CEILING(${1:number}${2:${3/.+/, /}})",
+            "contents": "ISO.CEILING(${1:number}${2:${3/.+/, /}${3:[significance]}})",
             "annotation": "Math and trigonometry",
             "details": "Returns a number that is rounded up to the nearest integer or to the nearest multiple of significance.",
             "kind": "function"
@@ -1927,14 +1927,14 @@
         },
         {
             "trigger": "LEFT",
-            "contents": "LEFT(${1:text}${2:${3/.+/, /}})",
+            "contents": "LEFT(${1:text}${2:${3/.+/, /}${3:[num_chars]}})",
             "annotation": "Text",
             "details": "Extracts a specified number of characters from the start (left) of a text string.",
             "kind": "function"
         },
         {
             "trigger": "LEFTB",
-            "contents": "LEFTB(${1:text}${2:${3/.+/, /}})",
+            "contents": "LEFTB(${1:text}${2:${3/.+/, /}${3:[num_bytes]}})",
             "annotation": "Text",
             "details": "Returns the first character or characters in a text string based on bytes.",
             "kind": "function"
@@ -1962,7 +1962,7 @@
         },
         {
             "trigger": "LINEST",
-            "contents": "LINEST(${1:known_ys}${2:${3/.+/, /}${3:[known_xs]}${4/.+/, /}${4:[const]}${5/.+/, /}})",
+            "contents": "LINEST(${1:known_ys}${2:${3/.+/, /}${3:[known_xs]}${4/.+/, /}${4:[const]}${5/.+/, /}${5:[stats]}})",
             "annotation": "Statistical",
             "details": "Returns the parameters of a linear trend.",
             "kind": "function"
@@ -1976,7 +1976,7 @@
         },
         {
             "trigger": "LOG",
-            "contents": "LOG(${1:number}${2:${3/.+/, /}})",
+            "contents": "LOG(${1:number}${2:${3/.+/, /}${3:[base]}})",
             "annotation": "Math and trigonometry",
             "details": "Returns the logarithm of a number to a specified base.",
             "kind": "function"
@@ -1990,7 +1990,7 @@
         },
         {
             "trigger": "LOGEST",
-            "contents": "LOGEST(${1:known_ys}${2:${3/.+/, /}${3:[known_xs]}${4/.+/, /}${4:[const]}${5/.+/, /}})",
+            "contents": "LOGEST(${1:known_ys}${2:${3/.+/, /}${3:[known_xs]}${4/.+/, /}${4:[const]}${5/.+/, /}${5:[stats]}})",
             "annotation": "Statistical",
             "details": "Returns the parameters of an exponential trend.",
             "kind": "function"
@@ -2025,7 +2025,7 @@
         },
         {
             "trigger": "LOOKUP",
-            "contents": "LOOKUP(${1:lookup_value}, ${2:lookup_vector}${3:${4/.+/, /}})",
+            "contents": "LOOKUP(${1:lookup_value}, ${2:lookup_vector}${3:${4/.+/, /}${4:[result_vector]}})",
             "annotation": "Lookup and reference",
             "details": "Looks up values in a vector or array.",
             "kind": "function"
@@ -2053,7 +2053,7 @@
         },
         {
             "trigger": "MATCH",
-            "contents": "MATCH(${1:lookup_value}, ${2:lookup_array}${3:${4/.+/, /}})",
+            "contents": "MATCH(${1:lookup_value}, ${2:lookup_array}${3:${4/.+/, /}${4:[match_type]}})",
             "annotation": "Lookup and reference",
             "details": "Looks up values in a reference or array.",
             "kind": "function"
@@ -2088,7 +2088,7 @@
         },
         {
             "trigger": "MDURATION",
-            "contents": "MDURATION(${1:settlement}, ${2:maturity}, ${3:coupon}, ${4:yld}, ${5:frequency}${6:${7/.+/, /}})",
+            "contents": "MDURATION(${1:settlement}, ${2:maturity}, ${3:coupon}, ${4:yld}, ${5:frequency}${6:${7/.+/, /}${7:[basis]}})",
             "annotation": "Financial",
             "details": "Returns the Macauley modified duration for a security with an assumed par value of $100.",
             "kind": "function"
@@ -2249,14 +2249,14 @@
         },
         {
             "trigger": "NETWORKDAYS",
-            "contents": "NETWORKDAYS(${1:start_date}, ${2:end_date}${3:${4/.+/, /}})",
+            "contents": "NETWORKDAYS(${1:start_date}, ${2:end_date}${3:${4/.+/, /}${4:[holidays]}})",
             "annotation": "Date and time",
             "details": "Returns the number of whole workdays between two dates.",
             "kind": "function"
         },
         {
             "trigger": "NETWORKDAYS.INTL",
-            "contents": "NETWORKDAYS.INTL(${1:start_date}, ${2:end_date}${3:${4/.+/, /}${4:[weekend]}${5/.+/, /}})",
+            "contents": "NETWORKDAYS.INTL(${1:start_date}, ${2:end_date}${3:${4/.+/, /}${4:[weekend]}${5/.+/, /}${5:[holidays]}})",
             "annotation": "Date and time",
             "details": "Returns the number of whole workdays between two dates using parameters to indicate which and how many days are weekend days.",
             "kind": "function"
@@ -2340,7 +2340,7 @@
         },
         {
             "trigger": "NPER",
-            "contents": "NPER(${1:rate}, ${2:pmt}, ${3:pv}${4:${5/.+/, /}${5:[fv]}${6/.+/, /}})",
+            "contents": "NPER(${1:rate}, ${2:pmt}, ${3:pv}${4:${5/.+/, /}${5:[fv]}${6/.+/, /}${6:[type]}})",
             "annotation": "Financial",
             "details": "Returns the number of periods for an investment.",
             "kind": "function"
@@ -2354,14 +2354,14 @@
         },
         {
             "trigger": "NUMBERVALUE",
-            "contents": "NUMBERVALUE(${1:text}${2:${3/.+/, /}${3:[decimal_separator]}${4/.+/, /}})",
+            "contents": "NUMBERVALUE(${1:text}${2:${3/.+/, /}${3:[decimal_separator]}${4/.+/, /}${4:[group_separator]}})",
             "annotation": "Text",
             "details": "Converts text to number in a locale-independent manner.",
             "kind": "function"
         },
         {
             "trigger": "OCT2BIN",
-            "contents": "OCT2BIN(${1:number}${2:${3/.+/, /}})",
+            "contents": "OCT2BIN(${1:number}${2:${3/.+/, /}${3:[places]}})",
             "annotation": "Engineering",
             "details": "Converts an octal number to binary.",
             "kind": "function"
@@ -2375,7 +2375,7 @@
         },
         {
             "trigger": "OCT2HEX",
-            "contents": "OCT2HEX(${1:number}${2:${3/.+/, /}})",
+            "contents": "OCT2HEX(${1:number}${2:${3/.+/, /}${3:[places]}})",
             "annotation": "Engineering",
             "details": "Converts an octal number to hexadecimal.",
             "kind": "function"
@@ -2389,35 +2389,35 @@
         },
         {
             "trigger": "ODDFPRICE",
-            "contents": "ODDFPRICE(${1:settlement}, ${2:maturity}, ${3:issue}, ${4:first_coupon}, ${5:rate}, ${6:yld}, ${7:redemption}, ${8:frequency}${9:${10/.+/, /}})",
+            "contents": "ODDFPRICE(${1:settlement}, ${2:maturity}, ${3:issue}, ${4:first_coupon}, ${5:rate}, ${6:yld}, ${7:redemption}, ${8:frequency}${9:${10/.+/, /}${10:[basis]}})",
             "annotation": "Financial",
             "details": "Returns the price per $100 face value of a security with an odd first period.",
             "kind": "function"
         },
         {
             "trigger": "ODDFYIELD",
-            "contents": "ODDFYIELD(${1:settlement}, ${2:maturity}, ${3:issue}, ${4:first_coupon}, ${5:rate}, ${6:pr}, ${7:redemption}, ${8:frequency}${9:${10/.+/, /}})",
+            "contents": "ODDFYIELD(${1:settlement}, ${2:maturity}, ${3:issue}, ${4:first_coupon}, ${5:rate}, ${6:pr}, ${7:redemption}, ${8:frequency}${9:${10/.+/, /}${10:[basis]}})",
             "annotation": "Financial",
             "details": "Returns the yield of a security with an odd first period.",
             "kind": "function"
         },
         {
             "trigger": "ODDLPRICE",
-            "contents": "ODDLPRICE(${1:settlement}, ${2:maturity}, ${3:last_interest}, ${4:rate}, ${5:yld}, ${6:redemption}, ${7:frequency}${8:${9/.+/, /}})",
+            "contents": "ODDLPRICE(${1:settlement}, ${2:maturity}, ${3:last_interest}, ${4:rate}, ${5:yld}, ${6:redemption}, ${7:frequency}${8:${9/.+/, /}${9:[basis]}})",
             "annotation": "Financial",
             "details": "Returns the price per $100 face value of a security with an odd last period.",
             "kind": "function"
         },
         {
             "trigger": "ODDLYIELD",
-            "contents": "ODDLYIELD(${1:settlement}, ${2:maturity}, ${3:last_interest}, ${4:rate}, ${5:pr}, ${6:redemption}, ${7:frequency}${8:${9/.+/, /}})",
+            "contents": "ODDLYIELD(${1:settlement}, ${2:maturity}, ${3:last_interest}, ${4:rate}, ${5:pr}, ${6:redemption}, ${7:frequency}${8:${9/.+/, /}${9:[basis]}})",
             "annotation": "Financial",
             "details": "Returns the yield of a security with an odd last period.",
             "kind": "function"
         },
         {
             "trigger": "OFFSET",
-            "contents": "OFFSET(${1:reference}, ${2:rows}, ${3:cols}${4:${5/.+/, /}${5:[height]}${6/.+/, /}})",
+            "contents": "OFFSET(${1:reference}, ${2:rows}, ${3:cols}${4:${5/.+/, /}${5:[height]}${6/.+/, /}${6:[width]}})",
             "annotation": "Lookup and reference",
             "details": "Returns a reference offset from a given reference.",
             "kind": "function"
@@ -2466,21 +2466,21 @@
         },
         {
             "trigger": "PERCENTRANK",
-            "contents": "PERCENTRANK(${1:array}, ${2:x}${3:${4/.+/, /}})",
+            "contents": "PERCENTRANK(${1:array}, ${2:x}${3:${4/.+/, /}${4:[significance]}})",
             "annotation": "Compatibility",
             "details": "Returns the percentage rank of a value in a data set. In Excel 2007, this is a Statistical function.",
             "kind": "function"
         },
         {
             "trigger": "PERCENTRANK.EXC",
-            "contents": "PERCENTRANK.EXC(${1:array}, ${2:x}${3:${4/.+/, /}})",
+            "contents": "PERCENTRANK.EXC(${1:array}, ${2:x}${3:${4/.+/, /}${4:[significance]}})",
             "annotation": "Statistical",
             "details": "Returns the rank of a value in a data set as a percentage (0..1, exclusive) of the data set.",
             "kind": "function"
         },
         {
             "trigger": "PERCENTRANK.INC",
-            "contents": "PERCENTRANK.INC(${1:array}, ${2:x}${3:${4/.+/, /}})",
+            "contents": "PERCENTRANK.INC(${1:array}, ${2:x}${3:${4/.+/, /}${4:[significance]}})",
             "annotation": "Statistical",
             "details": "Returns the percentage rank of a value in a data set.",
             "kind": "function"
@@ -2522,7 +2522,7 @@
         },
         {
             "trigger": "PMT",
-            "contents": "PMT(${1:rate}, ${2:nper}, ${3:pv}${4:${5/.+/, /}${5:[fv]}${6/.+/, /}})",
+            "contents": "PMT(${1:rate}, ${2:nper}, ${3:pv}${4:${5/.+/, /}${5:[fv]}${6/.+/, /}${6:[type]}})",
             "annotation": "Financial",
             "details": "Returns the periodic payment for an annuity.",
             "kind": "function"
@@ -2550,35 +2550,35 @@
         },
         {
             "trigger": "PPMT",
-            "contents": "PPMT(${1:rate}, ${2:per}, ${3:nper}, ${4:pv}${5:${6/.+/, /}${6:[fv]}${7/.+/, /}})",
+            "contents": "PPMT(${1:rate}, ${2:per}, ${3:nper}, ${4:pv}${5:${6/.+/, /}${6:[fv]}${7/.+/, /}${7:[type]}})",
             "annotation": "Financial",
             "details": "Returns the payment on the principal for an investment for a given period.",
             "kind": "function"
         },
         {
             "trigger": "PRICE",
-            "contents": "PRICE(${1:settlement}, ${2:maturity}, ${3:rate}, ${4:yld}, ${5:redemption}, ${6:frequency}${7:${8/.+/, /}})",
+            "contents": "PRICE(${1:settlement}, ${2:maturity}, ${3:rate}, ${4:yld}, ${5:redemption}, ${6:frequency}${7:${8/.+/, /}${8:[basis]}})",
             "annotation": "Financial",
             "details": "Returns the price per $100 face value of a security that pays periodic interest.",
             "kind": "function"
         },
         {
             "trigger": "PRICEDISC",
-            "contents": "PRICEDISC(${1:settlement}, ${2:maturity}, ${3:discount}, ${4:redemption}${5:${6/.+/, /}})",
+            "contents": "PRICEDISC(${1:settlement}, ${2:maturity}, ${3:discount}, ${4:redemption}${5:${6/.+/, /}${6:[basis]}})",
             "annotation": "Financial",
             "details": "Returns the price per $100 face value of a discounted security.",
             "kind": "function"
         },
         {
             "trigger": "PRICEMAT",
-            "contents": "PRICEMAT(${1:settlement}, ${2:maturity}, ${3:issue}, ${4:rate}, ${5:yld}${6:${7/.+/, /}})",
+            "contents": "PRICEMAT(${1:settlement}, ${2:maturity}, ${3:issue}, ${4:rate}, ${5:yld}${6:${7/.+/, /}${7:[basis]}})",
             "annotation": "Financial",
             "details": "Returns the price per $100 face value of a security that pays interest at maturity.",
             "kind": "function"
         },
         {
             "trigger": "PROB",
-            "contents": "PROB(${1:x_range}, ${2:prob_range}, ${3:lower_limit}${4:${5/.+/, /}})",
+            "contents": "PROB(${1:x_range}, ${2:prob_range}, ${3:lower_limit}${4:${5/.+/, /}${5:[upper_limit]}})",
             "annotation": "Statistical",
             "details": "Returns the probability that values in a range are between two limits.",
             "kind": "function"
@@ -2599,7 +2599,7 @@
         },
         {
             "trigger": "PV",
-            "contents": "PV(${1:rate}, ${2:nper}, ${3:pmt}${4:${5/.+/, /}${5:[fv]}${6/.+/, /}})",
+            "contents": "PV(${1:rate}, ${2:nper}, ${3:pmt}${4:${5/.+/, /}${5:[fv]}${6/.+/, /}${6:[typel]}})",
             "annotation": "Financial",
             "details": "Returns the present value of an investment.",
             "kind": "function"
@@ -2648,7 +2648,7 @@
         },
         {
             "trigger": "RANDARRAY",
-            "contents": "RANDARRAY(${1:${2/.+/, /}${2:[rows]}${3/.+/, /}${3:[columns]}${4/.+/, /}${4:[min]}${5/.+/, /}${5:[max]}${6/.+/, /}})",
+            "contents": "RANDARRAY(${1:${2/.+/, /}${2:[rows]}${3/.+/, /}${3:[columns]}${4/.+/, /}${4:[min]}${5/.+/, /}${5:[max]}${6/.+/, /}${6:[integer]}})",
             "annotation": "Math and trigonometry",
             "details": "Returns an array of random numbers between 0 and 1. However, you can specify the number of rows and columns to fill, minimum and maximum values, and whether to return whole numbers or decimal values.",
             "kind": "function"
@@ -2662,35 +2662,35 @@
         },
         {
             "trigger": "RANK",
-            "contents": "RANK(${1:number}, ${2:ref}${3:${4/.+/, /}})",
+            "contents": "RANK(${1:number}, ${2:ref}${3:${4/.+/, /}${4:[order]}})",
             "annotation": "Compatibility",
             "details": "Returns the rank of a number in a list of numbers. In Excel 2007, this is a Statistical function.",
             "kind": "function"
         },
         {
             "trigger": "RANK.AVG",
-            "contents": "RANK.AVG(${1:number}, ${2:ref}${3:${4/.+/, /}})",
+            "contents": "RANK.AVG(${1:number}, ${2:ref}${3:${4/.+/, /}${4:[order]}})",
             "annotation": "Statistical",
             "details": "Returns the rank of a number in a list of numbers. Ties take the average rank.",
             "kind": "function"
         },
         {
             "trigger": "RANK.EQ",
-            "contents": "RANK.EQ(${1:number}, ${2:ref}${3:${4/.+/, /}})",
+            "contents": "RANK.EQ(${1:number}, ${2:ref}${3:${4/.+/, /}${4:[order]}})",
             "annotation": "Statistical",
             "details": "Returns the rank of a number in a list of numbers. Ties take the top rank.",
             "kind": "function"
         },
         {
             "trigger": "RATE",
-            "contents": "RATE(${1:nper}, ${2:pmt}, ${3:pv}${4:${5/.+/, /}${5:[fv]}${6/.+/, /}${6:[type]}${7/.+/, /}})",
+            "contents": "RATE(${1:nper}, ${2:pmt}, ${3:pv}${4:${5/.+/, /}${5:[fv]}${6/.+/, /}${6:[type]}${7/.+/, /}${7:[guess]}})",
             "annotation": "Financial",
             "details": "Returns the interest rate per period of an annuity.",
             "kind": "function"
         },
         {
             "trigger": "RECEIVED",
-            "contents": "RECEIVED(${1:settlement}, ${2:maturity}, ${3:investment}, ${4:discount}${5:${6/.+/, /}})",
+            "contents": "RECEIVED(${1:settlement}, ${2:maturity}, ${3:investment}, ${4:discount}${5:${6/.+/, /}${6:[basis]}})",
             "annotation": "Financial",
             "details": "Returns the amount received at maturity for a fully invested security.",
             "kind": "function"
@@ -2711,7 +2711,7 @@
         },
         {
             "trigger": "REGISTER.ID",
-            "contents": "REGISTER.ID(${1:module_text}, ${2:procedure}${3:${4/.+/, /}})",
+            "contents": "REGISTER.ID(${1:module_text}, ${2:procedure}${3:${4/.+/, /}${4:[type_text]}})",
             "annotation": "Add-in",
             "details": "Returns the register ID of the specified DLL or code resource.",
             "kind": "function"
@@ -2739,21 +2739,21 @@
         },
         {
             "trigger": "RIGHT",
-            "contents": "RIGHT(${1:text}${2:${3/.+/, /}})",
+            "contents": "RIGHT(${1:text}${2:${3/.+/, /}${3:[num_chars]}})",
             "annotation": "Text",
             "details": "Extracts a specified number of characters from the end (right) of a text string.",
             "kind": "function"
         },
         {
             "trigger": "RIGHTB",
-            "contents": "RIGHTB(${1:text}${2:${3/.+/, /}})",
+            "contents": "RIGHTB(${1:text}${2:${3/.+/, /}${3:[num_bytes]}})",
             "annotation": "Text",
             "details": "Returns the last character or characters in a text string based on bytes.",
             "kind": "function"
         },
         {
             "trigger": "ROMAN",
-            "contents": "ROMAN(${1:number}${2:${3/.+/, /}})",
+            "contents": "ROMAN(${1:number}${2:${3/.+/, /}${3:[form]}})",
             "annotation": "Math and trigonometry",
             "details": "Converts an arabic numeral to roman, as text.",
             "kind": "function"
@@ -2781,7 +2781,7 @@
         },
         {
             "trigger": "ROW",
-            "contents": "ROW(${1:${2/.+/, /}})",
+            "contents": "ROW(${1:${2/.+/, /}${2:[reference]}})",
             "annotation": "Lookup and reference",
             "details": "Returns the row number of a reference.",
             "kind": "function"
@@ -2823,14 +2823,14 @@
         },
         {
             "trigger": "SEARCH",
-            "contents": "SEARCH(${1:find_text}, ${2:within_text}${3:${4/.+/, /}})",
+            "contents": "SEARCH(${1:find_text}, ${2:within_text}${3:${4/.+/, /}${4:[start_num]}})",
             "annotation": "Text",
             "details": "Finds the position of a substring within a text string, case-insensitive.",
             "kind": "function"
         },
         {
             "trigger": "SEARCHB",
-            "contents": "SEARCHB(${1:find_text}, ${2:within_text}${3:${4/.+/, /}})",
+            "contents": "SEARCHB(${1:find_text}, ${2:within_text}${3:${4/.+/, /}${4:[start_num]}})",
             "annotation": "Text",
             "details": "Returns the position of a specified substring within a text string, counting by bytes.",
             "kind": "function"
@@ -2858,7 +2858,7 @@
         },
         {
             "trigger": "SEQUENCE",
-            "contents": "SEQUENCE(${1:rows}${2:${3/.+/, /}${3:[columns]}${4/.+/, /}${4:[start]}${5/.+/, /}})",
+            "contents": "SEQUENCE(${1:rows}${2:${3/.+/, /}${3:[columns]}${4/.+/, /}${4:[start]}${5/.+/, /}${5:[step]}})",
             "annotation": "Math and trigonometry",
             "details": "Generates a list of sequential numbers in an array, such as 1, 2, 3, 4",
             "kind": "function"
@@ -2872,14 +2872,14 @@
         },
         {
             "trigger": "SHEET",
-            "contents": "SHEET(${1:${2/.+/, /}})",
+            "contents": "SHEET(${1:${2/.+/, /}${2:[value]}})",
             "annotation": "Information",
             "details": "Returns the sheet number of the referenced sheet.",
             "kind": "function"
         },
         {
             "trigger": "SHEETS",
-            "contents": "SHEETS(${1:${2/.+/, /}})",
+            "contents": "SHEETS(${1:${2/.+/, /}${2:[reference]}})",
             "annotation": "Information",
             "details": "Returns the number of sheets in a reference.",
             "kind": "function"
@@ -2942,7 +2942,7 @@
         },
         {
             "trigger": "SORT",
-            "contents": "SORT(${1:array}${2:${3/.+/, /}${3:[sort_index]}${4/.+/, /}${4:[sort_order]}${5/.+/, /}})",
+            "contents": "SORT(${1:array}${2:${3/.+/, /}${3:[sort_index]}${4/.+/, /}${4:[sort_order]}${5/.+/, /}${5:[by_col]}})",
             "annotation": "Lookup and reference",
             "details": "Sorts the contents of a range or array",
             "kind": "function"
@@ -3033,7 +3033,7 @@
         },
         {
             "trigger": "SUBSTITUTE",
-            "contents": "SUBSTITUTE(${1:text}, ${2:old_text}, ${3:new_text}${4:${5/.+/, /}})",
+            "contents": "SUBSTITUTE(${1:text}, ${2:old_text}, ${3:new_text}${4:${5/.+/, /}${5:[instance_num]}})",
             "annotation": "Text",
             "details": "Substitutes new text for old text in a text string.",
             "kind": "function"
@@ -3054,7 +3054,7 @@
         },
         {
             "trigger": "SUMIF",
-            "contents": "SUMIF(${1:range}, ${2:criteria}${3:${4/.+/, /}})",
+            "contents": "SUMIF(${1:range}, ${2:criteria}${3:${4/.+/, /}${4:[sum_range]}})",
             "annotation": "Math and trigonometry",
             "details": "Adds the cells specified by a given criteria.",
             "kind": "function"
@@ -3166,7 +3166,7 @@
         },
         {
             "trigger": "TAKE",
-            "contents": "TAKE(${1:array}, ${2:rows}${3:${4/.+/, /}})",
+            "contents": "TAKE(${1:array}, ${2:rows}${3:${4/.+/, /}${4:[columns]}})",
             "annotation": "Array",
             "details": "Returns rows or columns from the start or end of an array.",
             "kind": "function"
@@ -3222,14 +3222,14 @@
         },
         {
             "trigger": "TEXTAFTER",
-            "contents": "TEXTAFTER(${1:text}, ${2:delimiter}${3:${4/.+/, /}${4:[instance_num]}${5/.+/, /}${5:[match_mode]}${6/.+/, /}${6:[match_end]}${7/.+/, /}})",
+            "contents": "TEXTAFTER(${1:text}, ${2:delimiter}${3:${4/.+/, /}${4:[instance_num]}${5/.+/, /}${5:[match_mode]}${6/.+/, /}${6:[match_end]}${7/.+/, /}${7:[if_not_found]}})",
             "annotation": "Text",
             "details": "Returns text that's after delimiting characters.",
             "kind": "function"
         },
         {
             "trigger": "TEXTBEFORE",
-            "contents": "TEXTBEFORE(${1:text}, ${2:delimiter}${3:${4/.+/, /}${4:[instance_num]}${5/.+/, /}${5:[match_mode]}${6/.+/, /}${6:[match_end]}${7/.+/, /}})",
+            "contents": "TEXTBEFORE(${1:text}, ${2:delimiter}${3:${4/.+/, /}${4:[instance_num]}${5/.+/, /}${5:[match_mode]}${6/.+/, /}${6:[match_end]}${7/.+/, /}${7:[if_not_found]}})",
             "annotation": "Text",
             "details": "Returns text that's before delimiting characters.",
             "kind": "function"
@@ -3243,7 +3243,7 @@
         },
         {
             "trigger": "TEXTSPLIT",
-            "contents": "TEXTSPLIT(${1:text}, ${2:col_delimiter}${3:${4/.+/, /}${4:[row_delimiter]}${5/.+/, /}${5:[ignore_empty]}${6/.+/, /}${6:[match_mode]}${7/.+/, /}})",
+            "contents": "TEXTSPLIT(${1:text}, ${2:col_delimiter}${3:${4/.+/, /}${4:[row_delimiter]}${5/.+/, /}${5:[ignore_empty]}${6/.+/, /}${6:[match_mode]}${7/.+/, /}${7:[pad_with]}})",
             "annotation": "Text",
             "details": "Splits text into rows or columns using delimiters.",
             "kind": "function"
@@ -3271,7 +3271,7 @@
         },
         {
             "trigger": "TOCOL",
-            "contents": "TOCOL(${1:array}${2:${3/.+/, /}${3:[ignore]}${4/.+/, /}})",
+            "contents": "TOCOL(${1:array}${2:${3/.+/, /}${3:[ignore]}${4/.+/, /}${4:[scan_by_column]}})",
             "annotation": "Array",
             "details": "Returns the array as a column.",
             "kind": "function"
@@ -3285,7 +3285,7 @@
         },
         {
             "trigger": "TOROW",
-            "contents": "TOROW(${1:array}${2:${3/.+/, /}${3:[ignore]}${4/.+/, /}})",
+            "contents": "TOROW(${1:array}${2:${3/.+/, /}${3:[ignore]}${4/.+/, /}${4:[scan_by_column]}})",
             "annotation": "Array",
             "details": "Returns the array as a row.",
             "kind": "function"
@@ -3299,7 +3299,7 @@
         },
         {
             "trigger": "TREND",
-            "contents": "TREND(${1:known_ys}${2:${3/.+/, /}${3:[known_xs]}${4/.+/, /}${4:[new_xs]}${5/.+/, /}})",
+            "contents": "TREND(${1:known_ys}${2:${3/.+/, /}${3:[known_xs]}${4/.+/, /}${4:[new_xs]}${5/.+/, /}${5:[const]}})",
             "annotation": "Statistical",
             "details": "Returns values along a linear trend.",
             "kind": "function"
@@ -3320,7 +3320,7 @@
         },
         {
             "trigger": "TRUNC",
-            "contents": "TRUNC(${1:number}${2:${3/.+/, /}})",
+            "contents": "TRUNC(${1:number}${2:${3/.+/, /}${3:[num_digits]}})",
             "annotation": "Math and trigonometry",
             "details": "Truncates a number to an integer.",
             "kind": "function"
@@ -3355,7 +3355,7 @@
         },
         {
             "trigger": "UNIQUE",
-            "contents": "UNIQUE(${1:array}${2:${3/.+/, /}${3:[by_col]}${4/.+/, /}})",
+            "contents": "UNIQUE(${1:array}${2:${3/.+/, /}${3:[by_col]}${4/.+/, /}${4:[exactly_once]}})",
             "annotation": "Lookup and reference",
             "details": "Returns a list of unique values in a list or range",
             "kind": "function"
@@ -3383,7 +3383,7 @@
         },
         {
             "trigger": "VALUETOTEXT",
-            "contents": "VALUETOTEXT(${1:value}${2:${3/.+/, /}})",
+            "contents": "VALUETOTEXT(${1:value}${2:${3/.+/, /}${3:[format]}})",
             "annotation": "Text",
             "details": "Returns text from any specified value",
             "kind": "function"
@@ -3432,14 +3432,14 @@
         },
         {
             "trigger": "VDB",
-            "contents": "VDB(${1:cost}, ${2:salvage}, ${3:life}, ${4:start_period}, ${5:end_period}${6:${7/.+/, /}${7:[factor]}${8/.+/, /}})",
+            "contents": "VDB(${1:cost}, ${2:salvage}, ${3:life}, ${4:start_period}, ${5:end_period}${6:${7/.+/, /}${7:[factor]}${8/.+/, /}${8:[no_switch]}})",
             "annotation": "Financial",
             "details": "Returns the depreciation of an asset for a specified or partial period by using a declining balance method.",
             "kind": "function"
         },
         {
             "trigger": "VLOOKUP",
-            "contents": "VLOOKUP(${1:lookup_value}, ${2:table_array}, ${3:col_index_num}${4:${5/.+/, /}})",
+            "contents": "VLOOKUP(${1:lookup_value}, ${2:table_array}, ${3:col_index_num}${4:${5/.+/, /}${5:[range_lookup]}})",
             "annotation": "Lookup and reference",
             "details": "Looks in the first column of an array and moves across the row to return the value of a cell.",
             "kind": "function"
@@ -3460,14 +3460,14 @@
         },
         {
             "trigger": "WEEKDAY",
-            "contents": "WEEKDAY(${1:serial_number}${2:${3/.+/, /}})",
+            "contents": "WEEKDAY(${1:serial_number}${2:${3/.+/, /}${3:[return_type]}})",
             "annotation": "Date and time",
             "details": "Converts a serial number to a day of the week.",
             "kind": "function"
         },
         {
             "trigger": "WEEKNUM",
-            "contents": "WEEKNUM(${1:serial_number}${2:${3/.+/, /}})",
+            "contents": "WEEKNUM(${1:serial_number}${2:${3/.+/, /}${3:[return_type]}})",
             "annotation": "Date and time",
             "details": "Converts a serial number to a number representing where the week falls numerically with a year.",
             "kind": "function"
@@ -3488,49 +3488,49 @@
         },
         {
             "trigger": "WORKDAY",
-            "contents": "WORKDAY(${1:start_date}, ${2:days}${3:${4/.+/, /}})",
+            "contents": "WORKDAY(${1:start_date}, ${2:days}${3:${4/.+/, /}${4:[holidays]}})",
             "annotation": "Date and time",
             "details": "Returns the serial number of the date before or after a specified number of workdays.",
             "kind": "function"
         },
         {
             "trigger": "WORKDAY.INTL",
-            "contents": "WORKDAY.INTL(${1:start_date}, ${2:days}${3:${4/.+/, /}${4:[weekend]}${5/.+/, /}})",
+            "contents": "WORKDAY.INTL(${1:start_date}, ${2:days}${3:${4/.+/, /}${4:[weekend]}${5/.+/, /}${5:[holidays]}})",
             "annotation": "Date and time",
             "details": "Returns the serial number of the date before or after a specified number of workdays using parameters to indicate which and how many days are weekend days.",
             "kind": "function"
         },
         {
             "trigger": "WRAPCOLS",
-            "contents": "WRAPCOLS(${1:vector}, ${2:wrap_count}${3:${4/.+/, /}})",
+            "contents": "WRAPCOLS(${1:vector}, ${2:wrap_count}${3:${4/.+/, /}${4:[pad_with]}})",
             "annotation": "Array",
             "details": "Wraps a row or column to a specified height.",
             "kind": "function"
         },
         {
             "trigger": "WRAPROWS",
-            "contents": "WRAPROWS(${1:vector}, ${2:wrap_count}${3:${4/.+/, /}})",
+            "contents": "WRAPROWS(${1:vector}, ${2:wrap_count}${3:${4/.+/, /}${4:[pad_with]}})",
             "annotation": "Array",
             "details": "Wraps a row or column to a specified width.",
             "kind": "function"
         },
         {
             "trigger": "XIRR",
-            "contents": "XIRR(${1:values}, ${2:dates}${3:${4/.+/, /}})",
+            "contents": "XIRR(${1:values}, ${2:dates}${3:${4/.+/, /}${4:[guess]}})",
             "annotation": "Financial",
             "details": "Returns the internal rate of return for a schedule of cash flows that is not necessarily periodic.",
             "kind": "function"
         },
         {
             "trigger": "XLOOKUP",
-            "contents": "XLOOKUP(${1:lookup_value}, ${2:lookup_array}, ${3:return_array}${4:${5/.+/, /}${5:[if_not_found]}${6/.+/, /}${6:[match_mode]}${7/.+/, /}})",
+            "contents": "XLOOKUP(${1:lookup_value}, ${2:lookup_array}, ${3:return_array}${4:${5/.+/, /}${5:[if_not_found]}${6/.+/, /}${6:[match_mode]}${7/.+/, /}${7:[search_mode]}})",
             "annotation": "Lookup and reference",
             "details": "Searches a range or an array, and returns an item corresponding to the first match it finds. If a match doesn't exist,then XLOOKUP can return the closest (approximate) match.",
             "kind": "function"
         },
         {
             "trigger": "XMATCH",
-            "contents": "XMATCH(${1:lookup_value}, ${2:lookup_array}${3:${4/.+/, /}${4:[match_mode]}${5/.+/, /}})",
+            "contents": "XMATCH(${1:lookup_value}, ${2:lookup_array}${3:${4/.+/, /}${4:[match_mode]}${5/.+/, /}${5:[search_mode]}})",
             "annotation": "Lookup and reference",
             "details": "Returns the relative position of an item in an array or range of cells.",
             "kind": "function"
@@ -3558,42 +3558,42 @@
         },
         {
             "trigger": "YEARFRAC",
-            "contents": "YEARFRAC(${1:start_date}, ${2:end_date}${3:${4/.+/, /}})",
+            "contents": "YEARFRAC(${1:start_date}, ${2:end_date}${3:${4/.+/, /}${4:[basis]}})",
             "annotation": "Date and time",
             "details": "Returns the year fraction representing the number of whole days between start_date and end_date.",
             "kind": "function"
         },
         {
             "trigger": "YIELD",
-            "contents": "YIELD(${1:settlement}, ${2:maturity}, ${3:rate}, ${4:pr}, ${5:redemption}, ${6:frequency}${7:${8/.+/, /}})",
+            "contents": "YIELD(${1:settlement}, ${2:maturity}, ${3:rate}, ${4:pr}, ${5:redemption}, ${6:frequency}${7:${8/.+/, /}${8:[basis]}})",
             "annotation": "Financial",
             "details": "Returns the yield on a security that pays periodic interest.",
             "kind": "function"
         },
         {
             "trigger": "YIELDDISC",
-            "contents": "YIELDDISC(${1:settlement}, ${2:maturity}, ${3:pr}, ${4:redemption}${5:${6/.+/, /}})",
+            "contents": "YIELDDISC(${1:settlement}, ${2:maturity}, ${3:pr}, ${4:redemption}${5:${6/.+/, /}${6:[basis]}})",
             "annotation": "Financial",
             "details": "Returns the annual yield for a discounted security.",
             "kind": "function"
         },
         {
             "trigger": "YIELDMAT",
-            "contents": "YIELDMAT(${1:settlement}, ${2:maturity}, ${3:issue}, ${4:rate}, ${5:pr}${6:${7/.+/, /}})",
+            "contents": "YIELDMAT(${1:settlement}, ${2:maturity}, ${3:issue}, ${4:rate}, ${5:pr}${6:${7/.+/, /}${7:[basis]}})",
             "annotation": "Financial",
             "details": "Returns the annual yield of a security that pays interest at maturity.",
             "kind": "function"
         },
         {
             "trigger": "Z.TEST",
-            "contents": "Z.TEST(${1:array}, ${2:x}${3:${4/.+/, /}})",
+            "contents": "Z.TEST(${1:array}, ${2:x}${3:${4/.+/, /}${4:[sigma]}})",
             "annotation": "Statistical",
             "details": "Returns the one-tailed probability-value of a z-test.",
             "kind": "function"
         },
         {
             "trigger": "ZTEST",
-            "contents": "ZTEST(${1:array}, ${2:x}${3:${4/.+/, /}})",
+            "contents": "ZTEST(${1:array}, ${2:x}${3:${4/.+/, /}${4:[sigma]}})",
             "annotation": "Compatibility",
             "details": "Returns the one-tailed probability-value of a z-test. In Excel 2007, this is a Statistical function.",
             "kind": "function"

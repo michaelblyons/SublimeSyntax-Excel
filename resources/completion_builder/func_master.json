@@ -12,7 +12,7 @@
         "func_cat": "Financial",
         "func_desc": "Returns the accrued interest for a security that pays periodic interest.",
         "is_nullary": false,
-        "comp_str": "ACCRINT(${1:issue}, ${2:first_interest}, ${3:settlement}, ${4:rate}, ${5:par}, ${6:frequency}${7:${8/.+/, /}${8:[basis]}${9/.+/, /}})",
+        "comp_str": "ACCRINT(${1:issue}, ${2:first_interest}, ${3:settlement}, ${4:rate}, ${5:par}, ${6:frequency}${7:${8/.+/, /}${8:[basis]}${9/.+/, /}${9:[calc_method]}})",
         "ellipsis": false
     },
     {
@@ -20,7 +20,7 @@
         "func_cat": "Financial",
         "func_desc": "Returns the accrued interest for a security that pays interest at maturity.",
         "is_nullary": false,
-        "comp_str": "ACCRINTM(${1:issue}, ${2:settlement}, ${3:rate}, ${4:par}${5:${6/.+/, /}})",
+        "comp_str": "ACCRINTM(${1:issue}, ${2:settlement}, ${3:rate}, ${4:par}${5:${6/.+/, /}${6:[basis]}})",
         "ellipsis": false
     },
     {
@@ -60,7 +60,7 @@
         "func_cat": "Lookup and reference",
         "func_desc": "Returns a reference as text to a single cell in a worksheet.",
         "is_nullary": false,
-        "comp_str": "ADDRESS(${1:row_num}, ${2:column_num}${3:${4/.+/, /}${4:[abs_num]}${5/.+/, /}${5:[a1]}${6/.+/, /}})",
+        "comp_str": "ADDRESS(${1:row_num}, ${2:column_num}${3:${4/.+/, /}${4:[abs_num]}${5/.+/, /}${5:[a1]}${6/.+/, /}${6:[sheet_text]}})",
         "ellipsis": false
     },
     {
@@ -68,7 +68,7 @@
         "func_cat": "Math and trigonometry",
         "func_desc": "Returns an aggregate in a list or database.",
         "is_nullary": false,
-        "comp_str": "AGGREGATE(${1:function_num}, ${2:options}, ${3:array}${4:${5/.+/, /}})",
+        "comp_str": "AGGREGATE(${1:function_num}, ${2:options}, ${3:array}${4:${5/.+/, /}${5:[k]}})",
         "ellipsis": false
     },
     {
@@ -76,7 +76,7 @@
         "func_cat": "Financial",
         "func_desc": "Returns the depreciation for each accounting period by using a depreciation coefficient.",
         "is_nullary": false,
-        "comp_str": "AMORDEGRC(${1:cost}, ${2:date_purchased}, ${3:first_period}, ${4:salvage}, ${5:period}, ${6:rate}${7:${8/.+/, /}})",
+        "comp_str": "AMORDEGRC(${1:cost}, ${2:date_purchased}, ${3:first_period}, ${4:salvage}, ${5:period}, ${6:rate}${7:${8/.+/, /}${8:[basis]}})",
         "ellipsis": false
     },
     {
@@ -84,7 +84,7 @@
         "func_cat": "Financial",
         "func_desc": "Returns the depreciation for each accounting period.",
         "is_nullary": false,
-        "comp_str": "AMORLINC(${1:cost}, ${2:date_purchased}, ${3:first_period}, ${4:salvage}, ${5:period}, ${6:rate}${7:${8/.+/, /}})",
+        "comp_str": "AMORLINC(${1:cost}, ${2:date_purchased}, ${3:first_period}, ${4:salvage}, ${5:period}, ${6:rate}${7:${8/.+/, /}${8:[basis]}})",
         "ellipsis": false
     },
     {
@@ -116,7 +116,7 @@
         "func_cat": "Text",
         "func_desc": "Returns an array of text values from any specified range.",
         "is_nullary": false,
-        "comp_str": "ARRAYTOTEXT(${1:array}${2:${3/.+/, /}})",
+        "comp_str": "ARRAYTOTEXT(${1:array}${2:${3/.+/, /}${3:[format]}})",
         "ellipsis": false
     },
     {
@@ -196,7 +196,7 @@
         "func_cat": "Statistical",
         "func_desc": "Returns the average (arithmetic mean) of all the cells in a range that meet a given criteria.",
         "is_nullary": false,
-        "comp_str": "AVERAGEIF(${1:range}, ${2:criteria}${3:${4/.+/, /}})",
+        "comp_str": "AVERAGEIF(${1:range}, ${2:criteria}${3:${4/.+/, /}${4:[average_range]}})",
         "ellipsis": false
     },
     {
@@ -220,7 +220,7 @@
         "func_cat": "Math and trigonometry",
         "func_desc": "Converts a number into a text representation with the given radix (base).",
         "is_nullary": false,
-        "comp_str": "BASE(${1:number}, ${2:radix}${3:${4/.+/, /}})",
+        "comp_str": "BASE(${1:number}, ${2:radix}${3:${4/.+/, /}${4:[min_length]}})",
         "ellipsis": false
     },
     {
@@ -260,7 +260,7 @@
         "func_cat": "Statistical",
         "func_desc": "Returns the beta cumulative distribution function.",
         "is_nullary": false,
-        "comp_str": "BETA.DIST(${1:x}, ${2:alpha}, ${3:beta}, ${4:cumulative}${5:${6/.+/, /}${6:[A]}${7/.+/, /}})",
+        "comp_str": "BETA.DIST(${1:x}, ${2:alpha}, ${3:beta}, ${4:cumulative}${5:${6/.+/, /}${6:[A]}${7/.+/, /}${7:[B]}})",
         "ellipsis": false
     },
     {
@@ -268,7 +268,7 @@
         "func_cat": "Statistical",
         "func_desc": "Returns the inverse of the cumulative distribution function for a specified beta distribution.",
         "is_nullary": false,
-        "comp_str": "BETA.INV(${1:probability}, ${2:alpha}, ${3:beta}${4:${5/.+/, /}${5:[A]}${6/.+/, /}})",
+        "comp_str": "BETA.INV(${1:probability}, ${2:alpha}, ${3:beta}${4:${5/.+/, /}${5:[A]}${6/.+/, /}${6:[B]}})",
         "ellipsis": false
     },
     {
@@ -276,7 +276,7 @@
         "func_cat": "Compatibility",
         "func_desc": "Returns the beta cumulative distribution function. In Excel 2007, this is a Statistical function.",
         "is_nullary": false,
-        "comp_str": "BETADIST(${1:x}, ${2:alpha}, ${3:beta}${4:${5/.+/, /}${5:[A]}${6/.+/, /}})",
+        "comp_str": "BETADIST(${1:x}, ${2:alpha}, ${3:beta}${4:${5/.+/, /}${5:[A]}${6/.+/, /}${6:[B]}})",
         "ellipsis": false
     },
     {
@@ -284,7 +284,7 @@
         "func_cat": "Compatibility",
         "func_desc": "Returns the inverse of the cumulative distribution function for a specified beta. In Excel 2007, this is a Statistical function.",
         "is_nullary": false,
-        "comp_str": "BETAINV(${1:probability}, ${2:alpha}, ${3:beta}${4:${5/.+/, /}${5:[A]}${6/.+/, /}})",
+        "comp_str": "BETAINV(${1:probability}, ${2:alpha}, ${3:beta}${4:${5/.+/, /}${5:[A]}${6/.+/, /}${6:[B]}})",
         "ellipsis": false
     },
     {
@@ -300,7 +300,7 @@
         "func_cat": "Engineering",
         "func_desc": "Converts a binary number to hexadecimal.",
         "is_nullary": false,
-        "comp_str": "BIN2HEX(${1:number}${2:${3/.+/, /}})",
+        "comp_str": "BIN2HEX(${1:number}${2:${3/.+/, /}${3:[places]}})",
         "ellipsis": false
     },
     {
@@ -308,7 +308,7 @@
         "func_cat": "Engineering",
         "func_desc": "Converts a binary number to octal.",
         "is_nullary": false,
-        "comp_str": "BIN2OCT(${1:number}${2:${3/.+/, /}})",
+        "comp_str": "BIN2OCT(${1:number}${2:${3/.+/, /}${3:[places]}})",
         "ellipsis": false
     },
     {
@@ -324,7 +324,7 @@
         "func_cat": "Statistical",
         "func_desc": "Returns the probability of a trial result using a binomial distribution.",
         "is_nullary": false,
-        "comp_str": "BINOM.DIST.RANGE(${1:trials}, ${2:probability_s}, ${3:number_s}${4:${5/.+/, /}})",
+        "comp_str": "BINOM.DIST.RANGE(${1:trials}, ${2:probability_s}, ${3:number_s}${4:${5/.+/, /}${5:[number_s2]}})",
         "ellipsis": false
     },
     {
@@ -388,7 +388,7 @@
         "func_cat": "Array",
         "func_desc": "Applies a LAMBDA to each column and returns an array of the results.",
         "is_nullary": false,
-        "comp_str": "BYCOL(${1:array}${2:${3/.+/, /}})",
+        "comp_str": "BYCOL(${1:array}${2:${3/.+/, /}${3:[function]}})",
         "ellipsis": false
     },
     {
@@ -396,7 +396,7 @@
         "func_cat": "Array",
         "func_desc": "Applies a LAMBDA to each row and returns an array of the results.",
         "is_nullary": false,
-        "comp_str": "BYROW(${1:array}${2:${3/.+/, /}})",
+        "comp_str": "BYROW(${1:array}${2:${3/.+/, /}${3:[function]}})",
         "ellipsis": false
     },
     {
@@ -420,7 +420,7 @@
         "func_cat": "Math and trigonometry",
         "func_desc": "Rounds a number up, to the nearest integer or to the nearest multiple of significance.",
         "is_nullary": false,
-        "comp_str": "CEILING.MATH(${1:number}${2:${3/.+/, /}${3:[significance]}${4/.+/, /}})",
+        "comp_str": "CEILING.MATH(${1:number}${2:${3/.+/, /}${3:[significance]}${4/.+/, /}${4:[mode]}})",
         "ellipsis": false
     },
     {
@@ -428,7 +428,7 @@
         "func_cat": "Math and trigonometry",
         "func_desc": "Rounds a number the nearest integer or to the nearest multiple of significance. Regardless of the sign of the number, the number is rounded up.",
         "is_nullary": false,
-        "comp_str": "CEILING.PRECISE(${1:number}${2:${3/.+/, /}})",
+        "comp_str": "CEILING.PRECISE(${1:number}${2:${3/.+/, /}${3:[significance]}})",
         "ellipsis": false
     },
     {
@@ -436,7 +436,7 @@
         "func_cat": "Information",
         "func_desc": "Returns information about the formatting, location, or contents of a cell. This function is not available in Excel Online.",
         "is_nullary": false,
-        "comp_str": "CELL(${1:info_type}${2:${3/.+/, /}})",
+        "comp_str": "CELL(${1:info_type}${2:${3/.+/, /}${3:[reference]}})",
         "ellipsis": false
     },
     {
@@ -556,7 +556,7 @@
         "func_cat": "Lookup and reference",
         "func_desc": "Returns the column number of a reference.",
         "is_nullary": false,
-        "comp_str": "COLUMN(${1:${2/.+/, /}})",
+        "comp_str": "COLUMN(${1:${2/.+/, /}${2:[reference]}})",
         "ellipsis": false
     },
     {
@@ -588,7 +588,7 @@
         "func_cat": "Engineering",
         "func_desc": "Converts real and imaginary coefficients into a complex number.",
         "is_nullary": false,
-        "comp_str": "COMPLEX(${1:real_num}, ${2:i_num}${3:${4/.+/, /}})",
+        "comp_str": "COMPLEX(${1:real_num}, ${2:i_num}${3:${4/.+/, /}${4:[suffix]}})",
         "ellipsis": false
     },
     {
@@ -724,7 +724,7 @@
         "func_cat": "Financial",
         "func_desc": "Returns the number of days from the beginning of the coupon period to the settlement date.",
         "is_nullary": false,
-        "comp_str": "COUPDAYBS(${1:settlement}, ${2:maturity}, ${3:frequency}${4:${5/.+/, /}})",
+        "comp_str": "COUPDAYBS(${1:settlement}, ${2:maturity}, ${3:frequency}${4:${5/.+/, /}${5:[basis]}})",
         "ellipsis": false
     },
     {
@@ -732,7 +732,7 @@
         "func_cat": "Financial",
         "func_desc": "Returns the number of days in the coupon period that contains the settlement date.",
         "is_nullary": false,
-        "comp_str": "COUPDAYS(${1:settlement}, ${2:maturity}, ${3:frequency}${4:${5/.+/, /}})",
+        "comp_str": "COUPDAYS(${1:settlement}, ${2:maturity}, ${3:frequency}${4:${5/.+/, /}${5:[basis]}})",
         "ellipsis": false
     },
     {
@@ -740,7 +740,7 @@
         "func_cat": "Financial",
         "func_desc": "Returns the number of days from the settlement date to the next coupon date.",
         "is_nullary": false,
-        "comp_str": "COUPDAYSNC(${1:settlement}, ${2:maturity}, ${3:frequency}${4:${5/.+/, /}})",
+        "comp_str": "COUPDAYSNC(${1:settlement}, ${2:maturity}, ${3:frequency}${4:${5/.+/, /}${5:[basis]}})",
         "ellipsis": false
     },
     {
@@ -748,7 +748,7 @@
         "func_cat": "Financial",
         "func_desc": "Returns the next coupon date after the settlement date.",
         "is_nullary": false,
-        "comp_str": "COUPNCD(${1:settlement}, ${2:maturity}, ${3:frequency}${4:${5/.+/, /}})",
+        "comp_str": "COUPNCD(${1:settlement}, ${2:maturity}, ${3:frequency}${4:${5/.+/, /}${5:[basis]}})",
         "ellipsis": false
     },
     {
@@ -756,7 +756,7 @@
         "func_cat": "Financial",
         "func_desc": "Returns the number of coupons payable between the settlement date and maturity date.",
         "is_nullary": false,
-        "comp_str": "COUPNUM(${1:settlement}, ${2:maturity}, ${3:frequency}${4:${5/.+/, /}})",
+        "comp_str": "COUPNUM(${1:settlement}, ${2:maturity}, ${3:frequency}${4:${5/.+/, /}${5:[basis]}})",
         "ellipsis": false
     },
     {
@@ -764,7 +764,7 @@
         "func_cat": "Financial",
         "func_desc": "Returns the previous coupon date before the settlement date.",
         "is_nullary": false,
-        "comp_str": "COUPPCD(${1:settlement}, ${2:maturity}, ${3:frequency}${4:${5/.+/, /}})",
+        "comp_str": "COUPPCD(${1:settlement}, ${2:maturity}, ${3:frequency}${4:${5/.+/, /}${5:[basis]}})",
         "ellipsis": false
     },
     {
@@ -820,7 +820,7 @@
         "func_cat": "Cube",
         "func_desc": "Returns a key performance  (KPI) name, property, and measure, and displays the name and property in the cell. A KPI is a quantifiable measurement, such as monthly gross profit or quarterly employee turnover, used to monitor an organization's performance.",
         "is_nullary": false,
-        "comp_str": "CUBEKPIMEMBER(${1:connection}, ${2:kpi_name}, ${3:kpi_property}${4:${5/.+/, /}})",
+        "comp_str": "CUBEKPIMEMBER(${1:connection}, ${2:kpi_name}, ${3:kpi_property}${4:${5/.+/, /}${5:[caption]}})",
         "ellipsis": false
     },
     {
@@ -828,7 +828,7 @@
         "func_cat": "Cube",
         "func_desc": "Returns a member or tuple in a cube hierarchy. Use to validate that the member or tuple exists in the cube.",
         "is_nullary": false,
-        "comp_str": "CUBEMEMBER(${1:connection}, ${2:member_expression}${3:${4/.+/, /}})",
+        "comp_str": "CUBEMEMBER(${1:connection}, ${2:member_expression}${3:${4/.+/, /}${4:[caption]}})",
         "ellipsis": false
     },
     {
@@ -844,7 +844,7 @@
         "func_cat": "Cube",
         "func_desc": "Returns the nth, or ranked, member in a set. Use to return one or more elements in a set, such as the top sales performer or top 10 students.",
         "is_nullary": false,
-        "comp_str": "CUBERANKEDMEMBER(${1:connection}, ${2:set_expression}, ${3:rank}${4:${5/.+/, /}})",
+        "comp_str": "CUBERANKEDMEMBER(${1:connection}, ${2:set_expression}, ${3:rank}${4:${5/.+/, /}${5:[caption]}})",
         "ellipsis": false
     },
     {
@@ -852,7 +852,7 @@
         "func_cat": "Cube",
         "func_desc": "Defines a calculated set of members or tuples by sending a set expression to the cube on the server, which creates the set, and then returns that set to Microsoft Office Excel.",
         "is_nullary": false,
-        "comp_str": "CUBESET(${1:connection}, ${2:set_expression}${3:${4/.+/, /}${4:[caption]}${5/.+/, /}${5:[sort_order]}${6/.+/, /}})",
+        "comp_str": "CUBESET(${1:connection}, ${2:set_expression}${3:${4/.+/, /}${4:[caption]}${5/.+/, /}${5:[sort_order]}${6/.+/, /}${6:[sort_by]}})",
         "ellipsis": false
     },
     {
@@ -940,7 +940,7 @@
         "func_cat": "Date and time",
         "func_desc": "Calculates the number of days between two dates based on a 360-day year.",
         "is_nullary": false,
-        "comp_str": "DAYS360(${1:start_date}, ${2:end_date}${3:${4/.+/, /}})",
+        "comp_str": "DAYS360(${1:start_date}, ${2:end_date}${3:${4/.+/, /}${4:[method]}})",
         "ellipsis": false
     },
     {
@@ -948,7 +948,7 @@
         "func_cat": "Financial",
         "func_desc": "Returns the depreciation of an asset for a specified period by using the fixed-declining balance method.",
         "is_nullary": false,
-        "comp_str": "DB(${1:cost}, ${2:salvage}, ${3:life}, ${4:period}${5:${6/.+/, /}})",
+        "comp_str": "DB(${1:cost}, ${2:salvage}, ${3:life}, ${4:period}${5:${6/.+/, /}${6:[month]}})",
         "ellipsis": false
     },
     {
@@ -980,7 +980,7 @@
         "func_cat": "Financial",
         "func_desc": "Returns the depreciation of an asset for a specified period by using the double-declining balance method or some other method that you specify.",
         "is_nullary": false,
-        "comp_str": "DDB(${1:cost}, ${2:salvage}, ${3:life}, ${4:period}${5:${6/.+/, /}})",
+        "comp_str": "DDB(${1:cost}, ${2:salvage}, ${3:life}, ${4:period}${5:${6/.+/, /}${6:[factor]}})",
         "ellipsis": false
     },
     {
@@ -988,7 +988,7 @@
         "func_cat": "Engineering",
         "func_desc": "Converts a decimal number to binary.",
         "is_nullary": false,
-        "comp_str": "DEC2BIN(${1:number}${2:${3/.+/, /}})",
+        "comp_str": "DEC2BIN(${1:number}${2:${3/.+/, /}${3:[places]}})",
         "ellipsis": false
     },
     {
@@ -996,7 +996,7 @@
         "func_cat": "Engineering",
         "func_desc": "Converts a decimal number to hexadecimal.",
         "is_nullary": false,
-        "comp_str": "DEC2HEX(${1:number}${2:${3/.+/, /}})",
+        "comp_str": "DEC2HEX(${1:number}${2:${3/.+/, /}${3:[places]}})",
         "ellipsis": false
     },
     {
@@ -1004,7 +1004,7 @@
         "func_cat": "Engineering",
         "func_desc": "Converts a decimal number to octal.",
         "is_nullary": false,
-        "comp_str": "DEC2OCT(${1:number}${2:${3/.+/, /}})",
+        "comp_str": "DEC2OCT(${1:number}${2:${3/.+/, /}${3:[places]}})",
         "ellipsis": false
     },
     {
@@ -1028,7 +1028,7 @@
         "func_cat": "Engineering",
         "func_desc": "Tests whether two values are equal.",
         "is_nullary": false,
-        "comp_str": "DELTA(${1:number1}${2:${3/.+/, /}})",
+        "comp_str": "DELTA(${1:number1}${2:${3/.+/, /}${3:[number2]}})",
         "ellipsis": false
     },
     {
@@ -1052,7 +1052,7 @@
         "func_cat": "Financial",
         "func_desc": "Returns the discount rate for a security.",
         "is_nullary": false,
-        "comp_str": "DISC(${1:settlement}, ${2:maturity}, ${3:pr}, ${4:redemption}${5:${6/.+/, /}})",
+        "comp_str": "DISC(${1:settlement}, ${2:maturity}, ${3:pr}, ${4:redemption}${5:${6/.+/, /}${6:[basis]}})",
         "ellipsis": false
     },
     {
@@ -1076,7 +1076,7 @@
         "func_cat": "Text",
         "func_desc": "Converts a number to text, using the $ (dollar) currency format.",
         "is_nullary": false,
-        "comp_str": "DOLLAR(${1:number}${2:${3/.+/, /}})",
+        "comp_str": "DOLLAR(${1:number}${2:${3/.+/, /}${3:[decimals]}})",
         "ellipsis": false
     },
     {
@@ -1108,7 +1108,7 @@
         "func_cat": "Array",
         "func_desc": "Removes rows or columns from the start or end of an array.",
         "is_nullary": false,
-        "comp_str": "DROP(${1:array}, ${2:rows}${3:${4/.+/, /}})",
+        "comp_str": "DROP(${1:array}, ${2:rows}${3:${4/.+/, /}${4:[columns]}})",
         "ellipsis": false
     },
     {
@@ -1140,7 +1140,7 @@
         "func_cat": "Financial",
         "func_desc": "Returns the annual duration of a security with periodic interest payments.",
         "is_nullary": false,
-        "comp_str": "DURATION(${1:settlement}, ${2:maturity}, ${3:coupon}, ${4:yld}, ${5:frequency}${6:${7/.+/, /}})",
+        "comp_str": "DURATION(${1:settlement}, ${2:maturity}, ${3:coupon}, ${4:yld}, ${5:frequency}${6:${7/.+/, /}${7:[basis]}})",
         "ellipsis": false
     },
     {
@@ -1196,7 +1196,7 @@
         "func_cat": "Engineering",
         "func_desc": "Returns the error function integrated between lower_limit and upper_limit.",
         "is_nullary": false,
-        "comp_str": "ERF(${1:lower_limit}${2:${3/.+/, /}})",
+        "comp_str": "ERF(${1:lower_limit}${2:${3/.+/, /}${3:[upper_limit]}})",
         "ellipsis": false
     },
     {
@@ -1268,7 +1268,7 @@
         "func_cat": "Array",
         "func_desc": "Expands an array to the specified dimensions. ",
         "is_nullary": false,
-        "comp_str": "EXPAND(${1:array}, ${2:rows}${3:${4/.+/, /}${4:[columns]}${5/.+/, /}})",
+        "comp_str": "EXPAND(${1:array}, ${2:rows}${3:${4/.+/, /}${4:[columns]}${5/.+/, /}${5:[pad_with]}})",
         "ellipsis": false
     },
     {
@@ -1356,7 +1356,7 @@
         "func_cat": "Lookup and reference",
         "func_desc": "Filters a range of data based on criteria you define.",
         "is_nullary": false,
-        "comp_str": "FILTER(${1:array}, ${2:include}${3:${4/.+/, /}})",
+        "comp_str": "FILTER(${1:array}, ${2:include}${3:${4/.+/, /}${4:[if_empty]}})",
         "ellipsis": false
     },
     {
@@ -1372,7 +1372,7 @@
         "func_cat": "Text",
         "func_desc": "Returns the position of a substring within a text string, case-sensitive.",
         "is_nullary": false,
-        "comp_str": "FIND(${1:find_text}, ${2:within_text}${3:${4/.+/, /}})",
+        "comp_str": "FIND(${1:find_text}, ${2:within_text}${3:${4/.+/, /}${4:[start_num]}})",
         "ellipsis": false
     },
     {
@@ -1380,7 +1380,7 @@
         "func_cat": "Text",
         "func_desc": "Returns the position of the last occurrence of a specified substring within a text string, counting by bytes.",
         "is_nullary": false,
-        "comp_str": "FINDB(${1:find_text}, ${2:within_text}${3:${4/.+/, /}})",
+        "comp_str": "FINDB(${1:find_text}, ${2:within_text}${3:${4/.+/, /}${4:[start_num]}})",
         "ellipsis": false
     },
     {
@@ -1412,7 +1412,7 @@
         "func_cat": "Text",
         "func_desc": "Formats a number as text with a fixed number of decimals.",
         "is_nullary": false,
-        "comp_str": "FIXED(${1:number}${2:${3/.+/, /}${3:[decimals]}${4/.+/, /}})",
+        "comp_str": "FIXED(${1:number}${2:${3/.+/, /}${3:[decimals]}${4/.+/, /}${4:[no_commas]}})",
         "ellipsis": false
     },
     {
@@ -1428,7 +1428,7 @@
         "func_cat": "Math and trigonometry",
         "func_desc": "Rounds a number down, to the nearest integer or to the nearest multiple of significance.",
         "is_nullary": false,
-        "comp_str": "FLOOR.MATH(${1:number}${2:${3/.+/, /}${3:[significance]}${4/.+/, /}})",
+        "comp_str": "FLOOR.MATH(${1:number}${2:${3/.+/, /}${3:[significance]}${4/.+/, /}${4:[mode]}})",
         "ellipsis": false
     },
     {
@@ -1436,7 +1436,7 @@
         "func_cat": "Math and trigonometry",
         "func_desc": "Rounds a number the nearest integer or to the nearest multiple of significance. Regardless of the sign of the number, the number is rounded up.",
         "is_nullary": false,
-        "comp_str": "FLOOR.PRECISE(${1:number}${2:${3/.+/, /}})",
+        "comp_str": "FLOOR.PRECISE(${1:number}${2:${3/.+/, /}${3:[significance]}})",
         "ellipsis": false
     },
     {
@@ -1452,7 +1452,7 @@
         "func_cat": "Statistical",
         "func_desc": "Returns a future value based on existing (historical) values by using the AAA version of the Exponential Smoothing (ETS) algorithm. This function isn't available in Excel 2016 for Mac.",
         "is_nullary": false,
-        "comp_str": "FORECAST.ETS(${1:target_date}, ${2:values}, ${3:timeline}${4:${5/.+/, /}${5:[seasonality]}${6/.+/, /}${6:[data_completion]}${7/.+/, /}})",
+        "comp_str": "FORECAST.ETS(${1:target_date}, ${2:values}, ${3:timeline}${4:${5/.+/, /}${5:[seasonality]}${6/.+/, /}${6:[data_completion]}${7/.+/, /}${7:[aggregation]}})",
         "ellipsis": false
     },
     {
@@ -1460,7 +1460,7 @@
         "func_cat": "Statistical",
         "func_desc": "Returns a confidence interval for the forecast value at the specified target date. This function isn't available in Excel 2016 for Mac.",
         "is_nullary": false,
-        "comp_str": "FORECAST.ETS.CONFINT(${1:target_date}, ${2:values}, ${3:timeline}${4:${5/.+/, /}${5:[confidence_level]}${6/.+/, /}${6:[seasonality]}${7/.+/, /}${7:[data_completion]}${8/.+/, /}})",
+        "comp_str": "FORECAST.ETS.CONFINT(${1:target_date}, ${2:values}, ${3:timeline}${4:${5/.+/, /}${5:[confidence_level]}${6/.+/, /}${6:[seasonality]}${7/.+/, /}${7:[data_completion]}${8/.+/, /}${8:[aggregation]}})",
         "ellipsis": false
     },
     {
@@ -1468,7 +1468,7 @@
         "func_cat": "Statistical",
         "func_desc": "Returns the length of the repetitive pattern Excel detects for the specified time series. This function isn't available in Excel 2016 for Mac.",
         "is_nullary": false,
-        "comp_str": "FORECAST.ETS.SEASONALITY(${1:values}, ${2:timeline}${3:${4/.+/, /}${4:[data_completion]}${5/.+/, /}})",
+        "comp_str": "FORECAST.ETS.SEASONALITY(${1:values}, ${2:timeline}${3:${4/.+/, /}${4:[data_completion]}${5/.+/, /}${5:[aggregation]}})",
         "ellipsis": false
     },
     {
@@ -1476,7 +1476,7 @@
         "func_cat": "Statistical",
         "func_desc": "Returns a statistical value as a result of time series forecasting. This function isn't available in Excel 2016 for Mac.",
         "is_nullary": false,
-        "comp_str": "FORECAST.ETS.STAT(${1:values}, ${2:timeline}, ${3:statistic_type}${4:${5/.+/, /}${5:[seasonality]}${6/.+/, /}${6:[data_completion]}${7/.+/, /}})",
+        "comp_str": "FORECAST.ETS.STAT(${1:values}, ${2:timeline}, ${3:statistic_type}${4:${5/.+/, /}${5:[seasonality]}${6/.+/, /}${6:[data_completion]}${7/.+/, /}${7:[aggregation]}})",
         "ellipsis": false
     },
     {
@@ -1516,7 +1516,7 @@
         "func_cat": "Financial",
         "func_desc": "Returns the future value of an investment.",
         "is_nullary": false,
-        "comp_str": "FV(${1:rate}, ${2:nper}, ${3:pmt}${4:${5/.+/, /}${5:[pv]}${6/.+/, /}})",
+        "comp_str": "FV(${1:rate}, ${2:nper}, ${3:pmt}${4:${5/.+/, /}${5:[pv]}${6/.+/, /}${6:[type]}})",
         "ellipsis": false
     },
     {
@@ -1612,7 +1612,7 @@
         "func_cat": "Engineering",
         "func_desc": "Tests whether a number is greater than a threshold value.",
         "is_nullary": false,
-        "comp_str": "GESTEP(${1:number}${2:${3/.+/, /}})",
+        "comp_str": "GESTEP(${1:number}${2:${3/.+/, /}${3:[step]}})",
         "ellipsis": false
     },
     {
@@ -1628,7 +1628,7 @@
         "func_cat": "Statistical",
         "func_desc": "Returns values along an exponential trend.",
         "is_nullary": false,
-        "comp_str": "GROWTH(${1:known_ys}${2:${3/.+/, /}${3:[known_xs]}${4/.+/, /}${4:[new_xs]}${5/.+/, /}})",
+        "comp_str": "GROWTH(${1:known_ys}${2:${3/.+/, /}${3:[known_xs]}${4/.+/, /}${4:[new_xs]}${5/.+/, /}${5:[const]}})",
         "ellipsis": false
     },
     {
@@ -1644,7 +1644,7 @@
         "func_cat": "Engineering",
         "func_desc": "Converts a hexadecimal number to binary.",
         "is_nullary": false,
-        "comp_str": "HEX2BIN(${1:number}${2:${3/.+/, /}})",
+        "comp_str": "HEX2BIN(${1:number}${2:${3/.+/, /}${3:[places]}})",
         "ellipsis": false
     },
     {
@@ -1660,7 +1660,7 @@
         "func_cat": "Engineering",
         "func_desc": "Converts a hexadecimal number to octal.",
         "is_nullary": false,
-        "comp_str": "HEX2OCT(${1:number}${2:${3/.+/, /}})",
+        "comp_str": "HEX2OCT(${1:number}${2:${3/.+/, /}${3:[places]}})",
         "ellipsis": false
     },
     {
@@ -1668,7 +1668,7 @@
         "func_cat": "Lookup and reference",
         "func_desc": "Looks in the top row of an array and returns the value of the indicated cell.",
         "is_nullary": false,
-        "comp_str": "HLOOKUP(${1:lookup_value}, ${2:table_array}, ${3:row_index_num}${4:${5/.+/, /}})",
+        "comp_str": "HLOOKUP(${1:lookup_value}, ${2:table_array}, ${3:row_index_num}${4:${5/.+/, /}${5:[range_lookup]}})",
         "ellipsis": false
     },
     {
@@ -1692,7 +1692,7 @@
         "func_cat": "Lookup and reference",
         "func_desc": "Creates a shortcut or jump that opens a document stored on a network server, an intranet, or the Internet.",
         "is_nullary": false,
-        "comp_str": "HYPERLINK(${1:link_location}${2:${3/.+/, /}})",
+        "comp_str": "HYPERLINK(${1:link_location}${2:${3/.+/, /}${3:[friendly_name]}})",
         "ellipsis": false
     },
     {
@@ -1716,7 +1716,7 @@
         "func_cat": "Logical",
         "func_desc": "Specifies a logical test to perform.",
         "is_nullary": false,
-        "comp_str": "IF(${1:logical_test}${2:${3/.+/, /}${3:[value_if_true]}${4/.+/, /}})",
+        "comp_str": "IF(${1:logical_test}${2:${3/.+/, /}${3:[value_if_true]}${4/.+/, /}${4:[value_if_false]}})",
         "ellipsis": false
     },
     {
@@ -1756,7 +1756,7 @@
         "func_cat": "Lookup and reference",
         "func_desc": "Returns an image from a given source.",
         "is_nullary": false,
-        "comp_str": "IMAGE(${1:source}${2:${3/.+/, /}${3:[alt_text]}${4/.+/, /}${4:[sizing]}${5/.+/, /}${5:[height]}${6/.+/, /}})",
+        "comp_str": "IMAGE(${1:source}${2:${3/.+/, /}${3:[alt_text]}${4/.+/, /}${4:[sizing]}${5/.+/, /}${5:[height]}${6/.+/, /}${6:[width]}})",
         "ellipsis": false
     },
     {
@@ -1956,7 +1956,7 @@
         "func_cat": "Lookup and reference",
         "func_desc": "Uses an index to choose a value from a reference or array.",
         "is_nullary": false,
-        "comp_str": "INDEX(${1:array}, ${2:row_num}${3:${4/.+/, /}})",
+        "comp_str": "INDEX(${1:array}, ${2:row_num}${3:${4/.+/, /}${4:[column_num]}})",
         "ellipsis": false
     },
     {
@@ -1964,7 +1964,7 @@
         "func_cat": "Lookup and reference",
         "func_desc": "Returns a reference indicated by a text value.",
         "is_nullary": false,
-        "comp_str": "INDIRECT(${1:ref_text}${2:${3/.+/, /}})",
+        "comp_str": "INDIRECT(${1:ref_text}${2:${3/.+/, /}${3:[a1]}})",
         "ellipsis": false
     },
     {
@@ -1996,7 +1996,7 @@
         "func_cat": "Financial",
         "func_desc": "Returns the interest rate for a fully invested security.",
         "is_nullary": false,
-        "comp_str": "INTRATE(${1:settlement}, ${2:maturity}, ${3:investment}, ${4:redemption}${5:${6/.+/, /}})",
+        "comp_str": "INTRATE(${1:settlement}, ${2:maturity}, ${3:investment}, ${4:redemption}${5:${6/.+/, /}${6:[basis]}})",
         "ellipsis": false
     },
     {
@@ -2004,7 +2004,7 @@
         "func_cat": "Financial",
         "func_desc": "Returns the interest payment for an investment for a given period.",
         "is_nullary": false,
-        "comp_str": "IPMT(${1:rate}, ${2:per}, ${3:nper}, ${4:pv}${5:${6/.+/, /}${6:[fv]}${7/.+/, /}})",
+        "comp_str": "IPMT(${1:rate}, ${2:per}, ${3:nper}, ${4:pv}${5:${6/.+/, /}${6:[fv]}${7/.+/, /}${7:[type]}})",
         "ellipsis": false
     },
     {
@@ -2012,7 +2012,7 @@
         "func_cat": "Financial",
         "func_desc": "Returns the internal rate of return for a series of cash flows.",
         "is_nullary": false,
-        "comp_str": "IRR(${1:values}${2:${3/.+/, /}})",
+        "comp_str": "IRR(${1:values}${2:${3/.+/, /}${3:[guess]}})",
         "ellipsis": false
     },
     {
@@ -2092,7 +2092,7 @@
         "func_cat": "Math and trigonometry",
         "func_desc": "Returns a number that is rounded up to the nearest integer or to the nearest multiple of significance.",
         "is_nullary": false,
-        "comp_str": "ISO.CEILING(${1:number}${2:${3/.+/, /}})",
+        "comp_str": "ISO.CEILING(${1:number}${2:${3/.+/, /}${3:[significance]}})",
         "ellipsis": false
     },
     {
@@ -2188,7 +2188,7 @@
         "func_cat": "Text",
         "func_desc": "Extracts a specified number of characters from the start (left) of a text string.",
         "is_nullary": false,
-        "comp_str": "LEFT(${1:text}${2:${3/.+/, /}})",
+        "comp_str": "LEFT(${1:text}${2:${3/.+/, /}${3:[num_chars]}})",
         "ellipsis": false
     },
     {
@@ -2196,7 +2196,7 @@
         "func_cat": "Text",
         "func_desc": "Returns the first character or characters in a text string based on bytes.",
         "is_nullary": false,
-        "comp_str": "LEFTB(${1:text}${2:${3/.+/, /}})",
+        "comp_str": "LEFTB(${1:text}${2:${3/.+/, /}${3:[num_bytes]}})",
         "ellipsis": false
     },
     {
@@ -2228,7 +2228,7 @@
         "func_cat": "Statistical",
         "func_desc": "Returns the parameters of a linear trend.",
         "is_nullary": false,
-        "comp_str": "LINEST(${1:known_ys}${2:${3/.+/, /}${3:[known_xs]}${4/.+/, /}${4:[const]}${5/.+/, /}})",
+        "comp_str": "LINEST(${1:known_ys}${2:${3/.+/, /}${3:[known_xs]}${4/.+/, /}${4:[const]}${5/.+/, /}${5:[stats]}})",
         "ellipsis": false
     },
     {
@@ -2244,7 +2244,7 @@
         "func_cat": "Math and trigonometry",
         "func_desc": "Returns the logarithm of a number to a specified base.",
         "is_nullary": false,
-        "comp_str": "LOG(${1:number}${2:${3/.+/, /}})",
+        "comp_str": "LOG(${1:number}${2:${3/.+/, /}${3:[base]}})",
         "ellipsis": false
     },
     {
@@ -2260,7 +2260,7 @@
         "func_cat": "Statistical",
         "func_desc": "Returns the parameters of an exponential trend.",
         "is_nullary": false,
-        "comp_str": "LOGEST(${1:known_ys}${2:${3/.+/, /}${3:[known_xs]}${4/.+/, /}${4:[const]}${5/.+/, /}})",
+        "comp_str": "LOGEST(${1:known_ys}${2:${3/.+/, /}${3:[known_xs]}${4/.+/, /}${4:[const]}${5/.+/, /}${5:[stats]}})",
         "ellipsis": false
     },
     {
@@ -2300,7 +2300,7 @@
         "func_cat": "Lookup and reference",
         "func_desc": "Looks up values in a vector or array.",
         "is_nullary": false,
-        "comp_str": "LOOKUP(${1:lookup_value}, ${2:lookup_vector}${3:${4/.+/, /}})",
+        "comp_str": "LOOKUP(${1:lookup_value}, ${2:lookup_vector}${3:${4/.+/, /}${4:[result_vector]}})",
         "ellipsis": false
     },
     {
@@ -2332,7 +2332,7 @@
         "func_cat": "Lookup and reference",
         "func_desc": "Looks up values in a reference or array.",
         "is_nullary": false,
-        "comp_str": "MATCH(${1:lookup_value}, ${2:lookup_array}${3:${4/.+/, /}})",
+        "comp_str": "MATCH(${1:lookup_value}, ${2:lookup_array}${3:${4/.+/, /}${4:[match_type]}})",
         "ellipsis": false
     },
     {
@@ -2372,7 +2372,7 @@
         "func_cat": "Financial",
         "func_desc": "Returns the Macauley modified duration for a security with an assumed par value of $100.",
         "is_nullary": false,
-        "comp_str": "MDURATION(${1:settlement}, ${2:maturity}, ${3:coupon}, ${4:yld}, ${5:frequency}${6:${7/.+/, /}})",
+        "comp_str": "MDURATION(${1:settlement}, ${2:maturity}, ${3:coupon}, ${4:yld}, ${5:frequency}${6:${7/.+/, /}${7:[basis]}})",
         "ellipsis": false
     },
     {
@@ -2555,7 +2555,7 @@
         "func_cat": "Date and time",
         "func_desc": "Returns the number of whole workdays between two dates.",
         "is_nullary": false,
-        "comp_str": "NETWORKDAYS(${1:start_date}, ${2:end_date}${3:${4/.+/, /}})",
+        "comp_str": "NETWORKDAYS(${1:start_date}, ${2:end_date}${3:${4/.+/, /}${4:[holidays]}})",
         "ellipsis": false
     },
     {
@@ -2563,7 +2563,7 @@
         "func_cat": "Date and time",
         "func_desc": "Returns the number of whole workdays between two dates using parameters to indicate which and how many days are weekend days.",
         "is_nullary": false,
-        "comp_str": "NETWORKDAYS.INTL(${1:start_date}, ${2:end_date}${3:${4/.+/, /}${4:[weekend]}${5/.+/, /}})",
+        "comp_str": "NETWORKDAYS.INTL(${1:start_date}, ${2:end_date}${3:${4/.+/, /}${4:[weekend]}${5/.+/, /}${5:[holidays]}})",
         "ellipsis": false
     },
     {
@@ -2658,7 +2658,7 @@
         "func_cat": "Financial",
         "func_desc": "Returns the number of periods for an investment.",
         "is_nullary": false,
-        "comp_str": "NPER(${1:rate}, ${2:pmt}, ${3:pv}${4:${5/.+/, /}${5:[fv]}${6/.+/, /}})",
+        "comp_str": "NPER(${1:rate}, ${2:pmt}, ${3:pv}${4:${5/.+/, /}${5:[fv]}${6/.+/, /}${6:[type]}})",
         "ellipsis": false
     },
     {
@@ -2674,7 +2674,7 @@
         "func_cat": "Text",
         "func_desc": "Converts text to number in a locale-independent manner.",
         "is_nullary": false,
-        "comp_str": "NUMBERVALUE(${1:text}${2:${3/.+/, /}${3:[decimal_separator]}${4/.+/, /}})",
+        "comp_str": "NUMBERVALUE(${1:text}${2:${3/.+/, /}${3:[decimal_separator]}${4/.+/, /}${4:[group_separator]}})",
         "ellipsis": false
     },
     {
@@ -2682,7 +2682,7 @@
         "func_cat": "Engineering",
         "func_desc": "Converts an octal number to binary.",
         "is_nullary": false,
-        "comp_str": "OCT2BIN(${1:number}${2:${3/.+/, /}})",
+        "comp_str": "OCT2BIN(${1:number}${2:${3/.+/, /}${3:[places]}})",
         "ellipsis": false
     },
     {
@@ -2698,7 +2698,7 @@
         "func_cat": "Engineering",
         "func_desc": "Converts an octal number to hexadecimal.",
         "is_nullary": false,
-        "comp_str": "OCT2HEX(${1:number}${2:${3/.+/, /}})",
+        "comp_str": "OCT2HEX(${1:number}${2:${3/.+/, /}${3:[places]}})",
         "ellipsis": false
     },
     {
@@ -2714,7 +2714,7 @@
         "func_cat": "Financial",
         "func_desc": "Returns the price per $100 face value of a security with an odd first period.",
         "is_nullary": false,
-        "comp_str": "ODDFPRICE(${1:settlement}, ${2:maturity}, ${3:issue}, ${4:first_coupon}, ${5:rate}, ${6:yld}, ${7:redemption}, ${8:frequency}${9:${10/.+/, /}})",
+        "comp_str": "ODDFPRICE(${1:settlement}, ${2:maturity}, ${3:issue}, ${4:first_coupon}, ${5:rate}, ${6:yld}, ${7:redemption}, ${8:frequency}${9:${10/.+/, /}${10:[basis]}})",
         "ellipsis": false
     },
     {
@@ -2722,7 +2722,7 @@
         "func_cat": "Financial",
         "func_desc": "Returns the yield of a security with an odd first period.",
         "is_nullary": false,
-        "comp_str": "ODDFYIELD(${1:settlement}, ${2:maturity}, ${3:issue}, ${4:first_coupon}, ${5:rate}, ${6:pr}, ${7:redemption}, ${8:frequency}${9:${10/.+/, /}})",
+        "comp_str": "ODDFYIELD(${1:settlement}, ${2:maturity}, ${3:issue}, ${4:first_coupon}, ${5:rate}, ${6:pr}, ${7:redemption}, ${8:frequency}${9:${10/.+/, /}${10:[basis]}})",
         "ellipsis": false
     },
     {
@@ -2730,7 +2730,7 @@
         "func_cat": "Financial",
         "func_desc": "Returns the price per $100 face value of a security with an odd last period.",
         "is_nullary": false,
-        "comp_str": "ODDLPRICE(${1:settlement}, ${2:maturity}, ${3:last_interest}, ${4:rate}, ${5:yld}, ${6:redemption}, ${7:frequency}${8:${9/.+/, /}})",
+        "comp_str": "ODDLPRICE(${1:settlement}, ${2:maturity}, ${3:last_interest}, ${4:rate}, ${5:yld}, ${6:redemption}, ${7:frequency}${8:${9/.+/, /}${9:[basis]}})",
         "ellipsis": false
     },
     {
@@ -2738,7 +2738,7 @@
         "func_cat": "Financial",
         "func_desc": "Returns the yield of a security with an odd last period.",
         "is_nullary": false,
-        "comp_str": "ODDLYIELD(${1:settlement}, ${2:maturity}, ${3:last_interest}, ${4:rate}, ${5:pr}, ${6:redemption}, ${7:frequency}${8:${9/.+/, /}})",
+        "comp_str": "ODDLYIELD(${1:settlement}, ${2:maturity}, ${3:last_interest}, ${4:rate}, ${5:pr}, ${6:redemption}, ${7:frequency}${8:${9/.+/, /}${9:[basis]}})",
         "ellipsis": false
     },
     {
@@ -2746,7 +2746,7 @@
         "func_cat": "Lookup and reference",
         "func_desc": "Returns a reference offset from a given reference.",
         "is_nullary": false,
-        "comp_str": "OFFSET(${1:reference}, ${2:rows}, ${3:cols}${4:${5/.+/, /}${5:[height]}${6/.+/, /}})",
+        "comp_str": "OFFSET(${1:reference}, ${2:rows}, ${3:cols}${4:${5/.+/, /}${5:[height]}${6/.+/, /}${6:[width]}})",
         "ellipsis": false
     },
     {
@@ -2802,7 +2802,7 @@
         "func_cat": "Compatibility",
         "func_desc": "Returns the percentage rank of a value in a data set. In Excel 2007, this is a Statistical function.",
         "is_nullary": false,
-        "comp_str": "PERCENTRANK(${1:array}, ${2:x}${3:${4/.+/, /}})",
+        "comp_str": "PERCENTRANK(${1:array}, ${2:x}${3:${4/.+/, /}${4:[significance]}})",
         "ellipsis": false
     },
     {
@@ -2810,7 +2810,7 @@
         "func_cat": "Statistical",
         "func_desc": "Returns the rank of a value in a data set as a percentage (0..1, exclusive) of the data set.",
         "is_nullary": false,
-        "comp_str": "PERCENTRANK.EXC(${1:array}, ${2:x}${3:${4/.+/, /}})",
+        "comp_str": "PERCENTRANK.EXC(${1:array}, ${2:x}${3:${4/.+/, /}${4:[significance]}})",
         "ellipsis": false
     },
     {
@@ -2818,7 +2818,7 @@
         "func_cat": "Statistical",
         "func_desc": "Returns the percentage rank of a value in a data set.",
         "is_nullary": false,
-        "comp_str": "PERCENTRANK.INC(${1:array}, ${2:x}${3:${4/.+/, /}})",
+        "comp_str": "PERCENTRANK.INC(${1:array}, ${2:x}${3:${4/.+/, /}${4:[significance]}})",
         "ellipsis": false
     },
     {
@@ -2865,7 +2865,7 @@
         "func_cat": "Financial",
         "func_desc": "Returns the periodic payment for an annuity.",
         "is_nullary": false,
-        "comp_str": "PMT(${1:rate}, ${2:nper}, ${3:pv}${4:${5/.+/, /}${5:[fv]}${6/.+/, /}})",
+        "comp_str": "PMT(${1:rate}, ${2:nper}, ${3:pv}${4:${5/.+/, /}${5:[fv]}${6/.+/, /}${6:[type]}})",
         "ellipsis": false
     },
     {
@@ -2897,7 +2897,7 @@
         "func_cat": "Financial",
         "func_desc": "Returns the payment on the principal for an investment for a given period.",
         "is_nullary": false,
-        "comp_str": "PPMT(${1:rate}, ${2:per}, ${3:nper}, ${4:pv}${5:${6/.+/, /}${6:[fv]}${7/.+/, /}})",
+        "comp_str": "PPMT(${1:rate}, ${2:per}, ${3:nper}, ${4:pv}${5:${6/.+/, /}${6:[fv]}${7/.+/, /}${7:[type]}})",
         "ellipsis": false
     },
     {
@@ -2905,7 +2905,7 @@
         "func_cat": "Financial",
         "func_desc": "Returns the price per $100 face value of a security that pays periodic interest.",
         "is_nullary": false,
-        "comp_str": "PRICE(${1:settlement}, ${2:maturity}, ${3:rate}, ${4:yld}, ${5:redemption}, ${6:frequency}${7:${8/.+/, /}})",
+        "comp_str": "PRICE(${1:settlement}, ${2:maturity}, ${3:rate}, ${4:yld}, ${5:redemption}, ${6:frequency}${7:${8/.+/, /}${8:[basis]}})",
         "ellipsis": false
     },
     {
@@ -2913,7 +2913,7 @@
         "func_cat": "Financial",
         "func_desc": "Returns the price per $100 face value of a discounted security.",
         "is_nullary": false,
-        "comp_str": "PRICEDISC(${1:settlement}, ${2:maturity}, ${3:discount}, ${4:redemption}${5:${6/.+/, /}})",
+        "comp_str": "PRICEDISC(${1:settlement}, ${2:maturity}, ${3:discount}, ${4:redemption}${5:${6/.+/, /}${6:[basis]}})",
         "ellipsis": false
     },
     {
@@ -2921,7 +2921,7 @@
         "func_cat": "Financial",
         "func_desc": "Returns the price per $100 face value of a security that pays interest at maturity.",
         "is_nullary": false,
-        "comp_str": "PRICEMAT(${1:settlement}, ${2:maturity}, ${3:issue}, ${4:rate}, ${5:yld}${6:${7/.+/, /}})",
+        "comp_str": "PRICEMAT(${1:settlement}, ${2:maturity}, ${3:issue}, ${4:rate}, ${5:yld}${6:${7/.+/, /}${7:[basis]}})",
         "ellipsis": false
     },
     {
@@ -2929,7 +2929,7 @@
         "func_cat": "Statistical",
         "func_desc": "Returns the probability that values in a range are between two limits.",
         "is_nullary": false,
-        "comp_str": "PROB(${1:x_range}, ${2:prob_range}, ${3:lower_limit}${4:${5/.+/, /}})",
+        "comp_str": "PROB(${1:x_range}, ${2:prob_range}, ${3:lower_limit}${4:${5/.+/, /}${5:[upper_limit]}})",
         "ellipsis": false
     },
     {
@@ -2953,7 +2953,7 @@
         "func_cat": "Financial",
         "func_desc": "Returns the present value of an investment.",
         "is_nullary": false,
-        "comp_str": "PV(${1:rate}, ${2:nper}, ${3:pmt}${4:${5/.+/, /}${5:[fv]}${6/.+/, /}})",
+        "comp_str": "PV(${1:rate}, ${2:nper}, ${3:pmt}${4:${5/.+/, /}${5:[fv]}${6/.+/, /}${6:[typel]}})",
         "ellipsis": false
     },
     {
@@ -3008,7 +3008,7 @@
         "func_cat": "Math and trigonometry",
         "func_desc": "Returns an array of random numbers between 0 and 1. However, you can specify the number of rows and columns to fill, minimum and maximum values, and whether to return whole numbers or decimal values.",
         "is_nullary": false,
-        "comp_str": "RANDARRAY(${1:${2/.+/, /}${2:[rows]}${3/.+/, /}${3:[columns]}${4/.+/, /}${4:[min]}${5/.+/, /}${5:[max]}${6/.+/, /}})",
+        "comp_str": "RANDARRAY(${1:${2/.+/, /}${2:[rows]}${3/.+/, /}${3:[columns]}${4/.+/, /}${4:[min]}${5/.+/, /}${5:[max]}${6/.+/, /}${6:[integer]}})",
         "ellipsis": false
     },
     {
@@ -3024,7 +3024,7 @@
         "func_cat": "Compatibility",
         "func_desc": "Returns the rank of a number in a list of numbers. In Excel 2007, this is a Statistical function.",
         "is_nullary": false,
-        "comp_str": "RANK(${1:number}, ${2:ref}${3:${4/.+/, /}})",
+        "comp_str": "RANK(${1:number}, ${2:ref}${3:${4/.+/, /}${4:[order]}})",
         "ellipsis": false
     },
     {
@@ -3032,7 +3032,7 @@
         "func_cat": "Statistical",
         "func_desc": "Returns the rank of a number in a list of numbers. Ties take the average rank.",
         "is_nullary": false,
-        "comp_str": "RANK.AVG(${1:number}, ${2:ref}${3:${4/.+/, /}})",
+        "comp_str": "RANK.AVG(${1:number}, ${2:ref}${3:${4/.+/, /}${4:[order]}})",
         "ellipsis": false
     },
     {
@@ -3040,7 +3040,7 @@
         "func_cat": "Statistical",
         "func_desc": "Returns the rank of a number in a list of numbers. Ties take the top rank.",
         "is_nullary": false,
-        "comp_str": "RANK.EQ(${1:number}, ${2:ref}${3:${4/.+/, /}})",
+        "comp_str": "RANK.EQ(${1:number}, ${2:ref}${3:${4/.+/, /}${4:[order]}})",
         "ellipsis": false
     },
     {
@@ -3048,7 +3048,7 @@
         "func_cat": "Financial",
         "func_desc": "Returns the interest rate per period of an annuity.",
         "is_nullary": false,
-        "comp_str": "RATE(${1:nper}, ${2:pmt}, ${3:pv}${4:${5/.+/, /}${5:[fv]}${6/.+/, /}${6:[type]}${7/.+/, /}})",
+        "comp_str": "RATE(${1:nper}, ${2:pmt}, ${3:pv}${4:${5/.+/, /}${5:[fv]}${6/.+/, /}${6:[type]}${7/.+/, /}${7:[guess]}})",
         "ellipsis": false
     },
     {
@@ -3056,7 +3056,7 @@
         "func_cat": "Financial",
         "func_desc": "Returns the amount received at maturity for a fully invested security.",
         "is_nullary": false,
-        "comp_str": "RECEIVED(${1:settlement}, ${2:maturity}, ${3:investment}, ${4:discount}${5:${6/.+/, /}})",
+        "comp_str": "RECEIVED(${1:settlement}, ${2:maturity}, ${3:investment}, ${4:discount}${5:${6/.+/, /}${6:[basis]}})",
         "ellipsis": false
     },
     {
@@ -3080,7 +3080,7 @@
         "func_cat": "Add-in",
         "func_desc": "Returns the register ID of the specified DLL or code resource.",
         "is_nullary": false,
-        "comp_str": "REGISTER.ID(${1:module_text}, ${2:procedure}${3:${4/.+/, /}})",
+        "comp_str": "REGISTER.ID(${1:module_text}, ${2:procedure}${3:${4/.+/, /}${4:[type_text]}})",
         "ellipsis": false
     },
     {
@@ -3112,7 +3112,7 @@
         "func_cat": "Text",
         "func_desc": "Extracts a specified number of characters from the end (right) of a text string.",
         "is_nullary": false,
-        "comp_str": "RIGHT(${1:text}${2:${3/.+/, /}})",
+        "comp_str": "RIGHT(${1:text}${2:${3/.+/, /}${3:[num_chars]}})",
         "ellipsis": false
     },
     {
@@ -3120,7 +3120,7 @@
         "func_cat": "Text",
         "func_desc": "Returns the last character or characters in a text string based on bytes.",
         "is_nullary": false,
-        "comp_str": "RIGHTB(${1:text}${2:${3/.+/, /}})",
+        "comp_str": "RIGHTB(${1:text}${2:${3/.+/, /}${3:[num_bytes]}})",
         "ellipsis": false
     },
     {
@@ -3128,7 +3128,7 @@
         "func_cat": "Math and trigonometry",
         "func_desc": "Converts an arabic numeral to roman, as text.",
         "is_nullary": false,
-        "comp_str": "ROMAN(${1:number}${2:${3/.+/, /}})",
+        "comp_str": "ROMAN(${1:number}${2:${3/.+/, /}${3:[form]}})",
         "ellipsis": false
     },
     {
@@ -3160,7 +3160,7 @@
         "func_cat": "Lookup and reference",
         "func_desc": "Returns the row number of a reference.",
         "is_nullary": false,
-        "comp_str": "ROW(${1:${2/.+/, /}})",
+        "comp_str": "ROW(${1:${2/.+/, /}${2:[reference]}})",
         "ellipsis": false
     },
     {
@@ -3208,7 +3208,7 @@
         "func_cat": "Text",
         "func_desc": "Finds the position of a substring within a text string, case-insensitive.",
         "is_nullary": false,
-        "comp_str": "SEARCH(${1:find_text}, ${2:within_text}${3:${4/.+/, /}})",
+        "comp_str": "SEARCH(${1:find_text}, ${2:within_text}${3:${4/.+/, /}${4:[start_num]}})",
         "ellipsis": false
     },
     {
@@ -3216,7 +3216,7 @@
         "func_cat": "Text",
         "func_desc": "Returns the position of a specified substring within a text string, counting by bytes.",
         "is_nullary": false,
-        "comp_str": "SEARCHB(${1:find_text}, ${2:within_text}${3:${4/.+/, /}})",
+        "comp_str": "SEARCHB(${1:find_text}, ${2:within_text}${3:${4/.+/, /}${4:[start_num]}})",
         "ellipsis": false
     },
     {
@@ -3248,7 +3248,7 @@
         "func_cat": "Math and trigonometry",
         "func_desc": "Generates a list of sequential numbers in an array, such as 1, 2, 3, 4",
         "is_nullary": false,
-        "comp_str": "SEQUENCE(${1:rows}${2:${3/.+/, /}${3:[columns]}${4/.+/, /}${4:[start]}${5/.+/, /}})",
+        "comp_str": "SEQUENCE(${1:rows}${2:${3/.+/, /}${3:[columns]}${4/.+/, /}${4:[start]}${5/.+/, /}${5:[step]}})",
         "ellipsis": false
     },
     {
@@ -3264,7 +3264,7 @@
         "func_cat": "Information",
         "func_desc": "Returns the sheet number of the referenced sheet.",
         "is_nullary": false,
-        "comp_str": "SHEET(${1:${2/.+/, /}})",
+        "comp_str": "SHEET(${1:${2/.+/, /}${2:[value]}})",
         "ellipsis": false
     },
     {
@@ -3272,7 +3272,7 @@
         "func_cat": "Information",
         "func_desc": "Returns the number of sheets in a reference.",
         "is_nullary": false,
-        "comp_str": "SHEETS(${1:${2/.+/, /}})",
+        "comp_str": "SHEETS(${1:${2/.+/, /}${2:[reference]}})",
         "ellipsis": false
     },
     {
@@ -3344,7 +3344,7 @@
         "func_cat": "Lookup and reference",
         "func_desc": "Sorts the contents of a range or array",
         "is_nullary": false,
-        "comp_str": "SORT(${1:array}${2:${3/.+/, /}${3:[sort_index]}${4/.+/, /}${4:[sort_order]}${5/.+/, /}})",
+        "comp_str": "SORT(${1:array}${2:${3/.+/, /}${3:[sort_index]}${4/.+/, /}${4:[sort_order]}${5/.+/, /}${5:[by_col]}})",
         "ellipsis": false
     },
     {
@@ -3448,7 +3448,7 @@
         "func_cat": "Text",
         "func_desc": "Substitutes new text for old text in a text string.",
         "is_nullary": false,
-        "comp_str": "SUBSTITUTE(${1:text}, ${2:old_text}, ${3:new_text}${4:${5/.+/, /}})",
+        "comp_str": "SUBSTITUTE(${1:text}, ${2:old_text}, ${3:new_text}${4:${5/.+/, /}${5:[instance_num]}})",
         "ellipsis": false
     },
     {
@@ -3472,7 +3472,7 @@
         "func_cat": "Math and trigonometry",
         "func_desc": "Adds the cells specified by a given criteria.",
         "is_nullary": false,
-        "comp_str": "SUMIF(${1:range}, ${2:criteria}${3:${4/.+/, /}})",
+        "comp_str": "SUMIF(${1:range}, ${2:criteria}${3:${4/.+/, /}${4:[sum_range]}})",
         "ellipsis": false
     },
     {
@@ -3600,7 +3600,7 @@
         "func_cat": "Array",
         "func_desc": "Returns rows or columns from the start or end of an array.",
         "is_nullary": false,
-        "comp_str": "TAKE(${1:array}, ${2:rows}${3:${4/.+/, /}})",
+        "comp_str": "TAKE(${1:array}, ${2:rows}${3:${4/.+/, /}${4:[columns]}})",
         "ellipsis": false
     },
     {
@@ -3664,7 +3664,7 @@
         "func_cat": "Text",
         "func_desc": "Returns text that's after delimiting characters.",
         "is_nullary": false,
-        "comp_str": "TEXTAFTER(${1:text}, ${2:delimiter}${3:${4/.+/, /}${4:[instance_num]}${5/.+/, /}${5:[match_mode]}${6/.+/, /}${6:[match_end]}${7/.+/, /}})",
+        "comp_str": "TEXTAFTER(${1:text}, ${2:delimiter}${3:${4/.+/, /}${4:[instance_num]}${5/.+/, /}${5:[match_mode]}${6/.+/, /}${6:[match_end]}${7/.+/, /}${7:[if_not_found]}})",
         "ellipsis": false
     },
     {
@@ -3672,7 +3672,7 @@
         "func_cat": "Text",
         "func_desc": "Returns text that's before delimiting characters.",
         "is_nullary": false,
-        "comp_str": "TEXTBEFORE(${1:text}, ${2:delimiter}${3:${4/.+/, /}${4:[instance_num]}${5/.+/, /}${5:[match_mode]}${6/.+/, /}${6:[match_end]}${7/.+/, /}})",
+        "comp_str": "TEXTBEFORE(${1:text}, ${2:delimiter}${3:${4/.+/, /}${4:[instance_num]}${5/.+/, /}${5:[match_mode]}${6/.+/, /}${6:[match_end]}${7/.+/, /}${7:[if_not_found]}})",
         "ellipsis": false
     },
     {
@@ -3688,7 +3688,7 @@
         "func_cat": "Text",
         "func_desc": "Splits text into rows or columns using delimiters.",
         "is_nullary": false,
-        "comp_str": "TEXTSPLIT(${1:text}, ${2:col_delimiter}${3:${4/.+/, /}${4:[row_delimiter]}${5/.+/, /}${5:[ignore_empty]}${6/.+/, /}${6:[match_mode]}${7/.+/, /}})",
+        "comp_str": "TEXTSPLIT(${1:text}, ${2:col_delimiter}${3:${4/.+/, /}${4:[row_delimiter]}${5/.+/, /}${5:[ignore_empty]}${6/.+/, /}${6:[match_mode]}${7/.+/, /}${7:[pad_with]}})",
         "ellipsis": false
     },
     {
@@ -3720,7 +3720,7 @@
         "func_cat": "Array",
         "func_desc": "Returns the array as a column.",
         "is_nullary": false,
-        "comp_str": "TOCOL(${1:array}${2:${3/.+/, /}${3:[ignore]}${4/.+/, /}})",
+        "comp_str": "TOCOL(${1:array}${2:${3/.+/, /}${3:[ignore]}${4/.+/, /}${4:[scan_by_column]}})",
         "ellipsis": false
     },
     {
@@ -3735,7 +3735,7 @@
         "func_cat": "Array",
         "func_desc": "Returns the array as a row.",
         "is_nullary": false,
-        "comp_str": "TOROW(${1:array}${2:${3/.+/, /}${3:[ignore]}${4/.+/, /}})",
+        "comp_str": "TOROW(${1:array}${2:${3/.+/, /}${3:[ignore]}${4/.+/, /}${4:[scan_by_column]}})",
         "ellipsis": false
     },
     {
@@ -3751,7 +3751,7 @@
         "func_cat": "Statistical",
         "func_desc": "Returns values along a linear trend.",
         "is_nullary": false,
-        "comp_str": "TREND(${1:known_ys}${2:${3/.+/, /}${3:[known_xs]}${4/.+/, /}${4:[new_xs]}${5/.+/, /}})",
+        "comp_str": "TREND(${1:known_ys}${2:${3/.+/, /}${3:[known_xs]}${4/.+/, /}${4:[new_xs]}${5/.+/, /}${5:[const]}})",
         "ellipsis": false
     },
     {
@@ -3775,7 +3775,7 @@
         "func_cat": "Math and trigonometry",
         "func_desc": "Truncates a number to an integer.",
         "is_nullary": false,
-        "comp_str": "TRUNC(${1:number}${2:${3/.+/, /}})",
+        "comp_str": "TRUNC(${1:number}${2:${3/.+/, /}${3:[num_digits]}})",
         "ellipsis": false
     },
     {
@@ -3815,7 +3815,7 @@
         "func_cat": "Lookup and reference",
         "func_desc": "Returns a list of unique values in a list or range",
         "is_nullary": false,
-        "comp_str": "UNIQUE(${1:array}${2:${3/.+/, /}${3:[by_col]}${4/.+/, /}})",
+        "comp_str": "UNIQUE(${1:array}${2:${3/.+/, /}${3:[by_col]}${4/.+/, /}${4:[exactly_once]}})",
         "ellipsis": false
     },
     {
@@ -3847,7 +3847,7 @@
         "func_cat": "Text",
         "func_desc": "Returns text from any specified value",
         "is_nullary": false,
-        "comp_str": "VALUETOTEXT(${1:value}${2:${3/.+/, /}})",
+        "comp_str": "VALUETOTEXT(${1:value}${2:${3/.+/, /}${3:[format]}})",
         "ellipsis": false
     },
     {
@@ -3903,7 +3903,7 @@
         "func_cat": "Financial",
         "func_desc": "Returns the depreciation of an asset for a specified or partial period by using a declining balance method.",
         "is_nullary": false,
-        "comp_str": "VDB(${1:cost}, ${2:salvage}, ${3:life}, ${4:start_period}, ${5:end_period}${6:${7/.+/, /}${7:[factor]}${8/.+/, /}})",
+        "comp_str": "VDB(${1:cost}, ${2:salvage}, ${3:life}, ${4:start_period}, ${5:end_period}${6:${7/.+/, /}${7:[factor]}${8/.+/, /}${8:[no_switch]}})",
         "ellipsis": false
     },
     {
@@ -3911,7 +3911,7 @@
         "func_cat": "Lookup and reference",
         "func_desc": "Looks in the first column of an array and moves across the row to return the value of a cell.",
         "is_nullary": false,
-        "comp_str": "VLOOKUP(${1:lookup_value}, ${2:table_array}, ${3:col_index_num}${4:${5/.+/, /}})",
+        "comp_str": "VLOOKUP(${1:lookup_value}, ${2:table_array}, ${3:col_index_num}${4:${5/.+/, /}${5:[range_lookup]}})",
         "ellipsis": false
     },
     {
@@ -3935,7 +3935,7 @@
         "func_cat": "Date and time",
         "func_desc": "Converts a serial number to a day of the week.",
         "is_nullary": false,
-        "comp_str": "WEEKDAY(${1:serial_number}${2:${3/.+/, /}})",
+        "comp_str": "WEEKDAY(${1:serial_number}${2:${3/.+/, /}${3:[return_type]}})",
         "ellipsis": false
     },
     {
@@ -3943,7 +3943,7 @@
         "func_cat": "Date and time",
         "func_desc": "Converts a serial number to a number representing where the week falls numerically with a year.",
         "is_nullary": false,
-        "comp_str": "WEEKNUM(${1:serial_number}${2:${3/.+/, /}})",
+        "comp_str": "WEEKNUM(${1:serial_number}${2:${3/.+/, /}${3:[return_type]}})",
         "ellipsis": false
     },
     {
@@ -3967,7 +3967,7 @@
         "func_cat": "Date and time",
         "func_desc": "Returns the serial number of the date before or after a specified number of workdays.",
         "is_nullary": false,
-        "comp_str": "WORKDAY(${1:start_date}, ${2:days}${3:${4/.+/, /}})",
+        "comp_str": "WORKDAY(${1:start_date}, ${2:days}${3:${4/.+/, /}${4:[holidays]}})",
         "ellipsis": false
     },
     {
@@ -3975,7 +3975,7 @@
         "func_cat": "Date and time",
         "func_desc": "Returns the serial number of the date before or after a specified number of workdays using parameters to indicate which and how many days are weekend days.",
         "is_nullary": false,
-        "comp_str": "WORKDAY.INTL(${1:start_date}, ${2:days}${3:${4/.+/, /}${4:[weekend]}${5/.+/, /}})",
+        "comp_str": "WORKDAY.INTL(${1:start_date}, ${2:days}${3:${4/.+/, /}${4:[weekend]}${5/.+/, /}${5:[holidays]}})",
         "ellipsis": false
     },
     {
@@ -3983,7 +3983,7 @@
         "func_cat": "Array",
         "func_desc": "Wraps a row or column to a specified height.",
         "is_nullary": false,
-        "comp_str": "WRAPCOLS(${1:vector}, ${2:wrap_count}${3:${4/.+/, /}})",
+        "comp_str": "WRAPCOLS(${1:vector}, ${2:wrap_count}${3:${4/.+/, /}${4:[pad_with]}})",
         "ellipsis": false
     },
     {
@@ -3991,7 +3991,7 @@
         "func_cat": "Array",
         "func_desc": "Wraps a row or column to a specified width.",
         "is_nullary": false,
-        "comp_str": "WRAPROWS(${1:vector}, ${2:wrap_count}${3:${4/.+/, /}})",
+        "comp_str": "WRAPROWS(${1:vector}, ${2:wrap_count}${3:${4/.+/, /}${4:[pad_with]}})",
         "ellipsis": false
     },
     {
@@ -3999,7 +3999,7 @@
         "func_cat": "Financial",
         "func_desc": "Returns the internal rate of return for a schedule of cash flows that is not necessarily periodic.",
         "is_nullary": false,
-        "comp_str": "XIRR(${1:values}, ${2:dates}${3:${4/.+/, /}})",
+        "comp_str": "XIRR(${1:values}, ${2:dates}${3:${4/.+/, /}${4:[guess]}})",
         "ellipsis": false
     },
     {
@@ -4007,7 +4007,7 @@
         "func_cat": "Lookup and reference",
         "func_desc": "Searches a range or an array, and returns an item corresponding to the first match it finds. If a match doesn't exist,then XLOOKUP can return the closest (approximate) match.",
         "is_nullary": false,
-        "comp_str": "XLOOKUP(${1:lookup_value}, ${2:lookup_array}, ${3:return_array}${4:${5/.+/, /}${5:[if_not_found]}${6/.+/, /}${6:[match_mode]}${7/.+/, /}})",
+        "comp_str": "XLOOKUP(${1:lookup_value}, ${2:lookup_array}, ${3:return_array}${4:${5/.+/, /}${5:[if_not_found]}${6/.+/, /}${6:[match_mode]}${7/.+/, /}${7:[search_mode]}})",
         "ellipsis": false
     },
     {
@@ -4015,7 +4015,7 @@
         "func_cat": "Lookup and reference",
         "func_desc": "Returns the relative position of an item in an array or range of cells.",
         "is_nullary": false,
-        "comp_str": "XMATCH(${1:lookup_value}, ${2:lookup_array}${3:${4/.+/, /}${4:[match_mode]}${5/.+/, /}})",
+        "comp_str": "XMATCH(${1:lookup_value}, ${2:lookup_array}${3:${4/.+/, /}${4:[match_mode]}${5/.+/, /}${5:[search_mode]}})",
         "ellipsis": false
     },
     {
@@ -4047,7 +4047,7 @@
         "func_cat": "Date and time",
         "func_desc": "Returns the year fraction representing the number of whole days between start_date and end_date.",
         "is_nullary": false,
-        "comp_str": "YEARFRAC(${1:start_date}, ${2:end_date}${3:${4/.+/, /}})",
+        "comp_str": "YEARFRAC(${1:start_date}, ${2:end_date}${3:${4/.+/, /}${4:[basis]}})",
         "ellipsis": false
     },
     {
@@ -4055,7 +4055,7 @@
         "func_cat": "Financial",
         "func_desc": "Returns the yield on a security that pays periodic interest.",
         "is_nullary": false,
-        "comp_str": "YIELD(${1:settlement}, ${2:maturity}, ${3:rate}, ${4:pr}, ${5:redemption}, ${6:frequency}${7:${8/.+/, /}})",
+        "comp_str": "YIELD(${1:settlement}, ${2:maturity}, ${3:rate}, ${4:pr}, ${5:redemption}, ${6:frequency}${7:${8/.+/, /}${8:[basis]}})",
         "ellipsis": false
     },
     {
@@ -4063,7 +4063,7 @@
         "func_cat": "Financial",
         "func_desc": "Returns the annual yield for a discounted security.",
         "is_nullary": false,
-        "comp_str": "YIELDDISC(${1:settlement}, ${2:maturity}, ${3:pr}, ${4:redemption}${5:${6/.+/, /}})",
+        "comp_str": "YIELDDISC(${1:settlement}, ${2:maturity}, ${3:pr}, ${4:redemption}${5:${6/.+/, /}${6:[basis]}})",
         "ellipsis": false
     },
     {
@@ -4071,7 +4071,7 @@
         "func_cat": "Financial",
         "func_desc": "Returns the annual yield of a security that pays interest at maturity.",
         "is_nullary": false,
-        "comp_str": "YIELDMAT(${1:settlement}, ${2:maturity}, ${3:issue}, ${4:rate}, ${5:pr}${6:${7/.+/, /}})",
+        "comp_str": "YIELDMAT(${1:settlement}, ${2:maturity}, ${3:issue}, ${4:rate}, ${5:pr}${6:${7/.+/, /}${7:[basis]}})",
         "ellipsis": false
     },
     {
@@ -4079,7 +4079,7 @@
         "func_cat": "Statistical",
         "func_desc": "Returns the one-tailed probability-value of a z-test.",
         "is_nullary": false,
-        "comp_str": "Z.TEST(${1:array}, ${2:x}${3:${4/.+/, /}})",
+        "comp_str": "Z.TEST(${1:array}, ${2:x}${3:${4/.+/, /}${4:[sigma]}})",
         "ellipsis": false
     },
     {
@@ -4087,7 +4087,7 @@
         "func_cat": "Compatibility",
         "func_desc": "Returns the one-tailed probability-value of a z-test. In Excel 2007, this is a Statistical function.",
         "is_nullary": false,
-        "comp_str": "ZTEST(${1:array}, ${2:x}${3:${4/.+/, /}})",
+        "comp_str": "ZTEST(${1:array}, ${2:x}${3:${4/.+/, /}${4:[sigma]}})",
         "ellipsis": false
     }
 ]

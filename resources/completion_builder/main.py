@@ -30,7 +30,8 @@ import json
 
 scripts = ['js.py', 'cb.py', 'ld.py', 'mg.py']
 
-toggle_rerun = False
+# Boolean-toggled rerun of subscripts
+toggle_rerun = True
 
 if toggle_rerun:
     for script in scripts:

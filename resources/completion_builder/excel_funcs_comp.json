@@ -23,7 +23,7 @@
             "calc_method"
         ],
         "ellipsis": false,
-        "comp_str": "ACCRINT(${1:issue}, ${2:first_interest}, ${3:settlement}, ${4:rate}, ${5:par}, ${6:frequency}${7:${8/.+/, /}${8:[basis]}${9/.+/, /}})"
+        "comp_str": "ACCRINT(${1:issue}, ${2:first_interest}, ${3:settlement}, ${4:rate}, ${5:par}, ${6:frequency}${7:${8/.+/, /}${8:[basis]}${9/.+/, /}${9:[calc_method]}})"
     },
     {
         "func_name": "ACCRINTM",
@@ -37,7 +37,7 @@
             "basis"
         ],
         "ellipsis": false,
-        "comp_str": "ACCRINTM(${1:issue}, ${2:settlement}, ${3:rate}, ${4:par}${5:${6/.+/, /}})"
+        "comp_str": "ACCRINTM(${1:issue}, ${2:settlement}, ${3:rate}, ${4:par}${5:${6/.+/, /}${6:[basis]}})"
     },
     {
         "func_name": "ACOS",
@@ -87,7 +87,7 @@
             "sheet_text"
         ],
         "ellipsis": false,
-        "comp_str": "ADDRESS(${1:row_num}, ${2:column_num}${3:${4/.+/, /}${4:[abs_num]}${5/.+/, /}${5:[a1]}${6/.+/, /}})"
+        "comp_str": "ADDRESS(${1:row_num}, ${2:column_num}${3:${4/.+/, /}${4:[abs_num]}${5/.+/, /}${5:[a1]}${6/.+/, /}${6:[sheet_text]}})"
     },
     {
         "func_name": "AGGREGATE",
@@ -100,7 +100,7 @@
             "k"
         ],
         "ellipsis": false,
-        "comp_str": "AGGREGATE(${1:function_num}, ${2:options}, ${3:array}${4:${5/.+/, /}})"
+        "comp_str": "AGGREGATE(${1:function_num}, ${2:options}, ${3:array}${4:${5/.+/, /}${5:[k]}})"
     },
     {
         "func_name": "AMORDEGRC",
@@ -116,7 +116,7 @@
             "basis"
         ],
         "ellipsis": false,
-        "comp_str": "AMORDEGRC(${1:cost}, ${2:date_purchased}, ${3:first_period}, ${4:salvage}, ${5:period}, ${6:rate}${7:${8/.+/, /}})"
+        "comp_str": "AMORDEGRC(${1:cost}, ${2:date_purchased}, ${3:first_period}, ${4:salvage}, ${5:period}, ${6:rate}${7:${8/.+/, /}${8:[basis]}})"
     },
     {
         "func_name": "AMORLINC",
@@ -132,7 +132,7 @@
             "basis"
         ],
         "ellipsis": false,
-        "comp_str": "AMORLINC(${1:cost}, ${2:date_purchased}, ${3:first_period}, ${4:salvage}, ${5:period}, ${6:rate}${7:${8/.+/, /}})"
+        "comp_str": "AMORLINC(${1:cost}, ${2:date_purchased}, ${3:first_period}, ${4:salvage}, ${5:period}, ${6:rate}${7:${8/.+/, /}${8:[basis]}})"
     },
     {
         "func_name": "AND",
@@ -172,7 +172,7 @@
             "format"
         ],
         "ellipsis": false,
-        "comp_str": "ARRAYTOTEXT(${1:array}${2:${3/.+/, /}})"
+        "comp_str": "ARRAYTOTEXT(${1:array}${2:${3/.+/, /}${3:[format]}})"
     },
     {
         "func_name": "ASC",
@@ -272,7 +272,7 @@
             "average_range"
         ],
         "ellipsis": false,
-        "comp_str": "AVERAGEIF(${1:range}, ${2:criteria}${3:${4/.+/, /}})"
+        "comp_str": "AVERAGEIF(${1:range}, ${2:criteria}${3:${4/.+/, /}${4:[average_range]}})"
     },
     {
         "func_name": "AVERAGEIFS",
@@ -307,7 +307,7 @@
             "min_length"
         ],
         "ellipsis": false,
-        "comp_str": "BASE(${1:number}, ${2:radix}${3:${4/.+/, /}})"
+        "comp_str": "BASE(${1:number}, ${2:radix}${3:${4/.+/, /}${4:[min_length]}})"
     },
     {
         "func_name": "BESSELI",
@@ -362,7 +362,7 @@
             "B"
         ],
         "ellipsis": false,
-        "comp_str": "BETA.DIST(${1:x}, ${2:alpha}, ${3:beta}, ${4:cumulative}${5:${6/.+/, /}${6:[A]}${7/.+/, /}})"
+        "comp_str": "BETA.DIST(${1:x}, ${2:alpha}, ${3:beta}, ${4:cumulative}${5:${6/.+/, /}${6:[A]}${7/.+/, /}${7:[B]}})"
     },
     {
         "func_name": "BETA.INV",
@@ -376,7 +376,7 @@
             "B"
         ],
         "ellipsis": false,
-        "comp_str": "BETA.INV(${1:probability}, ${2:alpha}, ${3:beta}${4:${5/.+/, /}${5:[A]}${6/.+/, /}})"
+        "comp_str": "BETA.INV(${1:probability}, ${2:alpha}, ${3:beta}${4:${5/.+/, /}${5:[A]}${6/.+/, /}${6:[B]}})"
     },
     {
         "func_name": "BETADIST",
@@ -390,7 +390,7 @@
             "B"
         ],
         "ellipsis": false,
-        "comp_str": "BETADIST(${1:x}, ${2:alpha}, ${3:beta}${4:${5/.+/, /}${5:[A]}${6/.+/, /}})"
+        "comp_str": "BETADIST(${1:x}, ${2:alpha}, ${3:beta}${4:${5/.+/, /}${5:[A]}${6/.+/, /}${6:[B]}})"
     },
     {
         "func_name": "BETAINV",
@@ -404,7 +404,7 @@
             "B"
         ],
         "ellipsis": false,
-        "comp_str": "BETAINV(${1:probability}, ${2:alpha}, ${3:beta}${4:${5/.+/, /}${5:[A]}${6/.+/, /}})"
+        "comp_str": "BETAINV(${1:probability}, ${2:alpha}, ${3:beta}${4:${5/.+/, /}${5:[A]}${6/.+/, /}${6:[B]}})"
     },
     {
         "func_name": "BIN2DEC",
@@ -424,7 +424,7 @@
             "places"
         ],
         "ellipsis": false,
-        "comp_str": "BIN2HEX(${1:number}${2:${3/.+/, /}})"
+        "comp_str": "BIN2HEX(${1:number}${2:${3/.+/, /}${3:[places]}})"
     },
     {
         "func_name": "BIN2OCT",
@@ -435,7 +435,7 @@
             "places"
         ],
         "ellipsis": false,
-        "comp_str": "BIN2OCT(${1:number}${2:${3/.+/, /}})"
+        "comp_str": "BIN2OCT(${1:number}${2:${3/.+/, /}${3:[places]}})"
     },
     {
         "func_name": "BINOM.DIST",
@@ -460,7 +460,7 @@
             "number_s2"
         ],
         "ellipsis": false,
-        "comp_str": "BINOM.DIST.RANGE(${1:trials}, ${2:probability_s}, ${3:number_s}${4:${5/.+/, /}})"
+        "comp_str": "BINOM.DIST.RANGE(${1:trials}, ${2:probability_s}, ${3:number_s}${4:${5/.+/, /}${5:[number_s2]}})"
     },
     {
         "func_name": "BINOM.INV",
@@ -544,7 +544,7 @@
             "function"
         ],
         "ellipsis": false,
-        "comp_str": "BYCOL(${1:array}${2:${3/.+/, /}})"
+        "comp_str": "BYCOL(${1:array}${2:${3/.+/, /}${3:[function]}})"
     },
     {
         "func_name": "BYROW",
@@ -555,7 +555,7 @@
             "function"
         ],
         "ellipsis": false,
-        "comp_str": "BYROW(${1:array}${2:${3/.+/, /}})"
+        "comp_str": "BYROW(${1:array}${2:${3/.+/, /}${3:[function]}})"
     },
     {
         "func_name": "CALL",
@@ -588,7 +588,7 @@
             "mode"
         ],
         "ellipsis": false,
-        "comp_str": "CEILING.MATH(${1:number}${2:${3/.+/, /}${3:[significance]}${4/.+/, /}})"
+        "comp_str": "CEILING.MATH(${1:number}${2:${3/.+/, /}${3:[significance]}${4/.+/, /}${4:[mode]}})"
     },
     {
         "func_name": "CEILING.PRECISE",
@@ -599,7 +599,7 @@
             "significance"
         ],
         "ellipsis": false,
-        "comp_str": "CEILING.PRECISE(${1:number}${2:${3/.+/, /}})"
+        "comp_str": "CEILING.PRECISE(${1:number}${2:${3/.+/, /}${3:[significance]}})"
     },
     {
         "func_name": "CELL",
@@ -610,7 +610,7 @@
             "reference"
         ],
         "ellipsis": false,
-        "comp_str": "CELL(${1:info_type}${2:${3/.+/, /}})"
+        "comp_str": "CELL(${1:info_type}${2:${3/.+/, /}${3:[reference]}})"
     },
     {
         "func_name": "CHAR",
@@ -763,7 +763,7 @@
             "reference"
         ],
         "ellipsis": false,
-        "comp_str": "COLUMN(${1:${2/.+/, /}})"
+        "comp_str": "COLUMN(${1:${2/.+/, /}${2:[reference]}})"
     },
     {
         "func_name": "COLUMNS",
@@ -804,7 +804,7 @@
             "suffix"
         ],
         "ellipsis": false,
-        "comp_str": "COMPLEX(${1:real_num}, ${2:i_num}${3:${4/.+/, /}})"
+        "comp_str": "COMPLEX(${1:real_num}, ${2:i_num}${3:${4/.+/, /}${4:[suffix]}})"
     },
     {
         "func_name": "CONCAT",
@@ -983,7 +983,7 @@
             "basis"
         ],
         "ellipsis": false,
-        "comp_str": "COUPDAYBS(${1:settlement}, ${2:maturity}, ${3:frequency}${4:${5/.+/, /}})"
+        "comp_str": "COUPDAYBS(${1:settlement}, ${2:maturity}, ${3:frequency}${4:${5/.+/, /}${5:[basis]}})"
     },
     {
         "func_name": "COUPDAYS",
@@ -996,7 +996,7 @@
             "basis"
         ],
         "ellipsis": false,
-        "comp_str": "COUPDAYS(${1:settlement}, ${2:maturity}, ${3:frequency}${4:${5/.+/, /}})"
+        "comp_str": "COUPDAYS(${1:settlement}, ${2:maturity}, ${3:frequency}${4:${5/.+/, /}${5:[basis]}})"
     },
     {
         "func_name": "COUPDAYSNC",
@@ -1009,7 +1009,7 @@
             "basis"
         ],
         "ellipsis": false,
-        "comp_str": "COUPDAYSNC(${1:settlement}, ${2:maturity}, ${3:frequency}${4:${5/.+/, /}})"
+        "comp_str": "COUPDAYSNC(${1:settlement}, ${2:maturity}, ${3:frequency}${4:${5/.+/, /}${5:[basis]}})"
     },
     {
         "func_name": "COUPNCD",
@@ -1022,7 +1022,7 @@
             "basis"
         ],
         "ellipsis": false,
-        "comp_str": "COUPNCD(${1:settlement}, ${2:maturity}, ${3:frequency}${4:${5/.+/, /}})"
+        "comp_str": "COUPNCD(${1:settlement}, ${2:maturity}, ${3:frequency}${4:${5/.+/, /}${5:[basis]}})"
     },
     {
         "func_name": "COUPNUM",
@@ -1035,7 +1035,7 @@
             "basis"
         ],
         "ellipsis": false,
-        "comp_str": "COUPNUM(${1:settlement}, ${2:maturity}, ${3:frequency}${4:${5/.+/, /}})"
+        "comp_str": "COUPNUM(${1:settlement}, ${2:maturity}, ${3:frequency}${4:${5/.+/, /}${5:[basis]}})"
     },
     {
         "func_name": "COUPPCD",
@@ -1048,7 +1048,7 @@
             "basis"
         ],
         "ellipsis": false,
-        "comp_str": "COUPPCD(${1:settlement}, ${2:maturity}, ${3:frequency}${4:${5/.+/, /}})"
+        "comp_str": "COUPPCD(${1:settlement}, ${2:maturity}, ${3:frequency}${4:${5/.+/, /}${5:[basis]}})"
     },
     {
         "func_name": "COVAR",
@@ -1120,7 +1120,7 @@
             "caption"
         ],
         "ellipsis": false,
-        "comp_str": "CUBEKPIMEMBER(${1:connection}, ${2:kpi_name}, ${3:kpi_property}${4:${5/.+/, /}})"
+        "comp_str": "CUBEKPIMEMBER(${1:connection}, ${2:kpi_name}, ${3:kpi_property}${4:${5/.+/, /}${5:[caption]}})"
     },
     {
         "func_name": "CUBEMEMBER",
@@ -1132,7 +1132,7 @@
             "caption"
         ],
         "ellipsis": false,
-        "comp_str": "CUBEMEMBER(${1:connection}, ${2:member_expression}${3:${4/.+/, /}})"
+        "comp_str": "CUBEMEMBER(${1:connection}, ${2:member_expression}${3:${4/.+/, /}${4:[caption]}})"
     },
     {
         "func_name": "CUBEMEMBERPROPERTY",
@@ -1156,7 +1156,7 @@
             "caption"
         ],
         "ellipsis": false,
-        "comp_str": "CUBERANKEDMEMBER(${1:connection}, ${2:set_expression}, ${3:rank}${4:${5/.+/, /}})"
+        "comp_str": "CUBERANKEDMEMBER(${1:connection}, ${2:set_expression}, ${3:rank}${4:${5/.+/, /}${5:[caption]}})"
     },
     {
         "func_name": "CUBESET",
@@ -1170,7 +1170,7 @@
             "sort_by"
         ],
         "ellipsis": false,
-        "comp_str": "CUBESET(${1:connection}, ${2:set_expression}${3:${4/.+/, /}${4:[caption]}${5/.+/, /}${5:[sort_order]}${6/.+/, /}})"
+        "comp_str": "CUBESET(${1:connection}, ${2:set_expression}${3:${4/.+/, /}${4:[caption]}${5/.+/, /}${5:[sort_order]}${6/.+/, /}${6:[sort_by]}})"
     },
     {
         "func_name": "CUBESETCOUNT",
@@ -1291,7 +1291,7 @@
             "method"
         ],
         "ellipsis": false,
-        "comp_str": "DAYS360(${1:start_date}, ${2:end_date}${3:${4/.+/, /}})"
+        "comp_str": "DAYS360(${1:start_date}, ${2:end_date}${3:${4/.+/, /}${4:[method]}})"
     },
     {
         "func_name": "DB",
@@ -1305,7 +1305,7 @@
             "month"
         ],
         "ellipsis": false,
-        "comp_str": "DB(${1:cost}, ${2:salvage}, ${3:life}, ${4:period}${5:${6/.+/, /}})"
+        "comp_str": "DB(${1:cost}, ${2:salvage}, ${3:life}, ${4:period}${5:${6/.+/, /}${6:[month]}})"
     },
     {
         "func_name": "DBCS",
@@ -1350,7 +1350,7 @@
             "factor"
         ],
         "ellipsis": false,
-        "comp_str": "DDB(${1:cost}, ${2:salvage}, ${3:life}, ${4:period}${5:${6/.+/, /}})"
+        "comp_str": "DDB(${1:cost}, ${2:salvage}, ${3:life}, ${4:period}${5:${6/.+/, /}${6:[factor]}})"
     },
     {
         "func_name": "DEC2BIN",
@@ -1361,7 +1361,7 @@
             "places"
         ],
         "ellipsis": false,
-        "comp_str": "DEC2BIN(${1:number}${2:${3/.+/, /}})"
+        "comp_str": "DEC2BIN(${1:number}${2:${3/.+/, /}${3:[places]}})"
     },
     {
         "func_name": "DEC2HEX",
@@ -1372,7 +1372,7 @@
             "places"
         ],
         "ellipsis": false,
-        "comp_str": "DEC2HEX(${1:number}${2:${3/.+/, /}})"
+        "comp_str": "DEC2HEX(${1:number}${2:${3/.+/, /}${3:[places]}})"
     },
     {
         "func_name": "DEC2OCT",
@@ -1383,7 +1383,7 @@
             "places"
         ],
         "ellipsis": false,
-        "comp_str": "DEC2OCT(${1:number}${2:${3/.+/, /}})"
+        "comp_str": "DEC2OCT(${1:number}${2:${3/.+/, /}${3:[places]}})"
     },
     {
         "func_name": "DECIMAL",
@@ -1413,7 +1413,7 @@
             "number2"
         ],
         "ellipsis": false,
-        "comp_str": "DELTA(${1:number1}${2:${3/.+/, /}})"
+        "comp_str": "DELTA(${1:number1}${2:${3/.+/, /}${3:[number2]}})"
     },
     {
         "func_name": "DEVSQ",
@@ -1449,7 +1449,7 @@
             "basis"
         ],
         "ellipsis": false,
-        "comp_str": "DISC(${1:settlement}, ${2:maturity}, ${3:pr}, ${4:redemption}${5:${6/.+/, /}})"
+        "comp_str": "DISC(${1:settlement}, ${2:maturity}, ${3:pr}, ${4:redemption}${5:${6/.+/, /}${6:[basis]}})"
     },
     {
         "func_name": "DMAX",
@@ -1482,7 +1482,7 @@
             "decimals"
         ],
         "ellipsis": false,
-        "comp_str": "DOLLAR(${1:number}${2:${3/.+/, /}})"
+        "comp_str": "DOLLAR(${1:number}${2:${3/.+/, /}${3:[decimals]}})"
     },
     {
         "func_name": "DOLLARDE",
@@ -1525,7 +1525,7 @@
             "columns"
         ],
         "ellipsis": false,
-        "comp_str": "DROP(${1:array}, ${2:rows}${3:${4/.+/, /}})"
+        "comp_str": "DROP(${1:array}, ${2:rows}${3:${4/.+/, /}${4:[columns]}})"
     },
     {
         "func_name": "DSTDEV",
@@ -1573,7 +1573,7 @@
             "basis"
         ],
         "ellipsis": false,
-        "comp_str": "DURATION(${1:settlement}, ${2:maturity}, ${3:coupon}, ${4:yld}, ${5:frequency}${6:${7/.+/, /}})"
+        "comp_str": "DURATION(${1:settlement}, ${2:maturity}, ${3:coupon}, ${4:yld}, ${5:frequency}${6:${7/.+/, /}${7:[basis]}})"
     },
     {
         "func_name": "DVAR",
@@ -1645,7 +1645,7 @@
             "upper_limit"
         ],
         "ellipsis": false,
-        "comp_str": "ERF(${1:lower_limit}${2:${3/.+/, /}})"
+        "comp_str": "ERF(${1:lower_limit}${2:${3/.+/, /}${3:[upper_limit]}})"
     },
     {
         "func_name": "ERF.PRECISE",
@@ -1735,7 +1735,7 @@
             "pad_with"
         ],
         "ellipsis": false,
-        "comp_str": "EXPAND(${1:array}, ${2:rows}${3:${4/.+/, /}${4:[columns]}${5/.+/, /}})"
+        "comp_str": "EXPAND(${1:array}, ${2:rows}${3:${4/.+/, /}${4:[columns]}${5/.+/, /}${5:[pad_with]}})"
     },
     {
         "func_name": "EXPON.DIST",
@@ -1853,7 +1853,7 @@
             "if_empty"
         ],
         "ellipsis": false,
-        "comp_str": "FILTER(${1:array}, ${2:include}${3:${4/.+/, /}})"
+        "comp_str": "FILTER(${1:array}, ${2:include}${3:${4/.+/, /}${4:[if_empty]}})"
     },
     {
         "func_name": "FILTERXML",
@@ -1875,7 +1875,7 @@
             "start_num"
         ],
         "ellipsis": false,
-        "comp_str": "FIND(${1:find_text}, ${2:within_text}${3:${4/.+/, /}})"
+        "comp_str": "FIND(${1:find_text}, ${2:within_text}${3:${4/.+/, /}${4:[start_num]}})"
     },
     {
         "func_name": "FINDB",
@@ -1887,7 +1887,7 @@
             "start_num"
         ],
         "ellipsis": false,
-        "comp_str": "FINDB(${1:find_text}, ${2:within_text}${3:${4/.+/, /}})"
+        "comp_str": "FINDB(${1:find_text}, ${2:within_text}${3:${4/.+/, /}${4:[start_num]}})"
     },
     {
         "func_name": "FINV",
@@ -1928,7 +1928,7 @@
             "no_commas"
         ],
         "ellipsis": false,
-        "comp_str": "FIXED(${1:number}${2:${3/.+/, /}${3:[decimals]}${4/.+/, /}})"
+        "comp_str": "FIXED(${1:number}${2:${3/.+/, /}${3:[decimals]}${4/.+/, /}${4:[no_commas]}})"
     },
     {
         "func_name": "FLOOR",
@@ -1950,7 +1950,7 @@
             "mode"
         ],
         "ellipsis": false,
-        "comp_str": "FLOOR.MATH(${1:number}${2:${3/.+/, /}${3:[significance]}${4/.+/, /}})"
+        "comp_str": "FLOOR.MATH(${1:number}${2:${3/.+/, /}${3:[significance]}${4/.+/, /}${4:[mode]}})"
     },
     {
         "func_name": "FLOOR.PRECISE",
@@ -1961,7 +1961,7 @@
             "significance"
         ],
         "ellipsis": false,
-        "comp_str": "FLOOR.PRECISE(${1:number}${2:${3/.+/, /}})"
+        "comp_str": "FLOOR.PRECISE(${1:number}${2:${3/.+/, /}${3:[significance]}})"
     },
     {
         "func_name": "FORECAST",
@@ -1987,7 +1987,7 @@
             "aggregation"
         ],
         "ellipsis": false,
-        "comp_str": "FORECAST.ETS(${1:target_date}, ${2:values}, ${3:timeline}${4:${5/.+/, /}${5:[seasonality]}${6/.+/, /}${6:[data_completion]}${7/.+/, /}})"
+        "comp_str": "FORECAST.ETS(${1:target_date}, ${2:values}, ${3:timeline}${4:${5/.+/, /}${5:[seasonality]}${6/.+/, /}${6:[data_completion]}${7/.+/, /}${7:[aggregation]}})"
     },
     {
         "func_name": "FORECAST.ETS.CONFINT",
@@ -2003,7 +2003,7 @@
             "aggregation"
         ],
         "ellipsis": false,
-        "comp_str": "FORECAST.ETS.CONFINT(${1:target_date}, ${2:values}, ${3:timeline}${4:${5/.+/, /}${5:[confidence_level]}${6/.+/, /}${6:[seasonality]}${7/.+/, /}${7:[data_completion]}${8/.+/, /}})"
+        "comp_str": "FORECAST.ETS.CONFINT(${1:target_date}, ${2:values}, ${3:timeline}${4:${5/.+/, /}${5:[confidence_level]}${6/.+/, /}${6:[seasonality]}${7/.+/, /}${7:[data_completion]}${8/.+/, /}${8:[aggregation]}})"
     },
     {
         "func_name": "FORECAST.ETS.SEASONALITY",
@@ -2016,7 +2016,7 @@
             "aggregation"
         ],
         "ellipsis": false,
-        "comp_str": "FORECAST.ETS.SEASONALITY(${1:values}, ${2:timeline}${3:${4/.+/, /}${4:[data_completion]}${5/.+/, /}})"
+        "comp_str": "FORECAST.ETS.SEASONALITY(${1:values}, ${2:timeline}${3:${4/.+/, /}${4:[data_completion]}${5/.+/, /}${5:[aggregation]}})"
     },
     {
         "func_name": "FORECAST.ETS.STAT",
@@ -2031,7 +2031,7 @@
             "aggregation"
         ],
         "ellipsis": false,
-        "comp_str": "FORECAST.ETS.STAT(${1:values}, ${2:timeline}, ${3:statistic_type}${4:${5/.+/, /}${5:[seasonality]}${6/.+/, /}${6:[data_completion]}${7/.+/, /}})"
+        "comp_str": "FORECAST.ETS.STAT(${1:values}, ${2:timeline}, ${3:statistic_type}${4:${5/.+/, /}${5:[seasonality]}${6/.+/, /}${6:[data_completion]}${7/.+/, /}${7:[aggregation]}})"
     },
     {
         "func_name": "FORECAST.LINEAR",
@@ -2085,7 +2085,7 @@
             "type"
         ],
         "ellipsis": false,
-        "comp_str": "FV(${1:rate}, ${2:nper}, ${3:pmt}${4:${5/.+/, /}${5:[pv]}${6/.+/, /}})"
+        "comp_str": "FV(${1:rate}, ${2:nper}, ${3:pmt}${4:${5/.+/, /}${5:[pv]}${6/.+/, /}${6:[type]}})"
     },
     {
         "func_name": "FVSCHEDULE",
@@ -2210,7 +2210,7 @@
             "step"
         ],
         "ellipsis": false,
-        "comp_str": "GESTEP(${1:number}${2:${3/.+/, /}})"
+        "comp_str": "GESTEP(${1:number}${2:${3/.+/, /}${3:[step]}})"
     },
     {
         "func_name": "GETPIVOTDATA",
@@ -2236,7 +2236,7 @@
             "const"
         ],
         "ellipsis": false,
-        "comp_str": "GROWTH(${1:known_ys}${2:${3/.+/, /}${3:[known_xs]}${4/.+/, /}${4:[new_xs]}${5/.+/, /}})"
+        "comp_str": "GROWTH(${1:known_ys}${2:${3/.+/, /}${3:[known_xs]}${4/.+/, /}${4:[new_xs]}${5/.+/, /}${5:[const]}})"
     },
     {
         "func_name": "HARMEAN",
@@ -2258,7 +2258,7 @@
             "places"
         ],
         "ellipsis": false,
-        "comp_str": "HEX2BIN(${1:number}${2:${3/.+/, /}})"
+        "comp_str": "HEX2BIN(${1:number}${2:${3/.+/, /}${3:[places]}})"
     },
     {
         "func_name": "HEX2DEC",
@@ -2278,7 +2278,7 @@
             "places"
         ],
         "ellipsis": false,
-        "comp_str": "HEX2OCT(${1:number}${2:${3/.+/, /}})"
+        "comp_str": "HEX2OCT(${1:number}${2:${3/.+/, /}${3:[places]}})"
     },
     {
         "func_name": "HLOOKUP",
@@ -2291,7 +2291,7 @@
             "range_lookup"
         ],
         "ellipsis": false,
-        "comp_str": "HLOOKUP(${1:lookup_value}, ${2:table_array}, ${3:row_index_num}${4:${5/.+/, /}})"
+        "comp_str": "HLOOKUP(${1:lookup_value}, ${2:table_array}, ${3:row_index_num}${4:${5/.+/, /}${5:[range_lookup]}})"
     },
     {
         "func_name": "HOUR",
@@ -2322,7 +2322,7 @@
             "friendly_name"
         ],
         "ellipsis": false,
-        "comp_str": "HYPERLINK(${1:link_location}${2:${3/.+/, /}})"
+        "comp_str": "HYPERLINK(${1:link_location}${2:${3/.+/, /}${3:[friendly_name]}})"
     },
     {
         "func_name": "HYPGEOM.DIST",
@@ -2359,7 +2359,7 @@
             "value_if_false"
         ],
         "ellipsis": false,
-        "comp_str": "IF(${1:logical_test}${2:${3/.+/, /}${3:[value_if_true]}${4/.+/, /}})"
+        "comp_str": "IF(${1:logical_test}${2:${3/.+/, /}${3:[value_if_true]}${4/.+/, /}${4:[value_if_false]}})"
     },
     {
         "func_name": "IFERROR",
@@ -2415,7 +2415,7 @@
             "width"
         ],
         "ellipsis": false,
-        "comp_str": "IMAGE(${1:source}${2:${3/.+/, /}${3:[alt_text]}${4/.+/, /}${4:[sizing]}${5/.+/, /}${5:[height]}${6/.+/, /}})"
+        "comp_str": "IMAGE(${1:source}${2:${3/.+/, /}${3:[alt_text]}${4/.+/, /}${4:[sizing]}${5/.+/, /}${5:[height]}${6/.+/, /}${6:[width]}})"
     },
     {
         "func_name": "IMAGINARY",
@@ -2650,7 +2650,7 @@
             "column_num"
         ],
         "ellipsis": false,
-        "comp_str": "INDEX(${1:array}, ${2:row_num}${3:${4/.+/, /}})"
+        "comp_str": "INDEX(${1:array}, ${2:row_num}${3:${4/.+/, /}${4:[column_num]}})"
     },
     {
         "func_name": "INDIRECT",
@@ -2661,7 +2661,7 @@
             "a1"
         ],
         "ellipsis": false,
-        "comp_str": "INDIRECT(${1:ref_text}${2:${3/.+/, /}})"
+        "comp_str": "INDIRECT(${1:ref_text}${2:${3/.+/, /}${3:[a1]}})"
     },
     {
         "func_name": "INFO",
@@ -2703,7 +2703,7 @@
             "basis"
         ],
         "ellipsis": false,
-        "comp_str": "INTRATE(${1:settlement}, ${2:maturity}, ${3:investment}, ${4:redemption}${5:${6/.+/, /}})"
+        "comp_str": "INTRATE(${1:settlement}, ${2:maturity}, ${3:investment}, ${4:redemption}${5:${6/.+/, /}${6:[basis]}})"
     },
     {
         "func_name": "IPMT",
@@ -2718,7 +2718,7 @@
             "type"
         ],
         "ellipsis": false,
-        "comp_str": "IPMT(${1:rate}, ${2:per}, ${3:nper}, ${4:pv}${5:${6/.+/, /}${6:[fv]}${7/.+/, /}})"
+        "comp_str": "IPMT(${1:rate}, ${2:per}, ${3:nper}, ${4:pv}${5:${6/.+/, /}${6:[fv]}${7/.+/, /}${7:[type]}})"
     },
     {
         "func_name": "IRR",
@@ -2729,7 +2729,7 @@
             "guess"
         ],
         "ellipsis": false,
-        "comp_str": "IRR(${1:values}${2:${3/.+/, /}})"
+        "comp_str": "IRR(${1:values}${2:${3/.+/, /}${3:[guess]}})"
     },
     {
         "func_name": "ISBLANK",
@@ -2821,7 +2821,7 @@
             "significance"
         ],
         "ellipsis": false,
-        "comp_str": "ISO.CEILING(${1:number}${2:${3/.+/, /}})"
+        "comp_str": "ISO.CEILING(${1:number}${2:${3/.+/, /}${3:[significance]}})"
     },
     {
         "func_name": "ISODD",
@@ -2941,7 +2941,7 @@
             "num_chars"
         ],
         "ellipsis": false,
-        "comp_str": "LEFT(${1:text}${2:${3/.+/, /}})"
+        "comp_str": "LEFT(${1:text}${2:${3/.+/, /}${3:[num_chars]}})"
     },
     {
         "func_name": "LEFTB",
@@ -2952,7 +2952,7 @@
             "num_bytes"
         ],
         "ellipsis": false,
-        "comp_str": "LEFTB(${1:text}${2:${3/.+/, /}})"
+        "comp_str": "LEFTB(${1:text}${2:${3/.+/, /}${3:[num_bytes]}})"
     },
     {
         "func_name": "LEN",
@@ -2996,7 +2996,7 @@
             "stats"
         ],
         "ellipsis": false,
-        "comp_str": "LINEST(${1:known_ys}${2:${3/.+/, /}${3:[known_xs]}${4/.+/, /}${4:[const]}${5/.+/, /}})"
+        "comp_str": "LINEST(${1:known_ys}${2:${3/.+/, /}${3:[known_xs]}${4/.+/, /}${4:[const]}${5/.+/, /}${5:[stats]}})"
     },
     {
         "func_name": "LN",
@@ -3016,7 +3016,7 @@
             "base"
         ],
         "ellipsis": false,
-        "comp_str": "LOG(${1:number}${2:${3/.+/, /}})"
+        "comp_str": "LOG(${1:number}${2:${3/.+/, /}${3:[base]}})"
     },
     {
         "func_name": "LOG10",
@@ -3038,7 +3038,7 @@
             "stats"
         ],
         "ellipsis": false,
-        "comp_str": "LOGEST(${1:known_ys}${2:${3/.+/, /}${3:[known_xs]}${4/.+/, /}${4:[const]}${5/.+/, /}})"
+        "comp_str": "LOGEST(${1:known_ys}${2:${3/.+/, /}${3:[known_xs]}${4/.+/, /}${4:[const]}${5/.+/, /}${5:[stats]}})"
     },
     {
         "func_name": "LOGINV",
@@ -3095,7 +3095,7 @@
             "result_vector"
         ],
         "ellipsis": false,
-        "comp_str": "LOOKUP(${1:lookup_value}, ${2:lookup_vector}${3:${4/.+/, /}})"
+        "comp_str": "LOOKUP(${1:lookup_value}, ${2:lookup_vector}${3:${4/.+/, /}${4:[result_vector]}})"
     },
     {
         "func_name": "LOWER",
@@ -3139,7 +3139,7 @@
             "match_type"
         ],
         "ellipsis": false,
-        "comp_str": "MATCH(${1:lookup_value}, ${2:lookup_array}${3:${4/.+/, /}})"
+        "comp_str": "MATCH(${1:lookup_value}, ${2:lookup_array}${3:${4/.+/, /}${4:[match_type]}})"
     },
     {
         "func_name": "MAX",
@@ -3199,7 +3199,7 @@
             "basis"
         ],
         "ellipsis": false,
-        "comp_str": "MDURATION(${1:settlement}, ${2:maturity}, ${3:coupon}, ${4:yld}, ${5:frequency}${6:${7/.+/, /}})"
+        "comp_str": "MDURATION(${1:settlement}, ${2:maturity}, ${3:coupon}, ${4:yld}, ${5:frequency}${6:${7/.+/, /}${7:[basis]}})"
     },
     {
         "func_name": "MEDIAN",
@@ -3433,7 +3433,7 @@
             "holidays"
         ],
         "ellipsis": false,
-        "comp_str": "NETWORKDAYS(${1:start_date}, ${2:end_date}${3:${4/.+/, /}})"
+        "comp_str": "NETWORKDAYS(${1:start_date}, ${2:end_date}${3:${4/.+/, /}${4:[holidays]}})"
     },
     {
         "func_name": "NETWORKDAYS.INTL",
@@ -3446,7 +3446,7 @@
             "holidays"
         ],
         "ellipsis": false,
-        "comp_str": "NETWORKDAYS.INTL(${1:start_date}, ${2:end_date}${3:${4/.+/, /}${4:[weekend]}${5/.+/, /}})"
+        "comp_str": "NETWORKDAYS.INTL(${1:start_date}, ${2:end_date}${3:${4/.+/, /}${4:[weekend]}${5/.+/, /}${5:[holidays]}})"
     },
     {
         "func_name": "NOMINAL",
@@ -3562,7 +3562,7 @@
             "type"
         ],
         "ellipsis": false,
-        "comp_str": "NPER(${1:rate}, ${2:pmt}, ${3:pv}${4:${5/.+/, /}${5:[fv]}${6/.+/, /}})"
+        "comp_str": "NPER(${1:rate}, ${2:pmt}, ${3:pv}${4:${5/.+/, /}${5:[fv]}${6/.+/, /}${6:[type]}})"
     },
     {
         "func_name": "NPV",
@@ -3586,7 +3586,7 @@
             "group_separator"
         ],
         "ellipsis": false,
-        "comp_str": "NUMBERVALUE(${1:text}${2:${3/.+/, /}${3:[decimal_separator]}${4/.+/, /}})"
+        "comp_str": "NUMBERVALUE(${1:text}${2:${3/.+/, /}${3:[decimal_separator]}${4/.+/, /}${4:[group_separator]}})"
     },
     {
         "func_name": "OCT2BIN",
@@ -3597,7 +3597,7 @@
             "places"
         ],
         "ellipsis": false,
-        "comp_str": "OCT2BIN(${1:number}${2:${3/.+/, /}})"
+        "comp_str": "OCT2BIN(${1:number}${2:${3/.+/, /}${3:[places]}})"
     },
     {
         "func_name": "OCT2DEC",
@@ -3617,7 +3617,7 @@
             "places"
         ],
         "ellipsis": false,
-        "comp_str": "OCT2HEX(${1:number}${2:${3/.+/, /}})"
+        "comp_str": "OCT2HEX(${1:number}${2:${3/.+/, /}${3:[places]}})"
     },
     {
         "func_name": "ODD",
@@ -3644,7 +3644,7 @@
             "basis"
         ],
         "ellipsis": false,
-        "comp_str": "ODDFPRICE(${1:settlement}, ${2:maturity}, ${3:issue}, ${4:first_coupon}, ${5:rate}, ${6:yld}, ${7:redemption}, ${8:frequency}${9:${10/.+/, /}})"
+        "comp_str": "ODDFPRICE(${1:settlement}, ${2:maturity}, ${3:issue}, ${4:first_coupon}, ${5:rate}, ${6:yld}, ${7:redemption}, ${8:frequency}${9:${10/.+/, /}${10:[basis]}})"
     },
     {
         "func_name": "ODDFYIELD",
@@ -3662,7 +3662,7 @@
             "basis"
         ],
         "ellipsis": false,
-        "comp_str": "ODDFYIELD(${1:settlement}, ${2:maturity}, ${3:issue}, ${4:first_coupon}, ${5:rate}, ${6:pr}, ${7:redemption}, ${8:frequency}${9:${10/.+/, /}})"
+        "comp_str": "ODDFYIELD(${1:settlement}, ${2:maturity}, ${3:issue}, ${4:first_coupon}, ${5:rate}, ${6:pr}, ${7:redemption}, ${8:frequency}${9:${10/.+/, /}${10:[basis]}})"
     },
     {
         "func_name": "ODDLPRICE",
@@ -3679,7 +3679,7 @@
             "basis"
         ],
         "ellipsis": false,
-        "comp_str": "ODDLPRICE(${1:settlement}, ${2:maturity}, ${3:last_interest}, ${4:rate}, ${5:yld}, ${6:redemption}, ${7:frequency}${8:${9/.+/, /}})"
+        "comp_str": "ODDLPRICE(${1:settlement}, ${2:maturity}, ${3:last_interest}, ${4:rate}, ${5:yld}, ${6:redemption}, ${7:frequency}${8:${9/.+/, /}${9:[basis]}})"
     },
     {
         "func_name": "ODDLYIELD",
@@ -3696,7 +3696,7 @@
             "basis"
         ],
         "ellipsis": false,
-        "comp_str": "ODDLYIELD(${1:settlement}, ${2:maturity}, ${3:last_interest}, ${4:rate}, ${5:pr}, ${6:redemption}, ${7:frequency}${8:${9/.+/, /}})"
+        "comp_str": "ODDLYIELD(${1:settlement}, ${2:maturity}, ${3:last_interest}, ${4:rate}, ${5:pr}, ${6:redemption}, ${7:frequency}${8:${9/.+/, /}${9:[basis]}})"
     },
     {
         "func_name": "OFFSET",
@@ -3710,7 +3710,7 @@
             "width"
         ],
         "ellipsis": false,
-        "comp_str": "OFFSET(${1:reference}, ${2:rows}, ${3:cols}${4:${5/.+/, /}${5:[height]}${6/.+/, /}})"
+        "comp_str": "OFFSET(${1:reference}, ${2:rows}, ${3:cols}${4:${5/.+/, /}${5:[height]}${6/.+/, /}${6:[width]}})"
     },
     {
         "func_name": "OR",
@@ -3784,7 +3784,7 @@
             "significance"
         ],
         "ellipsis": false,
-        "comp_str": "PERCENTRANK(${1:array}, ${2:x}${3:${4/.+/, /}})"
+        "comp_str": "PERCENTRANK(${1:array}, ${2:x}${3:${4/.+/, /}${4:[significance]}})"
     },
     {
         "func_name": "PERCENTRANK.EXC",
@@ -3796,7 +3796,7 @@
             "significance"
         ],
         "ellipsis": false,
-        "comp_str": "PERCENTRANK.EXC(${1:array}, ${2:x}${3:${4/.+/, /}})"
+        "comp_str": "PERCENTRANK.EXC(${1:array}, ${2:x}${3:${4/.+/, /}${4:[significance]}})"
     },
     {
         "func_name": "PERCENTRANK.INC",
@@ -3808,7 +3808,7 @@
             "significance"
         ],
         "ellipsis": false,
-        "comp_str": "PERCENTRANK.INC(${1:array}, ${2:x}${3:${4/.+/, /}})"
+        "comp_str": "PERCENTRANK.INC(${1:array}, ${2:x}${3:${4/.+/, /}${4:[significance]}})"
     },
     {
         "func_name": "PERMUT",
@@ -3860,7 +3860,7 @@
             "type"
         ],
         "ellipsis": false,
-        "comp_str": "PMT(${1:rate}, ${2:nper}, ${3:pv}${4:${5/.+/, /}${5:[fv]}${6/.+/, /}})"
+        "comp_str": "PMT(${1:rate}, ${2:nper}, ${3:pv}${4:${5/.+/, /}${5:[fv]}${6/.+/, /}${6:[type]}})"
     },
     {
         "func_name": "POISSON",
@@ -3907,7 +3907,7 @@
             "type"
         ],
         "ellipsis": false,
-        "comp_str": "PPMT(${1:rate}, ${2:per}, ${3:nper}, ${4:pv}${5:${6/.+/, /}${6:[fv]}${7/.+/, /}})"
+        "comp_str": "PPMT(${1:rate}, ${2:per}, ${3:nper}, ${4:pv}${5:${6/.+/, /}${6:[fv]}${7/.+/, /}${7:[type]}})"
     },
     {
         "func_name": "PRICE",
@@ -3923,7 +3923,7 @@
             "basis"
         ],
         "ellipsis": false,
-        "comp_str": "PRICE(${1:settlement}, ${2:maturity}, ${3:rate}, ${4:yld}, ${5:redemption}, ${6:frequency}${7:${8/.+/, /}})"
+        "comp_str": "PRICE(${1:settlement}, ${2:maturity}, ${3:rate}, ${4:yld}, ${5:redemption}, ${6:frequency}${7:${8/.+/, /}${8:[basis]}})"
     },
     {
         "func_name": "PRICEDISC",
@@ -3937,7 +3937,7 @@
             "basis"
         ],
         "ellipsis": false,
-        "comp_str": "PRICEDISC(${1:settlement}, ${2:maturity}, ${3:discount}, ${4:redemption}${5:${6/.+/, /}})"
+        "comp_str": "PRICEDISC(${1:settlement}, ${2:maturity}, ${3:discount}, ${4:redemption}${5:${6/.+/, /}${6:[basis]}})"
     },
     {
         "func_name": "PRICEMAT",
@@ -3952,7 +3952,7 @@
             "basis"
         ],
         "ellipsis": false,
-        "comp_str": "PRICEMAT(${1:settlement}, ${2:maturity}, ${3:issue}, ${4:rate}, ${5:yld}${6:${7/.+/, /}})"
+        "comp_str": "PRICEMAT(${1:settlement}, ${2:maturity}, ${3:issue}, ${4:rate}, ${5:yld}${6:${7/.+/, /}${7:[basis]}})"
     },
     {
         "func_name": "PROB",
@@ -3965,7 +3965,7 @@
             "upper_limit"
         ],
         "ellipsis": false,
-        "comp_str": "PROB(${1:x_range}, ${2:prob_range}, ${3:lower_limit}${4:${5/.+/, /}})"
+        "comp_str": "PROB(${1:x_range}, ${2:prob_range}, ${3:lower_limit}${4:${5/.+/, /}${5:[upper_limit]}})"
     },
     {
         "func_name": "PRODUCT",
@@ -3999,7 +3999,7 @@
             "typel"
         ],
         "ellipsis": false,
-        "comp_str": "PV(${1:rate}, ${2:nper}, ${3:pmt}${4:${5/.+/, /}${5:[fv]}${6/.+/, /}})"
+        "comp_str": "PV(${1:rate}, ${2:nper}, ${3:pmt}${4:${5/.+/, /}${5:[fv]}${6/.+/, /}${6:[typel]}})"
     },
     {
         "func_name": "QUARTILE",
@@ -4061,7 +4061,7 @@
             "integer"
         ],
         "ellipsis": false,
-        "comp_str": "RANDARRAY(${1:${2/.+/, /}${2:[rows]}${3/.+/, /}${3:[columns]}${4/.+/, /}${4:[min]}${5/.+/, /}${5:[max]}${6/.+/, /}})"
+        "comp_str": "RANDARRAY(${1:${2/.+/, /}${2:[rows]}${3/.+/, /}${3:[columns]}${4/.+/, /}${4:[min]}${5/.+/, /}${5:[max]}${6/.+/, /}${6:[integer]}})"
     },
     {
         "func_name": "RANDBETWEEN",
@@ -4083,7 +4083,7 @@
             "order"
         ],
         "ellipsis": false,
-        "comp_str": "RANK(${1:number}, ${2:ref}${3:${4/.+/, /}})"
+        "comp_str": "RANK(${1:number}, ${2:ref}${3:${4/.+/, /}${4:[order]}})"
     },
     {
         "func_name": "RANK.AVG",
@@ -4095,7 +4095,7 @@
             "order"
         ],
         "ellipsis": false,
-        "comp_str": "RANK.AVG(${1:number}, ${2:ref}${3:${4/.+/, /}})"
+        "comp_str": "RANK.AVG(${1:number}, ${2:ref}${3:${4/.+/, /}${4:[order]}})"
     },
     {
         "func_name": "RANK.EQ",
@@ -4107,7 +4107,7 @@
             "order"
         ],
         "ellipsis": false,
-        "comp_str": "RANK.EQ(${1:number}, ${2:ref}${3:${4/.+/, /}})"
+        "comp_str": "RANK.EQ(${1:number}, ${2:ref}${3:${4/.+/, /}${4:[order]}})"
     },
     {
         "func_name": "RATE",
@@ -4122,7 +4122,7 @@
             "guess"
         ],
         "ellipsis": false,
-        "comp_str": "RATE(${1:nper}, ${2:pmt}, ${3:pv}${4:${5/.+/, /}${5:[fv]}${6/.+/, /}${6:[type]}${7/.+/, /}})"
+        "comp_str": "RATE(${1:nper}, ${2:pmt}, ${3:pv}${4:${5/.+/, /}${5:[fv]}${6/.+/, /}${6:[type]}${7/.+/, /}${7:[guess]}})"
     },
     {
         "func_name": "RECEIVED",
@@ -4136,7 +4136,7 @@
             "basis"
         ],
         "ellipsis": false,
-        "comp_str": "RECEIVED(${1:settlement}, ${2:maturity}, ${3:investment}, ${4:discount}${5:${6/.+/, /}})"
+        "comp_str": "RECEIVED(${1:settlement}, ${2:maturity}, ${3:investment}, ${4:discount}${5:${6/.+/, /}${6:[basis]}})"
     },
     {
         "func_name": "REDUCE",
@@ -4172,7 +4172,7 @@
             "type_text"
         ],
         "ellipsis": false,
-        "comp_str": "REGISTER.ID(${1:module_text}, ${2:procedure}${3:${4/.+/, /}})"
+        "comp_str": "REGISTER.ID(${1:module_text}, ${2:procedure}${3:${4/.+/, /}${4:[type_text]}})"
     },
     {
         "func_name": "REPLACE",
@@ -4217,7 +4217,7 @@
             "num_chars"
         ],
         "ellipsis": false,
-        "comp_str": "RIGHT(${1:text}${2:${3/.+/, /}})"
+        "comp_str": "RIGHT(${1:text}${2:${3/.+/, /}${3:[num_chars]}})"
     },
     {
         "func_name": "RIGHTB",
@@ -4228,7 +4228,7 @@
             "num_bytes"
         ],
         "ellipsis": false,
-        "comp_str": "RIGHTB(${1:text}${2:${3/.+/, /}})"
+        "comp_str": "RIGHTB(${1:text}${2:${3/.+/, /}${3:[num_bytes]}})"
     },
     {
         "func_name": "ROMAN",
@@ -4239,7 +4239,7 @@
             "form"
         ],
         "ellipsis": false,
-        "comp_str": "ROMAN(${1:number}${2:${3/.+/, /}})"
+        "comp_str": "ROMAN(${1:number}${2:${3/.+/, /}${3:[form]}})"
     },
     {
         "func_name": "ROUND",
@@ -4278,7 +4278,7 @@
             "reference"
         ],
         "ellipsis": false,
-        "comp_str": "ROW(${1:${2/.+/, /}})"
+        "comp_str": "ROW(${1:${2/.+/, /}${2:[reference]}})"
     },
     {
         "func_name": "ROWS",
@@ -4344,7 +4344,7 @@
             "start_num"
         ],
         "ellipsis": false,
-        "comp_str": "SEARCH(${1:find_text}, ${2:within_text}${3:${4/.+/, /}})"
+        "comp_str": "SEARCH(${1:find_text}, ${2:within_text}${3:${4/.+/, /}${4:[start_num]}})"
     },
     {
         "func_name": "SEARCHB",
@@ -4356,7 +4356,7 @@
             "start_num"
         ],
         "ellipsis": false,
-        "comp_str": "SEARCHB(${1:find_text}, ${2:within_text}${3:${4/.+/, /}})"
+        "comp_str": "SEARCHB(${1:find_text}, ${2:within_text}${3:${4/.+/, /}${4:[start_num]}})"
     },
     {
         "func_name": "SEC",
@@ -4396,7 +4396,7 @@
             "step"
         ],
         "ellipsis": false,
-        "comp_str": "SEQUENCE(${1:rows}${2:${3/.+/, /}${3:[columns]}${4/.+/, /}${4:[start]}${5/.+/, /}})"
+        "comp_str": "SEQUENCE(${1:rows}${2:${3/.+/, /}${3:[columns]}${4/.+/, /}${4:[start]}${5/.+/, /}${5:[step]}})"
     },
     {
         "func_name": "SERIESSUM",
@@ -4417,7 +4417,7 @@
             "value"
         ],
         "ellipsis": false,
-        "comp_str": "SHEET(${1:${2/.+/, /}})"
+        "comp_str": "SHEET(${1:${2/.+/, /}${2:[value]}})"
     },
     {
         "func_name": "SHEETS",
@@ -4426,7 +4426,7 @@
             "reference"
         ],
         "ellipsis": false,
-        "comp_str": "SHEETS(${1:${2/.+/, /}})"
+        "comp_str": "SHEETS(${1:${2/.+/, /}${2:[reference]}})"
     },
     {
         "func_name": "SIGN",
@@ -4519,7 +4519,7 @@
             "by_col"
         ],
         "ellipsis": false,
-        "comp_str": "SORT(${1:array}${2:${3/.+/, /}${3:[sort_index]}${4/.+/, /}${4:[sort_order]}${5/.+/, /}})"
+        "comp_str": "SORT(${1:array}${2:${3/.+/, /}${3:[sort_index]}${4/.+/, /}${4:[sort_order]}${5/.+/, /}${5:[by_col]}})"
     },
     {
         "func_name": "SORTBY",
@@ -4664,7 +4664,7 @@
             "instance_num"
         ],
         "ellipsis": false,
-        "comp_str": "SUBSTITUTE(${1:text}, ${2:old_text}, ${3:new_text}${4:${5/.+/, /}})"
+        "comp_str": "SUBSTITUTE(${1:text}, ${2:old_text}, ${3:new_text}${4:${5/.+/, /}${5:[instance_num]}})"
     },
     {
         "func_name": "SUBTOTAL",
@@ -4699,7 +4699,7 @@
             "sum_range"
         ],
         "ellipsis": false,
-        "comp_str": "SUMIF(${1:range}, ${2:criteria}${3:${4/.+/, /}})"
+        "comp_str": "SUMIF(${1:range}, ${2:criteria}${3:${4/.+/, /}${4:[sum_range]}})"
     },
     {
         "func_name": "SUMIFS",
@@ -4876,7 +4876,7 @@
             "columns"
         ],
         "ellipsis": false,
-        "comp_str": "TAKE(${1:array}, ${2:rows}${3:${4/.+/, /}})"
+        "comp_str": "TAKE(${1:array}, ${2:rows}${3:${4/.+/, /}${4:[columns]}})"
     },
     {
         "func_name": "TAN",
@@ -4963,7 +4963,7 @@
             "if_not_found"
         ],
         "ellipsis": false,
-        "comp_str": "TEXTAFTER(${1:text}, ${2:delimiter}${3:${4/.+/, /}${4:[instance_num]}${5/.+/, /}${5:[match_mode]}${6/.+/, /}${6:[match_end]}${7/.+/, /}})"
+        "comp_str": "TEXTAFTER(${1:text}, ${2:delimiter}${3:${4/.+/, /}${4:[instance_num]}${5/.+/, /}${5:[match_mode]}${6/.+/, /}${6:[match_end]}${7/.+/, /}${7:[if_not_found]}})"
     },
     {
         "func_name": "TEXTBEFORE",
@@ -4978,7 +4978,7 @@
             "if_not_found"
         ],
         "ellipsis": false,
-        "comp_str": "TEXTBEFORE(${1:text}, ${2:delimiter}${3:${4/.+/, /}${4:[instance_num]}${5/.+/, /}${5:[match_mode]}${6/.+/, /}${6:[match_end]}${7/.+/, /}})"
+        "comp_str": "TEXTBEFORE(${1:text}, ${2:delimiter}${3:${4/.+/, /}${4:[instance_num]}${5/.+/, /}${5:[match_mode]}${6/.+/, /}${6:[match_end]}${7/.+/, /}${7:[if_not_found]}})"
     },
     {
         "func_name": "TEXTJOIN",
@@ -5006,7 +5006,7 @@
             "pad_with"
         ],
         "ellipsis": false,
-        "comp_str": "TEXTSPLIT(${1:text}, ${2:col_delimiter}${3:${4/.+/, /}${4:[row_delimiter]}${5/.+/, /}${5:[ignore_empty]}${6/.+/, /}${6:[match_mode]}${7/.+/, /}})"
+        "comp_str": "TEXTSPLIT(${1:text}, ${2:col_delimiter}${3:${4/.+/, /}${4:[row_delimiter]}${5/.+/, /}${5:[ignore_empty]}${6/.+/, /}${6:[match_mode]}${7/.+/, /}${7:[pad_with]}})"
     },
     {
         "func_name": "TIME",
@@ -5048,7 +5048,7 @@
             "scan_by_column"
         ],
         "ellipsis": false,
-        "comp_str": "TOCOL(${1:array}${2:${3/.+/, /}${3:[ignore]}${4/.+/, /}})"
+        "comp_str": "TOCOL(${1:array}${2:${3/.+/, /}${3:[ignore]}${4/.+/, /}${4:[scan_by_column]}})"
     },
     {
         "func_name": "TOROW",
@@ -5060,7 +5060,7 @@
             "scan_by_column"
         ],
         "ellipsis": false,
-        "comp_str": "TOROW(${1:array}${2:${3/.+/, /}${3:[ignore]}${4/.+/, /}})"
+        "comp_str": "TOROW(${1:array}${2:${3/.+/, /}${3:[ignore]}${4/.+/, /}${4:[scan_by_column]}})"
     },
     {
         "func_name": "TRANSPOSE",
@@ -5082,7 +5082,7 @@
             "const"
         ],
         "ellipsis": false,
-        "comp_str": "TREND(${1:known_ys}${2:${3/.+/, /}${3:[known_xs]}${4/.+/, /}${4:[new_xs]}${5/.+/, /}})"
+        "comp_str": "TREND(${1:known_ys}${2:${3/.+/, /}${3:[known_xs]}${4/.+/, /}${4:[new_xs]}${5/.+/, /}${5:[const]}})"
     },
     {
         "func_name": "TRIM",
@@ -5112,7 +5112,7 @@
             "num_digits"
         ],
         "ellipsis": false,
-        "comp_str": "TRUNC(${1:number}${2:${3/.+/, /}})"
+        "comp_str": "TRUNC(${1:number}${2:${3/.+/, /}${3:[num_digits]}})"
     },
     {
         "func_name": "TTEST",
@@ -5163,7 +5163,7 @@
             "exactly_once"
         ],
         "ellipsis": false,
-        "comp_str": "UNIQUE(${1:array}${2:${3/.+/, /}${3:[by_col]}${4/.+/, /}})"
+        "comp_str": "UNIQUE(${1:array}${2:${3/.+/, /}${3:[by_col]}${4/.+/, /}${4:[exactly_once]}})"
     },
     {
         "func_name": "UNREGISTER",
@@ -5201,7 +5201,7 @@
             "format"
         ],
         "ellipsis": false,
-        "comp_str": "VALUETOTEXT(${1:value}${2:${3/.+/, /}})"
+        "comp_str": "VALUETOTEXT(${1:value}${2:${3/.+/, /}${3:[format]}})"
     },
     {
         "func_name": "VAR",
@@ -5283,7 +5283,7 @@
             "no_switch"
         ],
         "ellipsis": false,
-        "comp_str": "VDB(${1:cost}, ${2:salvage}, ${3:life}, ${4:start_period}, ${5:end_period}${6:${7/.+/, /}${7:[factor]}${8/.+/, /}})"
+        "comp_str": "VDB(${1:cost}, ${2:salvage}, ${3:life}, ${4:start_period}, ${5:end_period}${6:${7/.+/, /}${7:[factor]}${8/.+/, /}${8:[no_switch]}})"
     },
     {
         "func_name": "VLOOKUP",
@@ -5296,7 +5296,7 @@
             "range_lookup"
         ],
         "ellipsis": false,
-        "comp_str": "VLOOKUP(${1:lookup_value}, ${2:table_array}, ${3:col_index_num}${4:${5/.+/, /}})"
+        "comp_str": "VLOOKUP(${1:lookup_value}, ${2:table_array}, ${3:col_index_num}${4:${5/.+/, /}${5:[range_lookup]}})"
     },
     {
         "func_name": "VSTACK",
@@ -5327,7 +5327,7 @@
             "return_type"
         ],
         "ellipsis": false,
-        "comp_str": "WEEKDAY(${1:serial_number}${2:${3/.+/, /}})"
+        "comp_str": "WEEKDAY(${1:serial_number}${2:${3/.+/, /}${3:[return_type]}})"
     },
     {
         "func_name": "WEEKNUM",
@@ -5338,7 +5338,7 @@
             "return_type"
         ],
         "ellipsis": false,
-        "comp_str": "WEEKNUM(${1:serial_number}${2:${3/.+/, /}})"
+        "comp_str": "WEEKNUM(${1:serial_number}${2:${3/.+/, /}${3:[return_type]}})"
     },
     {
         "func_name": "WEIBULL",
@@ -5374,7 +5374,7 @@
             "holidays"
         ],
         "ellipsis": false,
-        "comp_str": "WORKDAY(${1:start_date}, ${2:days}${3:${4/.+/, /}})"
+        "comp_str": "WORKDAY(${1:start_date}, ${2:days}${3:${4/.+/, /}${4:[holidays]}})"
     },
     {
         "func_name": "WORKDAY.INTL",
@@ -5387,7 +5387,7 @@
             "holidays"
         ],
         "ellipsis": false,
-        "comp_str": "WORKDAY.INTL(${1:start_date}, ${2:days}${3:${4/.+/, /}${4:[weekend]}${5/.+/, /}})"
+        "comp_str": "WORKDAY.INTL(${1:start_date}, ${2:days}${3:${4/.+/, /}${4:[weekend]}${5/.+/, /}${5:[holidays]}})"
     },
     {
         "func_name": "WRAPCOLS",
@@ -5399,7 +5399,7 @@
             "pad_with"
         ],
         "ellipsis": false,
-        "comp_str": "WRAPCOLS(${1:vector}, ${2:wrap_count}${3:${4/.+/, /}})"
+        "comp_str": "WRAPCOLS(${1:vector}, ${2:wrap_count}${3:${4/.+/, /}${4:[pad_with]}})"
     },
     {
         "func_name": "WRAPROWS",
@@ -5411,7 +5411,7 @@
             "pad_with"
         ],
         "ellipsis": false,
-        "comp_str": "WRAPROWS(${1:vector}, ${2:wrap_count}${3:${4/.+/, /}})"
+        "comp_str": "WRAPROWS(${1:vector}, ${2:wrap_count}${3:${4/.+/, /}${4:[pad_with]}})"
     },
     {
         "func_name": "XIRR",
@@ -5423,7 +5423,7 @@
             "guess"
         ],
         "ellipsis": false,
-        "comp_str": "XIRR(${1:values}, ${2:dates}${3:${4/.+/, /}})"
+        "comp_str": "XIRR(${1:values}, ${2:dates}${3:${4/.+/, /}${4:[guess]}})"
     },
     {
         "func_name": "XLOOKUP",
@@ -5438,7 +5438,7 @@
             "search_mode"
         ],
         "ellipsis": false,
-        "comp_str": "XLOOKUP(${1:lookup_value}, ${2:lookup_array}, ${3:return_array}${4:${5/.+/, /}${5:[if_not_found]}${6/.+/, /}${6:[match_mode]}${7/.+/, /}})"
+        "comp_str": "XLOOKUP(${1:lookup_value}, ${2:lookup_array}, ${3:return_array}${4:${5/.+/, /}${5:[if_not_found]}${6/.+/, /}${6:[match_mode]}${7/.+/, /}${7:[search_mode]}})"
     },
     {
         "func_name": "XMATCH",
@@ -5451,7 +5451,7 @@
             "search_mode"
         ],
         "ellipsis": false,
-        "comp_str": "XMATCH(${1:lookup_value}, ${2:lookup_array}${3:${4/.+/, /}${4:[match_mode]}${5/.+/, /}})"
+        "comp_str": "XMATCH(${1:lookup_value}, ${2:lookup_array}${3:${4/.+/, /}${4:[match_mode]}${5/.+/, /}${5:[search_mode]}})"
     },
     {
         "func_name": "XNPV",
@@ -5494,7 +5494,7 @@
             "basis"
         ],
         "ellipsis": false,
-        "comp_str": "YEARFRAC(${1:start_date}, ${2:end_date}${3:${4/.+/, /}})"
+        "comp_str": "YEARFRAC(${1:start_date}, ${2:end_date}${3:${4/.+/, /}${4:[basis]}})"
     },
     {
         "func_name": "YIELD",
@@ -5510,7 +5510,7 @@
             "basis"
         ],
         "ellipsis": false,
-        "comp_str": "YIELD(${1:settlement}, ${2:maturity}, ${3:rate}, ${4:pr}, ${5:redemption}, ${6:frequency}${7:${8/.+/, /}})"
+        "comp_str": "YIELD(${1:settlement}, ${2:maturity}, ${3:rate}, ${4:pr}, ${5:redemption}, ${6:frequency}${7:${8/.+/, /}${8:[basis]}})"
     },
     {
         "func_name": "YIELDDISC",
@@ -5524,7 +5524,7 @@
             "basis"
         ],
         "ellipsis": false,
-        "comp_str": "YIELDDISC(${1:settlement}, ${2:maturity}, ${3:pr}, ${4:redemption}${5:${6/.+/, /}})"
+        "comp_str": "YIELDDISC(${1:settlement}, ${2:maturity}, ${3:pr}, ${4:redemption}${5:${6/.+/, /}${6:[basis]}})"
     },
     {
         "func_name": "YIELDMAT",
@@ -5539,7 +5539,7 @@
             "basis"
         ],
         "ellipsis": false,
-        "comp_str": "YIELDMAT(${1:settlement}, ${2:maturity}, ${3:issue}, ${4:rate}, ${5:pr}${6:${7/.+/, /}})"
+        "comp_str": "YIELDMAT(${1:settlement}, ${2:maturity}, ${3:issue}, ${4:rate}, ${5:pr}${6:${7/.+/, /}${7:[basis]}})"
     },
     {
         "func_name": "Z.TEST",
@@ -5551,7 +5551,7 @@
             "sigma"
         ],
         "ellipsis": false,
-        "comp_str": "Z.TEST(${1:array}, ${2:x}${3:${4/.+/, /}})"
+        "comp_str": "Z.TEST(${1:array}, ${2:x}${3:${4/.+/, /}${4:[sigma]}})"
     },
     {
         "func_name": "ZTEST",
@@ -5563,6 +5563,6 @@
             "sigma"
         ],
         "ellipsis": false,
-        "comp_str": "ZTEST(${1:array}, ${2:x}${3:${4/.+/, /}})"
+        "comp_str": "ZTEST(${1:array}, ${2:x}${3:${4/.+/, /}${4:[sigma]}})"
     }
 ]
