@@ -13,6 +13,15 @@ class SpreadsheetFunction(object):
         self.optional_args = optional_args
         self.has_ellipsis = has_ellipsis
 
+    def to_json(self) -> str:
+        """This is the temporary transfer format"""
+        return dict(
+            func_name = self.name,
+            req_param = self.required_args,
+            opt_param = self.optional_args,
+            ellipsis = self.has_ellipsis,
+        )
+
     def to_arg_string(self) -> str:
         args = self.required_args
         args += [f'[{a}]' for a in self.optional_args]

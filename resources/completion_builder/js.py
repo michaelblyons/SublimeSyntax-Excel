@@ -4,6 +4,8 @@ import json
 import re
 from argparse import ArgumentParser
 
+from SpreadsheetFunction import SpreadsheetFunction
+
 def parse_function_list(sheet_app: str, write_json_file: bool = True):
 
     with open(f'{sheet_app}_funcs_data_list.txt', 'r') as file:
@@ -32,18 +34,18 @@ def parse_function_list(sheet_app: str, write_json_file: bool = True):
             else:
                 req_param.append(param)
 
-        func_dict = dict(
-            func_name = func_name,
-            req_param = req_param,
-            opt_param = opt_param,
-            ellipsis = ellipsis,
+        function = SpreadsheetFunction(
+            func_name,
+            required_args = req_param,
+            optional_args = opt_param,
+            has_ellipsis = ellipsis,
         )
 
-        functions.append(func_dict)
+        functions.append(function)
 
     if write_json_file:
         with open(f'{sheet_app}_funcs.json', 'w') as o:
-            json.dump(functions, o, indent=4)
+            json.dump([f.to_json() for f in functions], o, indent=4)
 
     return functions
 
