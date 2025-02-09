@@ -5,21 +5,27 @@
 #       "req_param" (Array)
 #       "opt_param" (Array)
 #       "ellipsis" (Boolean)
+#       js.py ("json")
 #
 # 2. Build out completion strings for param-having functions
+#       cb.py ("completion builder")
 # 
 # 3. Covert the function metadata found in func_ref.xlsx to JSON
-# 
+#       ld.py ("load")
+#       
 # 4. Match completion strings to descriptions, categories, and function names
+#       mg.py ("merge")
 # 
 # 5. Build out completion strings for nullary functions
+#       main.py
 # 
 # Last. Build out entire .sublime-completions file.
+#       main.py
 # 
-# NOTE: Not all ellipsis == True functions follow the same format, e.g.:
+# NOTE: Not all `ellipsis == True` functions follow the same format, e.g.:
 #       1. COUNTA~value1,[value2],...
 #       2. COUNTIFS~criteria_range1,criteria1,...
-#       Before running this script, clean formulas that look like 2. to look like 1. using your best judgement and find using:
+#       Before running this script, clean formulas that look like 2. to look like 1. using your best judgement. Find them using:
 #           [^\]],\.{3}
 
 # TODO: Allow this entire directory to switch between application specific information like the `scope` found in this file and
