@@ -8,11 +8,11 @@
 #
 # 2. Build out completion strings for param-having functions
 # 
-# 4. Covert the function metadata found in func_ref.xlsx to JSON
+# 3. Covert the function metadata found in func_ref.xlsx to JSON
 # 
 # 4. Match completion strings to descriptions, categories, and function names
 # 
-# 3. Build out completion strings for nullary functions
+# 5. Build out completion strings for nullary functions
 # 
 # Last. Build out entire .sublime-completions file.
 # 
