@@ -45,8 +45,7 @@ class SpreadsheetFunction(object):
         )
         return {k:output[k] for k in output if output[k] is not None}
 
-
-    def to_arg_string(self) -> str:
+    def to_arg_list(self) -> list[str]:
         args = []
         if self.required_args:
             args += self.required_args
@@ -54,11 +53,44 @@ class SpreadsheetFunction(object):
             args += [f'[{a}]' for a in self.optional_args]
         if self.has_ellipsis:
             args += ['...']
-        return ', '.join(args)
+        return args
+
+    def to_arg_string(self) -> str:
+        return ', '.join(self.to_arg_list())
 
     def to_completion_arg_string(self) -> str:
-        # TODO: Replace this with the fancy one
-        return f'{self.name}({self.to_arg_string()})'
+        completions = []
+        param_id = 0
+
+        if self.required_args:
+            for req in self.required_args:
+                param_id += 1
+
+                if param_id > 1:
+                    completions.append(',')
+                    completions.append(f'${{{param_id}: {req}}}')
+                else:
+                    completions.append(f'${{{param_id}:{req}}}')
+
+        if self.optional_args:
+            num_opt_param = len(self.optional_args)
+            num_param = num_opt_param + len(self.required_args or [])
+
+            # Wrap optional arguments in an extra tabstop
+            param_id += 1
+            completions.append(f'${{{param_id}:')
+
+            for opt in self.optional_args:
+                param_id += 1
+
+                if param_id == num_param + 1 and self.has_ellipsis:
+                    completions.append(f',${{{param_id}: [{opt}], ...}}')
+                else:
+                    completions.append(f',${{{param_id}: [{opt}]}}')
+
+            completions.append('}')
+
+        return f'{self.name}({"".join(completions)})'
 
     def to_sublime_word_completion(self) -> dict[str,str]:
         return {
