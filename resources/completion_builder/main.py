@@ -17,7 +17,8 @@ def main(sheet_app: str, write_intermediate_json: bool):
 
     completions = {
         "scope": f'source.sheet.{sheet_app} - string - comment',
-        "completions": [f.to_sublime_snippet_completion() for f in functions],
+        "completions": [f.to_sublime_snippet_completion() for f in functions] +
+                       [f.to_sublime_word_completion() for f in functions],
     }
 
     with open('.sublime-completions', 'w') as o:
