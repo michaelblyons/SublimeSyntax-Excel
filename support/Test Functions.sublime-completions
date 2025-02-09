@@ -46,7 +46,7 @@
             //                                                         Desired -> TEST(1, opt_param1,,)
             //                                                         
             //                     
-            "contents": "TEST(${1:req_param1}${3/(?<ANY>.+)|(?<NONE>^$)/(?{ANY}, :)(?{NONE},:)/}${2:${3:opt_param1}${4/(?<ANY>.+)|(?<NONE>^$)/(?{ANY}, :)(?{NONE},:)/}${4:opt_param2}${5/(?<ANY>.+)|(?<NONE>^$)/(?{ANY}, :)(?{NONE}:)/}${5:opt_param3}})",
+            "contents": "TEST(${1:req_param1}${2/(?<ANY>.+)|(?<NONE>^$)/(?{ANY}, :)(?{NONE},:)/}${2:${3:opt_param1}${4/(?<ANY>.+)|(?<NONE>^$)/(?{ANY}, :)(?{NONE},:)/}${4:opt_param2}${5/(?<ANY>.+)|(?<NONE>^$)/(?{ANY}, :)(?{NONE}:)/}${5:opt_param3}})",
             // "contents" : "${1:hello}${3/(?<h>world)(?<n>^$)/(?{h} :)(?{n})/}${2:boo ${3:world}}",
             // "contents" : "${1:hello}${3/(?<h>world)(?<n>^$)/(?{h} :)(?{n})/}${2:boo${1/(?<h>.+)/(?{h})/}${3:world}}",
             // "contents" : "${1:hello}${1/h/$`/}",
