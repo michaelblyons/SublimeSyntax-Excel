@@ -10,7 +10,7 @@
 # 2. Build out completion strings for param-having functions
 #    ⮡ cb.py ("completion builder")
 # 
-# 3. Covert the function metadata found in func_ref.xlsx to JSON
+# 3. Covert the function metadata found in *_funcs_ref.xlsx to JSON
 #    ⮡ ld.py ("load")
 #       
 # 4. Match completion strings to descriptions, categories, and function names
