@@ -4,7 +4,7 @@ import json
 import re
 from argparse import ArgumentParser
 
-from SpreadsheetFunction import SpreadsheetFunction
+from SpreadsheetFunction import APP_SUFFIXES, SpreadsheetFunction
 
 def parse_function_list(sheet_app: str, write_json_file: bool = True):
 
@@ -55,7 +55,7 @@ if __name__ == '__main__':
         description='Parse ~-delimited spreadsheet function list from a file')
     parser.add_argument(
         '-s', '--spreadsheet-app',
-        choices={'excel', 'gsheets', 'localc'},
+        choices=APP_SUFFIXES,
         default='excel',
         help='spreadsheet application')
     parser.add_argument(
@@ -65,4 +65,4 @@ if __name__ == '__main__':
         help='dump JSON output to a file')
     args = parser.parse_args()
 
-    parse_function_list(args.spreadsheet_app)
+    parse_function_list(args.spreadsheet_app, args.dump_json)
