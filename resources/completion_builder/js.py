@@ -2,8 +2,13 @@
 
 import json
 import re
+import sys
 
-func_file = 'func_data_list.txt'
+app = sys.argv[1]
+
+print(f'{app}_func_data_list.txt')
+
+func_file = f'{app}_func_data_list.txt'
 
 with open(func_file, 'r') as file:
     func_list = [line.strip() for line in file]
@@ -42,7 +47,7 @@ for line in func_list:
 
 json_out = json.dumps(dict_list, indent = 4)
 
-o = open('excel_funcs.json', 'w')
+o = open(f'{app}_funcs.json', 'w')
 
 o.write(json_out)
 o.close()

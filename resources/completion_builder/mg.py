@@ -1,14 +1,17 @@
 # See main.py for overview.
 
 import json
+import sys
 
-func_file = open('excel_funcs_comp.json', 'r')
+app = sys.argv[1]
+
+func_file = open(f'{app}_funcs_comp.json', 'r')
 
 js_func = json.load(func_file)
 
 func_file.close()
 
-ref_file = open('excel_funcs_ref.json', 'r')
+ref_file = open(f'{app}_funcs_ref.json', 'r')
 
 js_ref = json.load(ref_file)
 
@@ -44,7 +47,7 @@ for ref in js_ref:
 
 print('\nLength of Master List: ' + str(len(js_ref)))
 
-o = open('func_master.json', 'w')
+o = open(f'{app}_func_master.json', 'w')
 
 json_out = json.dumps(js_ref, indent = 4)
 

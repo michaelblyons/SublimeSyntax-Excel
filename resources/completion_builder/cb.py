@@ -1,6 +1,7 @@
 # See main.py for overview.
 
 import json
+import sys
 
 # Expected:
 #   "FORECAST.ETS(${1:target_date}, ${2:values}, ${3:timeline}${4:${5/.+/, /}${5:[seasonality]}${6/.+/, /}${6:[data_completion]}${7/.+/, /}${7:[aggregation]}})"
@@ -10,7 +11,9 @@ import json
 #   "FORECAST.ETS(${1:target_date}, ${2:values}, ${3:timeline}${4:${5/.+/, /}${5:[seasonality]}${6/.+/, /}${6:[data_completion]}${7/.+/, /}${7:[aggregation]}})"
 #   "CHOOSECOLS(${1:array}, ${2:col_num1}${3:${4/.+/, /}${4:[col_num2], ...}})"
 
-func_file = open('excel_funcs.json', 'r')
+app = sys.argv[1]
+
+func_file = open(f'{app}_funcs.json', 'r')
 
 js = json.load(func_file)
 
@@ -73,7 +76,7 @@ for func in js:
 
 json_out = json.dumps(dict_list, indent = 4)
 
-o = open('excel_funcs_comp.json', 'w')
+o = open(f'{app}_funcs_comp.json', 'w')
 
 o.write(json_out)
 o.close()

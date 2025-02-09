@@ -17,9 +17,15 @@
 #    ⮡ mg.py ("merge")
 # 
 # 5. Build out completion strings for nullary functions
+#       (Nullary functions are not included during the OCR which creates the *_data_list_raw.txt file.
+#        Nullary functions are however included in the *_func_ref.xlsx file, so this is where they
+#        are managed.)
+#    ⮡ mg.py
+#    
+# 6. Remove TRUE() and FALSE() from consideration if present in *_func_ref.xlsx
 #    ⮡ mg.py
 # 
-# 6. Run all subscripts (if toggle_rerun is enabled) and build out entire .sublime-completions file.
+# 7. Run all subscripts (if toggle_rerun is enabled) and build out entire .sublime-completions file.
 #    ⮡ main.py
 # 
 # NOTE: Not all `ellipsis == True` functions follow the same format, e.g.:
@@ -36,19 +42,23 @@ import json
 
 scripts = ['js.py', 'cb.py', 'ld.py', 'mg.py']
 
+# Takes values of 'excel', 'google', 'libre'
+app = 'excel'
+
 # Boolean-toggled rerun of subscripts
 toggle_rerun = True
 
 if toggle_rerun:
+    print(f'App Config: {app}')
     for script in scripts:
         print(f'Running {script}...')
-        result = subprocess.run(['python3', script], check = True)
+        result = subprocess.run(['python3', script, app], check = True)
         if result.returncode != 0:
             print(f'Error occured while running {script}')
             break
         print(f'{script} completed successfully')
 
-master_file = open('func_master.json', 'r')
+master_file = open(f'{app}_func_master.json', 'r')
 
 master_list = json.load(master_file)
 
@@ -64,7 +74,7 @@ for func in master_list:
     kind = 'function'
     completions.append(dict(trigger = trigger, contents = contents, annotation = annotation, details = details, kind = kind))
 
-dict_list = dict(scope = 'source.sheet.excel - string - comment', completions = completions)
+dict_list = dict(scope = f'source.sheet.{app} - string - comment', completions = completions)
 
 json_out = json.dumps(dict_list, indent = 4)
 

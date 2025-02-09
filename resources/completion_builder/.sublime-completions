@@ -1,16 +1,3 @@
-// Excel functions with descriptions, details, and arguments.
-// TODO: Maybe shorten up some of the longer descriptions. It's a long shot, but maybe word wrap is possible?
-//       (just having a single extra line would make a world of a difference IMO)
-//       
-// TODO: It may be better to just put a `(XL2007)` parenthetical at the end or start of each 07 compatibility 
-//       func rather than ending with ' In Excel 2007, this is a Statistical function.'
-//
-//       
-// NOTE: Since it would be infeasible to verify that each of these descriptions aren't misleading or 
-//       inaccurate when applied to Google Sheets or Libre Office functions of the same name, I've left
-//       them separate for now.
-//       
-// NOTE: 512 functions (all 514 found after consolidating multiple sources minus FALSE() and TRUE())
 {
     "scope": "source.sheet.excel - string - comment",
     "completions": [
