@@ -5,22 +5,22 @@
 #       "req_param" (Array)
 #       "opt_param" (Array)
 #       "ellipsis" (Boolean)
-#       js.py ("json")
+#    ⮡ js.py ("json")
 #
 # 2. Build out completion strings for param-having functions
-#       cb.py ("completion builder")
+#    ⮡ cb.py ("completion builder")
 # 
 # 3. Covert the function metadata found in func_ref.xlsx to JSON
-#       ld.py ("load")
+#    ⮡ ld.py ("load")
 #       
 # 4. Match completion strings to descriptions, categories, and function names
-#       mg.py ("merge")
+#    ⮡ mg.py ("merge")
 # 
 # 5. Build out completion strings for nullary functions
-#       mg.py
+#    ⮡ mg.py
 # 
-# Last. Build out entire .sublime-completions file.
-#       main.py
+# 6. Run all subscripts (if toggle_rerun is enabled) and build out entire .sublime-completions file.
+#    ⮡ main.py
 # 
 # NOTE: Not all `ellipsis == True` functions follow the same format, e.g.:
 #       1. COUNTA~value1,[value2],...
