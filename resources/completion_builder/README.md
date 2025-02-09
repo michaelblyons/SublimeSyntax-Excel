@@ -18,7 +18,7 @@ Convert the function data found in `func_data_list.txt` to JSON, where each has:
 Build out completion strings for param-having functions
 
 ### *ld.py* Load
-Convert the function metadata found in `func_ref.xlsx` to JSON
+Convert the function metadata found in *\*\_funcs\_ref.xlsx* to JSON
 
 ### *mg.py* Merge
 

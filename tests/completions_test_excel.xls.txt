@@ -1,3 +1,5 @@
+' Original method from FF
+
 ' Starting function:
 
 =FORECAST.ETS(target_date, values, timeline, [seasonality], [data_completion], [aggregation])
@@ -17,12 +19,101 @@
 =TEST.FUNC(req_param1, ,, [opt_param2], [opt_param3])
 
 
-'A - ${3/.+/, /}
-'B - ${3:[opt_param1]}
+' A - ${3/.+/, /}
+' B - ${3:[opt_param1]}
 
-'A takes the value of 3 ('[opt_param1]'), but the regex forces is to become ', ' since .+ matches the entirity of '[opt_param1]'
-'The idea is for this to then be removed if 3: is reduced to a blank string.
+' A takes the value of 3 ('[opt_param1]'), but the regex forces it to become ', ' since .+ matches the entirity of '[opt_param1]'
+' The idea is for this to then be removed if 3: is reduced to a blank string.
 
-'However, deleted parameters need to become ',' when deleted.
+' However, deleted optional parameters need to become ',' when deleted:
 
 =TEST.FUNC(req_param1,, [opt_param2], [opt_param3])
+
+' or
+
+=TEST.FUNC(req_param1, , [opt_param2], [opt_param3])
+
+
+' (?-m:$^) matches nothing in oniguruma (I think). perl reg is weird and hard to test in this context, esp.
+'    regarding whether -m is even supported or relevant.
+
+
+' Build strings based on number of parameters?
+
+' The only weird thing this string does:
+'    "contents": "TEST(${1:req_param1}, ${2:req_param2}${3/.+/, /}${3:${4:[opt_param1]}${5/.+/, /}${5:[opt_param2]}})",
+
+' Is that deleting [opt_param2] in this state:
+
+=TEST(req_param1, req_param2, , *[opt_param2]*)
+
+' gives this:
+
+=TEST(1, 1, )
+
+' which, while functional, would ideally give:
+
+=TEST(1, 1)
+
+' but you could argue that the proper way to use the string if no optional parameters are needed is to delete them here:
+
+=TEST(1, 1, *[opt_param1], [opt_param2]*)
+
+' which does give:
+
+TEST(1, 1)
+
+
+' The real problems arise when you increase the number of optional parameters n > 2.
+
+' Deleting [opt_param2] in this state:
+
+=TEST(1, 1, , *[opt_param2]*, [opt_param3])
+
+' Gives the following invalid formula:
+
+=TEST(1, 1, , [opt_param3])
+
+' (unless [opt_param3] is deleted, which then loops back to the train of thought for n = 2)
+
+
+' Potentially exploitable behavior, so long as there is a way to both deduplicate "Hello World"
+' and a way to still two different strings from the expression conditionally.
+'       "contents": "${1/(?<FOO>o)*+/(?{FOO}bar:hiss)/}${1:Hello World}",
+
+=hissHello World*Hello World*
+
+' press 'a'
+
+=hissaa
+
+' instead of 'a', press 'o'
+
+=baro
+
+' instead of 'a', press 'DEL'
+
+=hiss
+
+
+'       "contents": "${1/(?<FOO>o)+/(?{FOO}bar:hiss)/}${1:Hello World}",
+
+=Hellbar World*Hello World*
+' press 'a'
+=aa
+' instead of 'a', press 'o'
+=baro
+' instead of 'a', press 'DEL'
+=
+
+' One remaining case to solve:
+
+=TEST(req_param1, , 1, opt_param3)
+
+=TEST(worldhello)
+
+=TEST(worldhello)
+
+=TEST(req_param1boo,,opt_param1, opt_param2, opt_param3)
+
+=TEST(req_param1,,opt_param1, opt_param2, opt_param3)

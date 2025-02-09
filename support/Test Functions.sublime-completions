@@ -1,18 +1,59 @@
-// Function(s) for testing completions. This should be or commented out after testing is complete.
+// Function(s) for testing completions.
+// This probably doesn't need to be commented out for relase since
+// it's accounted for in .gitattributes
 
 {
     "scope": "source.sheet.excel - string - comment",
     "completions": [
         {
-            "trigger": "TEST.FUNC",
+            "trigger": "TEST",
             // The following is functional but not pretty.
-            "contents": "TEST.FUNC(${1:req_param1}${2:,${3: [opt_param1]},${4: [opt_param2]},${5: [opt_param3]}})",
+            // "contents": "TEST(${1:req_param1}${2:,${3: [opt_param1]},${4: [opt_param2]},${5: [opt_param3]}})",
             // Test new cb.py script output (w/o ellipsis)
-            // "contents": "TEST.FUNC(${1:row_num},${2: column_num}${3:,${4: [abs_num]},${5: [a1]},${6: [sheet_text]}})",
+            // "contents": "TEST(${1:row_num},${2: column_num}${3:,${4: [abs_num]},${5: [a1]},${6: [sheet_text]}})",
             // Test new cb.py script output (w/ ellipsis)
-            // "contents": "TEST.FUNC(${1:average_range},${2: criteria_range1},${3: criteria1}${4:,${5: [criteria_range2]},${6: [criteria2], ...}})",
-            "annotation": "TEST",
-            "details": "Function for testing completions. This should be or commented out after testing is complete.",
+            // "contents": "TEST(${1:average_range},${2: criteria_range1},${3: criteria1}${4:,${5: [criteria_range2]},${6: [criteria2], ...}})",
+            // Dev
+            // Functional for optional parameters n = 2
+            // "contents": "TEST(${1:req_param1}, ${2:req_param2}${3/.+/, /}${3:${4:[opt_param1]}${5/.+/, /}${5:[opt_param2]}})",
+            // Broken in one specific state for optional parameters n = 3
+            // "contents": "TEST(${1:req_param1}, ${2:req_param2}${3/.+/, /}${3:${4:[opt_param1]}${5/.+/, /}${5:[opt_param2]}${6/.+/, /}${6:[opt_param3]}})",
+            // Dev
+            // Some crazy stuff happening here.
+            // "contents": "${1/(?<FOO>o)/(?{FOO}bar:hiss)/}${1:Hello World}",
+            // Hellbar WorldHello World
+            // Below is first example of actually getting the FALSE condition to do anything,
+            //      but why does it get added to the start of the string? Is there any
+            //      way to exploit that behavior? (Edit: there is)
+            //      
+            //      IN LOGIC
+            //      MAKE (?{NONE}:) for last optional parameter
+            //      MAKE (?{NONE},:) for all preceding optional parameters
+            //      opt param n = 2
+            // "contents": "TEST(${1:req_param1}${2:${3/(?<ANY>.+)|(?<NONE>^$)/(?{ANY}, :)(?{NONE},:)/}${3:opt_param1}${4/(?<ANY>.+)|(?<NONE>^$)/(?{ANY}, :)(?{NONE}:)/}${4:opt_param2}})",
+            //      opt param n = 3
+            // "contents":  "TEST(${1:req_param1}${2:${3/(?<ANY>.+)|(?<NONE>^$)/(?{ANY}, :)(?{NONE},:)/}${3:opt_param1}${4/(?<ANY>.+)|(?<NONE>^$)/(?{ANY}, :)(?{NONE},:)/}${4:opt_param2}${5/(?<ANY>.+)|(?<NONE>^$)/(?{ANY}, :)(?{NONE}:)/}${5:opt_param3}})",
+            // 
+            //      Try cleaning up top nest
+            //      
+            //      Two current problems:
+            //        TEST(1, *opt_param1*, opt_param2, opt_param3) ->     DEL -> TEST(1, , opt_param2, opt_param3)
+            //                                                         Desired -> TEST(1,, opt_param2, opt_param3)
+            //          
+            //                   TEST(1, opt_param1,, *opt_param3*) ->     DEL -> TEST(1, opt_param1,)
+            //                                                         Desired -> TEST(1, opt_param1)
+            //                                                         OR
+            //                                                         Desired -> TEST(1, opt_param1,,)
+            //                                                         
+            //                     
+            "contents": "TEST(${1:req_param1}${2/(?<ANY>.+)|(?<NONE>^$)/(?{ANY}, :)(?{NONE},:)/}${2:${3:opt_param1}${4/(?<ANY>.+)|(?<NONE>^$)/(?{ANY}, :)(?{NONE},:)/}${4:opt_param2}${5/(?<ANY>.+)|(?<NONE>^$)/(?{ANY}, :)(?{NONE}:)/}${5:opt_param3}})",
+            // "contents" : "${1:hello}${3/(?<h>world)(?<n>^$)/(?{h} :)(?{n})/}${2:boo ${3:world}}",
+            // "contents" : "${1:hello}${3/(?<h>world)(?<n>^$)/(?{h} :)(?{n})/}${2:boo${1/(?<h>.+)/(?{h})/}${3:world}}",
+            // "contents" : "${1:hello}${1/h/$`/}",
+            // "contents" : "${1:hello}${1/h/$&/}",
+            // "contents" : "${1:hello}${1/(h)(e)(l)//}",
+            "annotation" : "TEST",
+            "details": "Function for testing completions. This probably doesn't need to be commented out for relase since it's accounted for in .gitattributes",
             "kind": "function"
         }
     ]
